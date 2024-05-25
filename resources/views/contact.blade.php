@@ -100,54 +100,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="main_menu">
                                 <nav id="mobile-menu">
                                     <ul>
-                                        <li><a href="index.html">home<i class="far fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li><a href="index.html">home page one</a></li>
-                                                <li><a href="index-2.html">home page two</a></li>
-                                            </ul>
-                                        </li>
-                                        <li><a href="about.html">about us</a></li>
-                                        <li><a href="service.html">pages <i class="far fa-chevron-down"></i></a>
-                                            <ul>
-                                                <li><a href="service.html">service</a>
-                                                    <ul>
-                                                        <li><a href="service-details.html">service details</a>
-                                                        </li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="customQuote.html">Custom Quotation</a></li>
-                                                <li><a href="portfolio.html">portfolio</a>
-                                                    <ul>
-                                                        <li><a href="portfolio-details.html">portfolio
-                                                                details</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="team.html">team</a>
-                                                    <ul>
-                                                        <li><a href="team-details.html">team details</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="history.html">History</a></li>
-                                                <li><a href="faq.html">Faq</a></li>
-                                                <li><a href="blog.html">blog</a>
-                                                    <ul>
-                                                        <li><a href="classicblog.html">blog classic</a></li>
-                                                        <li><a href="blogsingle.html">blog single</a></li>
-                                                    </ul>
-                                                </li>
-
-                                                <li><a href="login.html">login</a></li>
-                                                <li><a href="reset.html">reset</a></li>
-                                                <li><a href="404.html">404</a></li>
-
-
-                                            </ul>
-                                        </li>
-                                        <li><a href="contact.html">contact us</a></li>
-                                        <li><a href="login.html" id="quote_btn"><span>sign up</span> <i
+                                        <li><a href="/">{{__('words.home')}}</a></li>
+                                        <li><a href="/about">{{__('words.about')}}</a></li>
+                                        <li><a href="/product">{{__('words.product')}}</a></li>
+                                        <li><a href="/blog">{{__('words.blog')}}</a></li>
+                                        <li><a href="/contact">{{__('words.contact')}}</a></li>
+                                        <li><a href="#" id="quote_btn"><span>+998 (93) 512 5324</span> <i
                                                     class="fas fa-chevron-right"></i></a></li>
                                     </ul>
                                 </nav>
