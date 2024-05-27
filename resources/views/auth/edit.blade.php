@@ -1,27 +1,53 @@
 <x-layouts.admin>
-
     <div class="container">
         <div class="w-50 py-4">
             <div class="contact-form">
                 <div id="success"></div>
 
-                <form action="{{ route('profile.update', ['profile' => $profile->id]) }}" method="post"
-                      enctype="multipart/form-data">
+                @if(session('success'))
+                    <div class="alert alert-success">
+                        {{ session('success') }}
+                    </div>
+                @endif
+
+                @if($errors->any())
+                    <div class="alert alert-danger">
+                        <ul>
+                            @foreach ($errors->all() as $error)
+                                <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
+                    </div>
+                @endif
+
+                <form action="{{ route('profile.update', ['profile' => $profile->id]) }}" method="post" enctype="multipart/form-data">
                     @csrf
                     @method('PUT')
                     <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="name"
-                               placeholder="Ism" value="{{ $profile->name }}"/>
+                        <input type="text" id="if" class="form-control p-2" name="name" placeholder="Ism" value="{{ $profile->name }}" required/>
                         @error('name')
-                        <label for="if" class="text-danger">Ism</label>
+                        <label for="if" class="text-danger">{{ $message }}</label>
                         @enderror
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="password"
-                               placeholder="Parol" value="{{ $profile->password }}"/>
-                        @error('password')
-                        <label for="if" class="text-danger">Parol</label>
+                        <input type="password" id="if" class="form-control p-2" name="old_password" placeholder="Eski parolni kiriting" required/>
+                        @error('old_password')
+                        <label for="if" class="text-danger">{{ $message }}</label>
+                        @enderror
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" id="if" class="form-control p-2" name="new_password" placeholder="Yangi parol" required/>
+                        @error('new_password')
+                        <label for="if" class="text-danger">{{ $message }}</label>
+                        @enderror
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
+                        <input type="password" id="if" class="form-control p-2" name="new_password_confirmation" placeholder="Yangi parolni tasdiqlash" required/>
+                        @error('new_password_confirmation')
+                        <label for="if" class="text-danger">{{ $message }}</label>
                         @enderror
                         <p class="help-block text-danger"></p>
                     </div>
@@ -33,5 +59,4 @@
             </div>
         </div>
     </div>
-    <!-- /.content-wrapper -->
 </x-layouts.admin>

@@ -17,6 +17,7 @@
                                 <th scope="col">facebook</th>
                                 <th scope="col">twitter</th>
                                 <th scope="col">youtube</th>
+                                <th scope="col">photo</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
                             </thead>
@@ -30,6 +31,7 @@
                                     <td><a href="{{ $link->facebook }}">facebook</a></td>
                                     <td><a href="{{ $link->twitter }}">twitter</a></td>
                                     <td><a href="{{ $link->youtube }}">youtube</a></td>
+                                    <td><img src="{{ asset('storage/' . $link->photo) }}" alt="" style="width: 80px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('link.edit', ['link' => $link->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>

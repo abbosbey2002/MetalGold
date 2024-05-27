@@ -55,6 +55,12 @@
                         @enderror
                         <p class="help-block text-danger"></p>
                     </div>
+                    <div class="control-group form-control mb-3 pb-2">
+                        <input name="photo" type="file" class="input-group m-2" id="subject"/>
+                    </div>
+                    @error('photo')
+                    <label for="if" class="text-danger">faylni yuklashni unutdingiz3</label>
+                    @enderror
                     <div class="control-group">
                         <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Saqlash</button>
                     </div>

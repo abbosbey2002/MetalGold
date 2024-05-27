@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers;
 
-//use App\Http\Requests\StoreRequest;
 use App\Models\User;
-//use http\Env\Request;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
@@ -23,14 +22,26 @@ class UserController extends Controller
 
     public function update(Request $request, User $profile)
     {
-        $profile->update([
-            'name' => $request->name,
-            'password' => Hash::make($request->password),
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'old_password' => 'required',
+            'new_password' => 'required|confirmed|min:8',
         ]);
 
-        return redirect()->route('profile.index', ['profile' => $profile->id]);
+        // Foydalanuvchini olish
+        $user = Auth::user();
 
+        // Eski parolni tekshirish
+        if (!Hash::check($request->old_password, $user->password)) {
+            return back()->withErrors(['old_password' => 'Eski parol noto\'g\'ri']);
+        }
+
+        // Yangilash
+        $profile->update([
+            'name' => $request->name,
+            'password' => Hash::make($request->new_password),
+        ]);
+
+        return redirect()->route('profile.index')->with('success', 'Parol muvaffaqiyatli o\'zgartirildi');
     }
-
-
 }

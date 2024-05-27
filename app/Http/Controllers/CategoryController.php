@@ -33,6 +33,12 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('photo'))
+        {
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+        }
 
         Category::create([
             'name_uz' => $request->name_uz,
@@ -43,6 +49,7 @@ class CategoryController extends Controller
             'manufacturer' => $request->manufacturer,
             'unit' => $request->unit,
             'price' => $request->price,
+            'photo' => $path ?? null,
         ]);
 
         return redirect()->route('categories.index');
@@ -68,6 +75,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
+        if ($request->hasFile('photo'))
+        {
+            if (isset($about->photo))
+            {
+                Storage::delete($about->photo);
+            }
+
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post_photo', $name);
+        }
 
         $category->update([
             'name_uz' => $request->name_uz,
@@ -78,6 +95,7 @@ class CategoryController extends Controller
             'manufacturer' => $request->manufacturer,
             'unit' => $request->unit,
             'price' => $request->price,
+            'photo' => $path ?? $category->photo,
         ]);
 
         return redirect()->route('category.index', ['categories' => $category->id]);
@@ -90,6 +108,10 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
+        if (isset($about->photo))
+        {
+            Storage::delete($about->photo);
+        }
         return redirect()->route('category.index');
     }
 }

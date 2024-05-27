@@ -18,5 +18,6 @@ class Link extends Model
       'twitter',
       'facebook',
       'youtube',
+      'photo',
     ];
 }

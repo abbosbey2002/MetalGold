@@ -12,7 +12,6 @@
                                 <th scope="col">Id</th>
                                 <th scope="col">name</th>
                                 <th scope="col">email</th>
-                                <th scope="col">password</th>
                                 <th scope="col">Operatsiya</th>
                             </tr>
                             </thead>
@@ -22,7 +21,6 @@
                                     <td>{{ $admin->id }}</td>
                                     <td>{{ $admin->name }}</td>
                                     <td>{{ $admin->email }}</td>
-                                    <td>{{ $admin->password }}</td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('profile.edit', ['profile' => $admin->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>
