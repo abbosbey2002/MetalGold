@@ -20,6 +20,7 @@ class Category extends Model
       'manufacturer',
       'unit',
       'price',
+      'photo',
     ];
 
 

@@ -21,6 +21,7 @@ return new class extends Migration
             $table->string('manufacturer')->nullable();
             $table->string('unit')->nullable();
             $table->string('price')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

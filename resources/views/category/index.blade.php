@@ -17,6 +17,7 @@
                                 <th scope="col">ishlab chiqarilgan</th>
                                 <th scope="col">birligi</th>
                                 <th scope="col">narxi</th>
+                                <th scope="col">photo</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
                             </thead>
@@ -30,6 +31,7 @@
                                     <td>{{ $category->manufacturer }}</td>
                                     <td>{{ $category->unit }}</td>
                                     <td>{{ $category->price }}</td>
+                                    <td><img src="{{ asset('storage/' . $category->photo)  }}" alt="" style="width: 80px;"></td>
                                     <td>
                                         <div class="d-flex tools">
                                             <a href="{{ route('categories.show', ['category' => $category->id]) }}" class="mx-3"><i class="fa fa-eye"></i></a>

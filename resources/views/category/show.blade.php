@@ -18,6 +18,7 @@
                                 <th scope="col">ishlab chiqarilgan</th>
                                 <th scope="col">birligi</th>
                                 <th scope="col">narxi</th>
+                                <th scope="col">photo</th>
                             </tr>
                             </thead>
                             <tbody>
@@ -31,6 +32,7 @@
                                 <td>{{ $categories->manufacturer }}</td>
                                 <td>{{ $categories->unit }}</td>
                                 <td>{{ $categories->price }}</td>
+                                <td><img src="{{ asset('storage/' . $categories->photo) }}" alt="" style="width: 80px;"></td>
                             </tr>
                             </tbody>
                         </table>

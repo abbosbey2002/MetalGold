@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('instagram')->nullable();
             $table->string('facebook')->nullable();
             $table->string('youtube')->nullable();
+            $table->string('photo')->nullable();
             $table->timestamps();
         });
     }

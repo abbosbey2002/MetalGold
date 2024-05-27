@@ -32,6 +32,12 @@ class LinkController extends Controller
      */
     public function store(Request $request)
     {
+        if ($request->hasFile('photo'))
+        {
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post_photo', $name);
+
+        }
 
         Link::create([
             'link' => $request->link,
@@ -40,6 +46,7 @@ class LinkController extends Controller
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
             'youtube' => $request->youtube,
+            'photo' => $path ?? null,
         ]);
 
         return redirect()->route('link.index');
@@ -59,6 +66,16 @@ class LinkController extends Controller
      */
     public function update(Request $request, Link $link)
     {
+        if ($request->hasFile('photo'))
+        {
+            if (isset($link->photo))
+            {
+                Storage::delete($link->photo);
+            }
+
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post_photo', $name);
+        }
 
         $link->update([
             'link' => $request->link,
@@ -67,6 +84,7 @@ class LinkController extends Controller
             'facebook' => $request->facebook,
             'twitter' => $request->twitter,
             'youtube' => $request->youtube,
+            'photo' => $path ?? $link->photo,
         ]);
 
         return redirect()->route('link.index', ['links' => $link->id]);
@@ -78,6 +96,10 @@ class LinkController extends Controller
     public function destroy(Link $link)
     {
         $link->delete();
+        if (isset($link->photo))
+        {
+            Storage::delete($link->photo);
+        }
         return redirect()->route('link.index');
     }
 }

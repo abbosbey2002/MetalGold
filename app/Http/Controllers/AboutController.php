@@ -96,7 +96,7 @@ class AboutController extends Controller
             'content_uz' => $request->content_uz,
             'content_ru' => $request->content_ru,
             'content_en' => $request->content_en,
-            'photo' => $path ?? null
+            'photo' => $path ?? $about->photo
         ]);
 
         return redirect()->route('about.index', ['abouts' => $about->id]);
