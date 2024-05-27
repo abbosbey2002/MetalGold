@@ -248,7 +248,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4 col-sm-6">
                             <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="1.5s" data-wow-duration="1.2s">
                                 <div class="process_icon process_icon_2">
-                                    <img class="process_two" src="./assets/img/services/ss_two.png" alt="process_icon">
+                                    <img class="process_two" src="/assets/img/services/ss_two.png" alt="process_icon">
                                 </div>
                                 <div class="process_content">
                                     <h4>02.quick response</h4>
@@ -259,7 +259,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4 col-sm-6">
                             <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="1.5s">
                                 <div class="process_icon process_icon_3">
-                                    <img class="process_three" src="./assets/img/services/ss_three.png" alt="process_icon">
+                                    <img class="process_three" src="/assets/img/services/ss_three.png" alt="process_icon">
                                 </div>
                                 <div class="process_content">
                                     <h4>03.image files</h4>
@@ -270,7 +270,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4 col-sm-6">
                             <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="1.8s">
                                 <div class="process_icon process_icon_4">
-                                    <img class="process_four" src="./assets/img/services/ss_four.png" alt="process_icon">
+                                    <img class="process_four" src="/assets/img/services/ss_four.png" alt="process_icon">
                                 </div>
                                 <div class="process_content">
                                     <h4>04.download image</h4>
@@ -281,7 +281,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4 col-sm-6">
                             <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="2s">
                                 <div class="process_icon process_icon_5">
-                                    <img class="process_five" src="./assets/img/services/ss_five.png" alt="process_icon">
+                                    <img class="process_five" src="/assets/img/services/ss_five.png" alt="process_icon">
                                 </div>
                                 <div class="process_content">
                                     <h4>05.made payment</h4>
@@ -292,7 +292,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         <div class="col-md-4 col-sm-6">
                             <div class="process_card mb-0 wow animate__fadeIn" data-animation="fadeInUp" data-delay="3.5s">
                                 <div class="process_icon process_icon_6">
-                                    <img class="process_six" src="./assets/img/services/ss_six.png" alt="process_icon">
+                                    <img class="process_six" src="/assets/img/services/ss_six.png" alt="process_icon">
                                 </div>
                                 <div class="process_content">
                                     <h4>06.give us review</h4>
@@ -502,16 +502,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="single_price d-flex wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
                         <div class="price_img">
                             <img src="{{ asset('storage/' . $popular->photo) }}" alt="">
-                            <div class="price">
-                                <p>$25</p>
-                            </div>
+                            
                         </div>
                         <div class="price_content">
                             <h4>{{ $popular['title_' . $lang] }}</h4>
                             <p>{{ $popular['short_content_' . $lang] }}</p>
                         </div>
                         <div class="choose_plan">
-                            <a class="cmn_btn  increase_width   cmn_outline  effect" href="pricing.html"><span>choose plan</span><i class="fas fa-chevron-right"></i></a>
+                            <a class="cmn_btn  increase_width   cmn_outline  effect" href="{{route('product')}}"><span>choose plan</span><i class="fas fa-chevron-right"></i></a>
                         </div>
                     </div>
                 </div>
@@ -643,7 +641,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-8 col-lg-6 col-xl-5 col-sm-7 ">
                     <div class="footer_widget">
-                        <h4>About us</h4>
+                        <h4>{{ __('about')}}</h4>
                         <p>Sed ut perspiciatis unde omnis iste natus error voluptatem <br> Sed ut perspiciatis
                             unde
                             omnis
@@ -665,7 +663,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                         <path id="fpokmd" data-name="Path 28" d="M269.332,161.508a1.314,1.314,0,0,0-1.985,0c-.464.46-.928.921-1.385,1.389a.315.315,0,0,1-.222.119.324.324,0,0,1-.159-.049c-.3-.164-.621-.3-.909-.476a14.4,14.4,0,0,1-3.471-3.159,8.242,8.242,0,0,1-1.244-1.993.286.286,0,0,1,.07-.367c.464-.448.917-.909,1.373-1.369a1.318,1.318,0,0,0,0-2.032c-.363-.367-.726-.725-1.088-1.092s-.745-.753-1.123-1.124a1.322,1.322,0,0,0-1.985,0c-.468.46-.917.932-1.393,1.384a2.262,2.262,0,0,0-.71,1.525,6.455,6.455,0,0,0,.5,2.781,16.893,16.893,0,0,0,3,5,18.558,18.558,0,0,0,6.147,4.809,8.889,8.889,0,0,0,3.4.991c.074,0,.147.006.219.006a2.433,2.433,0,0,0,1.923-.821c.4-.445.846-.85,1.267-1.275a1.327,1.327,0,0,0,.008-2.021Q270.451,162.618,269.332,161.508Zm1.421,3.452c-.139.14-.281.278-.424.416-.293.285-.6.579-.884.9a1.314,1.314,0,0,1-1.08.444c-.051,0-.1,0-.157,0a7.671,7.671,0,0,1-2.972-.879,17.514,17.514,0,0,1-5.776-4.52,15.7,15.7,0,0,1-2.806-4.666,5.308,5.308,0,0,1-.431-2.295,1.141,1.141,0,0,1,.362-.8c.294-.279.578-.565.862-.852.18-.182.361-.365.546-.547a.223.223,0,0,1,.4,0c.249.244.494.491.739.738l.372.373c.185.187.369.372.554.556s.356.356.536.538c.208.209.2.246,0,.44l-.19.192c-.387.39-.771.779-1.179,1.174a1.407,1.407,0,0,0-.313,1.6,9.214,9.214,0,0,0,1.41,2.269,15.454,15.454,0,0,0,3.75,3.4c.222.138.447.248.644.346.108.053.215.105.3.154a1.442,1.442,0,0,0,.716.2,1.414,1.414,0,0,0,1.031-.46c.446-.457.9-.908,1.372-1.376a.217.217,0,0,1,.392,0q1.116,1.11,2.226,2.222C270.933,164.7,270.951,164.76,270.753,164.961Z" transform="translate(0 -0.218)" fill="#438ff9" />
                                     </g>
                                 </svg>
-                                +1 225 365 03</a>
+                                +998 (93) 512 5324</a>
                         </div>
                         @foreach($links as $link)
                         <div class="social_link pt-25">
@@ -687,23 +685,20 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                    first_photo</a></li>
+                                    {{__('words.home')}}</a></li>
                             <li><a href="/about"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfa" data-name="ojkj" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                    about us</a></li>
-                            <li><a href="#"><svg width="7.514" height="11.563">
+                                    {{__('words.service')}}</a></li>
+                            <li><a href="{{ route('category')}}"><svg width="7.514" height="11.563">
                                         <path id="poek" data-name="dfdsr" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
                                     service</a></li>
                             <li><a href="/blog"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                    blog</a></li>
-                            <li><a href="#"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="mjnbn" data-name="opiut" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    consult</a></li>
+                                    {{__('words.blog')}}</a></li>
+                            
                         </ul>
                     </div>
                 </div>

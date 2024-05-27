@@ -13,4 +13,5 @@ return
         'manufacturer' => 'Manufacturer',
         'unit' => 'Unit',
         'back' => 'Back',
+        'service' => 'Service',
     ];

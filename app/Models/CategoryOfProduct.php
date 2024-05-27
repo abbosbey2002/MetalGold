@@ -33,6 +33,6 @@ class CategoryOfProduct extends Model
 
     public function category()
     {
-        return $this->hasMany(Category::class);
+        return $this->belongsTo(Category::class, 'category_id');
     }
 }

@@ -3,7 +3,7 @@
 return
     [
         'home' => 'Asosiy',
-        'about' => 'About us',
+        'about' => 'Biz haqimizda',
         'product' => 'Mahsulotlar',
         'contact' => 'bog`lanish',
         'blog' => 'Blog',
@@ -12,5 +12,6 @@ return
         'theory' => 'Nzariyasi',
         "manufacturer" => 'Ishlab Chiqaruvchi',
         'unit' => 'Birligi',
-        'back' => 'Orqaga'
+        'back' => 'Orqaga',
+        'service' => 'Hizmatlar'
     ];
