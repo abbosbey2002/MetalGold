@@ -24,9 +24,13 @@ class MainController extends Controller
 
     public function index()
     {
-        $homes = Home::latest()->take(1)->get();
+        $first_photo = Home::latest()->first();
+        $second_photo = Home::latest()->skip(1)->first();
+        $third_photo = Home::latest()->skip(2)->first();
+        $fourth_photo = Home::latest()->skip(3)->first();
+        $fifth_photo = Home::latest()->skip(4)->first();
         $abouts = About::latest()->take(1)->get();
-        $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(3)->get(['name_uz', 'name_ru', 'name_en', 'photo']);
+        $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(3)->get(['id','name_uz', 'name_ru', 'name_en', 'photo', 'category_id']);
         $teams = Team::latest()->take(2)->get();
         $categories = Category::latest()->take(6)->get();
         $our_teams = Team::latest()->skip(2)->take(4)->get();
@@ -38,10 +42,14 @@ class MainController extends Controller
         $blogs = Blog::latest()->take(4)->get(['description_uz', 'description_ru', 'description_en', 'photo', 'created_at']);
         $blog_text = Blog::latest()->take(1)->get(['title_uz', 'title_ru', 'title_en', 'short_content_uz', 'short_content_ru', 'short_content_en', 'content_uz', 'content_ru', 'content_en']);
         $popular_products = $this->findNews(1);
-
+        
         return view('index', compact(
             'abouts',
-            'homes',
+            'first_photo',
+            'second_photo',
+            'third_photo',
+            'fourth_photo',
+            'fifth_photo',
             'contacts',
             'actives',
             'links',
@@ -89,7 +97,8 @@ class MainController extends Controller
         ));
     }
 
-    public function single_blog($blog){
+    public function single_blog($blog)
+    {
         $blog = Blog::find($blog);
         $lastBlogs = Blog::take(4)->latest()->get();
         $categories = Category::orderBy('created_at', 'desc')->take(6)->get(['name_uz', 'name_ru', 'name_en']);
@@ -111,9 +120,10 @@ class MainController extends Controller
         return view('category', compact('categories'));
     }
 
-    public function single_category($category){
-        $category = Category::find($category);
-
-        return view('singleCategory', compact('category'));
+    public function products($product)
+    {
+        $product = CategoryOfProduct::find($product);
+        
+        return view('singleProduct', compact('product'));
     }
 }

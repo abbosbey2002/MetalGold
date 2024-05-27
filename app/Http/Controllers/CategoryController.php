@@ -77,9 +77,9 @@ class CategoryController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($about->photo))
+            if (isset($category->photo))
             {
-                Storage::delete($about->photo);
+                Storage::delete($category->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
@@ -108,9 +108,9 @@ class CategoryController extends Controller
     public function destroy(Category $category)
     {
         $category->delete();
-        if (isset($about->photo))
+        if (isset($category->photo))
         {
-            Storage::delete($about->photo);
+            Storage::delete($category->photo);
         }
         return redirect()->route('category.index');
     }

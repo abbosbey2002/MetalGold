@@ -113,8 +113,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="cmn_widget category">
                         <h4>Categories</h4>
                         <ul>
+
                             @foreach ($categories as $category)
-                            <li><a href="{{ route('single_category',['category' => $category->id])}}">{{ $category['name_'.$lang]}}</a><span class="text-end"><i class="far fa-chevron-right"></i></span></li>
+                            <li><a href="{{ route('category')}}">{{ $category['name_'.$lang]}}</a><span class="text-end"><i class="far fa-chevron-right"></i></span></li>
                             @endforeach
                         </ul>
                     </div>

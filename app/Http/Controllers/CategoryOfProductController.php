@@ -36,15 +36,16 @@ class CategoryOfProductController extends Controller
      */
     public function store(Request $request)
     {
-        if ($request->hasFile('photo'))
-        {
+        if ($request->hasFile('photo')) {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post_photo', $name);
-
         }
+
+        $category_ids = json_encode($request->category_id);
+
         CategoryOfProduct::create([
             'type_id' => $request->type_id,
-            'category_id' => $request->category_id,
+            'category_id' => $category_ids,
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
@@ -72,26 +73,36 @@ class CategoryOfProductController extends Controller
 
     public function edit(CategoryOfProduct $category_of_product)
     {
-        return view('category_of_product.edit')->with(['products' => $category_of_product]);
+        $categories = Category::all();
+        $populars = Popular::all();
+        return view('category_of_product.edit')->with(['products' => $category_of_product, 'categories' => $categories, 'populars' => $populars]);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, CategoryOfProduct $category_of_product)
+    public function update(Request $request, $id)
     {
-        if ($request->hasFile('photo'))
-        {
-            if (isset($category_of_product->photo))
-            {
-                Storage::delete($category_of_product->photo);
-            }
+        $request->validate([
+            'category_id' => 'required|array'
+        ]);
 
+        $categoryOfProduct = CategoryOfProduct::findOrFail($id);
+
+        if ($request->hasFile('photo')) {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post_photo', $name);
+            if ($categoryOfProduct->photo) {
+                Storage::delete('post_photo/' . $categoryOfProduct->photo);
+            }
+            $categoryOfProduct->photo = $path;
         }
 
-        $category_of_product->update([
+        $category_ids = json_encode($request->category_id);
+
+        $categoryOfProduct->update([
+            'type_id' => $request->type_id,
+            'category_id' => $category_ids, 
             'title_uz' => $request->title_uz,
             'title_ru' => $request->title_ru,
             'title_en' => $request->title_en,
@@ -100,12 +111,12 @@ class CategoryOfProductController extends Controller
             'short_content_en' => $request->short_content_en,
             'name_uz' => $request->name_uz,
             'name_ru' => $request->name_ru,
-            'name_en' => $request->name_en,
-            'photo' => $path ?? $category_of_product->name
+            'name_en' => $request->name_en
         ]);
 
-        return redirect()->route('category_of_product.index', ['products' => $category_of_product->id]);
+        return redirect()->route('category_of_product.index');
     }
+
 
 
     /**

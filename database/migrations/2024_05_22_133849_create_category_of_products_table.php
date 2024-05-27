@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('category_of_products', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('type_id');
-            $table->unsignedBigInteger('category_id');
+            $table->json('category_id');
             $table->text('title_uz')->nullable();
             $table->text('title_ru')->nullable();
             $table->text('title_en')->nullable();

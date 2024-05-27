@@ -88,7 +88,7 @@ Route::get('/blog/{blog}', [MainController::class, 'single_blog'])->name('single
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/product', [MainController::class, 'product'])->name('product');
 Route::get('/category', [MainController::class, 'category'])->name('category');
-Route::get('/category/{category}', [MainController::class, 'single_category'])->name('single_category');
+Route::get('/product/{product}', [MainController::class, 'products'])->name('products');
 
 Route::get('/{lang}', function ($lang){
 

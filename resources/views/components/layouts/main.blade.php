@@ -29,6 +29,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <link rel="stylesheet" href="/assets/css/twentytwenty.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 
 <body>

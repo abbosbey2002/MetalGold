@@ -41,12 +41,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-6 col-lg-4">
                     <div class="service_two_card">
                         <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_01.png" alt="">
+                            <img src="{{ asset('storage/' . $category->photo) }}" alt="">
                         </div>
                         <div class="service_two__content">
                             <h4><a href="service-details.html">{{ $category['name_'.$lang]}}</a></h4>
                             <p>{{ $category->manufacturer}}</p>
-                            <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
+                            <a href="{{ route('single_category', ['category'=> $category->id])}}">More Details<i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                     </div>
