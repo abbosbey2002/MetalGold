@@ -80,11 +80,20 @@ class MainController extends Controller
     public function blog()
     {
         $blogs = Blog::latest()->paginate(8);
+        $lastBlogs = Blog::take(4)->latest()->get();
         $categories = Category::orderBy('created_at', 'desc')->take(6)->get(['name_uz', 'name_ru', 'name_en']);
         return view('blog', compact(
             'blogs',
             'categories',
+            'lastBlogs'
         ));
+    }
+
+    public function single_blog($blog){
+        $blog = Blog::find($blog);
+        $lastBlogs = Blog::take(4)->latest()->get();
+        $categories = Category::orderBy('created_at', 'desc')->take(6)->get(['name_uz', 'name_ru', 'name_en']);
+        return view('singleBlog', compact('blog', 'categories', 'lastBlogs'));
     }
     public function product()
     {
@@ -98,6 +107,13 @@ class MainController extends Controller
     }
     public function category()
     {
-        return view('category');
+        $categories = Category::paginate(5);
+        return view('category', compact('categories'));
+    }
+
+    public function single_category($category){
+        $category = Category::find($category);
+
+        return view('singleCategory', compact('category'));
     }
 }

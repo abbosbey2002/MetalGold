@@ -84,9 +84,12 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
 Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/blog', [MainController::class, 'blog'])->name('blog');
+Route::get('/blog/{blog}', [MainController::class, 'single_blog'])->name('single_blog');
 Route::get('/contact', [MainController::class, 'contact'])->name('contact');
 Route::get('/product', [MainController::class, 'product'])->name('product');
 Route::get('/category', [MainController::class, 'category'])->name('category');
+Route::get('/category/{category}', [MainController::class, 'single_category'])->name('single_category');
+
 Route::get('/{lang}', function ($lang){
 
     session(['lang' => $lang]);

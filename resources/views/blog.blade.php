@@ -42,177 +42,28 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-7 col-lg-8">
                     <div class="row">
+                        @foreach ($blogs as $blog )
                         <div class="col-md-12 col-lg-6">
                             <div class="blog blog-home-page">
                                 <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog1.jpg" alt="">
+                                    <img src="/storage/{{$blog->photo}}" alt="">
                                 </div>
                                 <div class="blog__content">
                                     <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
+                                        <span><img src="./assets/img/blog/calender.png" alt="">{{ $blog->created_at->format('M d, Y')}}</span>
                                     </div>
                                     <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Ideas Is The Main Way To Grow</h4>
+                                        <a href="{{ route('single_blog', ['blog'=> $blog->id])}}">
+                                            <h4>{{ $blog['description_'.$lang]}}</h4>
                                         </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
+                                        <a href="{{ route('single_blog', ['blog'=> $blog->id])}}" class="readmore_btn"><i class="far fa-long-arrow-right"></i></a>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog2.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Implement Design Is The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog3.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Concern Design Is The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog4.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Norodom Paban Is The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog5.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Requirement Is The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog6.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Fanching is not The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog7.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Ensure Quality Grow Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-12 col-lg-6">
-                            <div class="blog blog-home-page">
-                                <div class="blog__thumb">
-                                    <img src="./assets/img/blog/blog8.jpg" alt="">
-                                </div>
-                                <div class="blog__content">
-                                    <div class="blog__content-meta d-flex">
-                                        <span>MARKETING</span>
-                                        <span><img src="./assets/img/blog/calender.png" alt=""> June 9, 2021</span>
-                                    </div>
-                                    <div class="blog__content-info">
-                                        <a href="blogsingle.html">
-                                            <h4>Producing Ideas Is The Main Way To Grow</h4>
-                                        </a>
-                                        <a href="blogsingle.html" class="readmore_btn"><i
-                                                class="far fa-long-arrow-right"></i></a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                        @endforeach
                         <div class="custom_pagination pt-50 mb-100">
-                            <ul>
-                                <li><a href="#">prev</a></li>
-                                <li><a href="#">01</a></li>
-                                <li><a href="#">02</a></li>
-                                <li><a href="#">03</a></li>
-                                <li><a href="#">04</a></li>
-                                <li><a href="#">05</a></li>
-                                <li><a href="#">06</a></li>
-                                <li><a href="#">next</a></li>
-                            </ul>
+                            {{ $blogs->links()}}
                         </div>
                     </div>
                 </div>
@@ -220,75 +71,27 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
                     <div class="cmn_widget recent_widget">
                         <h4>Recent Posts</h4>
+                        @foreach ($lastBlogs as $lBlog)
                         <div class="recent d-flex">
                             <div class="recent__thumb">
-                                <img src="./assets/img/blog/blogsm_01.jpg" alt="">
+                                <img src="{{ asset('storage/' . $lBlog->photo) }}" alt="">
                             </div>
                             <div class="recent__content">
-                                <h5>Aug 23,2021</h5>
-                                <a href="blogsingle.html">
-                                    <h3>Nostal ideas is the main <br>
-                                        way to grow the</h3>
+                                <h5>{{ $lBlog->created_at->format('M d, Y')}}</h5>
+                                <a href="{{ route('single_blog',['blog'=> $blog->id ])}}">
+                                    <h3>{{ $lBlog['title_'.$lang]}}</h3>
                                 </a>
                             </div>
                         </div>
-                        <div class="recent d-flex">
-                            <div class="recent__thumb">
-                                <img src="./assets/img/blog/blogsm_02.jpg" alt="">
-                            </div>
-                            <div class="recent__content">
-                                <h5>Aug 23,2021</h5>
-                                <a href="blogsingle.html">
-                                    <h3>Design Increment is the main <br>
-                                        way to grow the</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="recent d-flex">
-                            <div class="recent__thumb">
-                                <img src="./assets/img/blog/blogsm_03.jpg" alt="">
-                            </div>
-                            <div class="recent__content">
-                                <h5>Aug 23,2021</h5>
-                                <a href="blogsingle.html">
-                                    <h3>Paradiam ideas is the main <br>
-                                        way to grow the</h3>
-                                </a>
-                            </div>
-                        </div>
-                        <div class="recent border-0 d-flex">
-                            <div class="recent__thumb">
-                                <img src="./assets/img/blog/blogsm_04.jpg" alt="">
-                            </div>
-                            <div class="recent__content">
-                                <h5>Aug 23,2021</h5>
-                                <a href="blogsingle.html">
-                                    <h3>Demand ideas is the main <br>
-                                        way to grow the</h3>
-                                </a>
-                            </div>
-                        </div>
+                        @endforeach
                     </div>
 
                     <div class="cmn_widget category">
                         <h4>Categories</h4>
                         <ul>
-                            <li><a href="blog.html">Business Analysis</a><span class="text-end"><i
-                                        class="far fa-chevron-right"></i></span></li>
-                            <li><a href="blog.html">Agencey Strategy</a><span><i
-                                        class="far fa-chevron-right"></i></span>
-                            </li>
-                            <li><a href="blog.html">Stock Investment </a><span><i
-                                        class="far fa-chevron-right"></i></span>
-                            </li>
-                            <li><a href="blog.html">Programme Analysis</a><span><i
-                                        class="far fa-chevron-right"></i></span>
-                            </li>
-                            <li><a href="blog.html">Data Analysis </a><span><i class="far fa-chevron-right"></i></span>
-                            </li>
-                            <li><a href="blog.html">Structure Analysis </a><span><i
-                                        class="far fa-chevron-right"></i></span>
-                            </li>
+                            @foreach ($categories as $category )
+                            <li><a href="{{route('single_category',['category' => $category->id])}}">{{ $category['name_'.$lang]}}</a><span class="text-end"><i class="far fa-chevron-right"></i></span></li>
+                            @endforeach
                         </ul>
                     </div>
 

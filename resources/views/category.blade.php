@@ -37,76 +37,22 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <div class="service_two mb-90 pt-120">
         <div class="container">
             <div class="row">
+                @foreach ($categories as $category)
                 <div class="col-md-6 col-lg-4">
                     <div class="service_two_card">
                         <div class="service_two__image">
                             <img src="./assets/img/home_two_ass/product/product_01.png" alt="">
                         </div>
                         <div class="service_two__content">
-                            <h4><a href="service-details.html">Image Masking</a></h4>
-                            <p>There are many variations of pass
-                                ages of image masking</p>
+                            <h4><a href="service-details.html">{{ $category['name_'.$lang]}}</a></h4>
+                            <p>{{ $category->manufacturer}}</p>
                             <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_02.png" alt="">
-                        </div>
-                        <div class="service_two__content">
-                            <h4><a href="service-details.html">Clipping Path</a></h4>
-                            <p>There are many variations of pass
-                                ages of image masking</p>
-                            <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_03.png" alt="">
-                        </div>
-                        <div class="service_two__content">
-                            <h4><a href="service-details.html">Multi-clipping</a></h4>
-                            <p>There are many variations of pass
-                                ages of image masking</p>
-                            <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_04.png" alt="">
-                        </div>
-                        <div class="service_two__content">
-                            <h4><a href="service-details.html">Removal</a></h4>
-                            <p>There are many variations of pass
-                                ages of image masking</p>
-                            <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="service_two_card">
-                        <div class="service_two__image">
-                            <img src="./assets/img/home_two_ass/product/product_05.png" alt="">
-                        </div>
-                        <div class="service_two__content">
-                            <h4><a href="service-details.html">Shadow making</a></h4>
-                            <p>There are many variations of pass
-                                ages of image masking</p>
-                            <a href="service-details.html">More Details<i class="fas fa-chevron-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
                 <div class="col-md-6 col-lg-4">
                     <a href="service.html" class="load_icon">
                         <div class="arrow-right">

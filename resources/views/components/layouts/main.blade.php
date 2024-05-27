@@ -13,22 +13,22 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="manifest" href="site.webmanifest">
-    <link rel="shortcut icon" type="image/x-icon" href="assets/img/fav.png">
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/img/fav.png">
 
     <!-- Place favicon.ico in the root directory -->
 
     <!-- ==========================================
                 CSS FILES HERE
     ========================================== -->
-    <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/animate.min.css">
-    <link rel="stylesheet" href="assets/css/magnific-popup.css">
-    <link rel="stylesheet" href="assets/css/fontawesome-all.min.css">
-    <link rel="stylesheet" href="assets/css/meanmenu.css">
-    <link rel="stylesheet" href="assets/css/slick.css">
-    <link rel="stylesheet" href="assets/css/twentytwenty.css">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/responsive.css">
+    <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/assets/css/animate.min.css">
+    <link rel="stylesheet" href="/assets/css/magnific-popup.css">
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="/assets/css/meanmenu.css">
+    <link rel="stylesheet" href="/assets/css/slick.css">
+    <link rel="stylesheet" href="/assets/css/twentytwenty.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/responsive.css">
 </head>
 
 <body>
@@ -92,7 +92,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="row align-items-center">
                     <div class="col-md-4 col-xl-2 col-lg-2 col-xxl-3 ">
                         <div class="logo">
-                            <a href="/"> <img src="./assets/img/logo/log.png" alt="site_logo"></a>
+                            <a href="/"> <img src="/assets/img/logo/log.png" alt="site_logo"></a>
                         </div>
                     </div>
                     <div class="col-md-8 col-xl-10 col-lg-10 col-xxl-9">
@@ -216,26 +216,26 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 <!-- ==========================================
             javascript FILES HERE
 ========================================== -->
-<script src="assets/js/vendor/modernizr-3.5.0.min.js"></script>
-<script src="assets/js/vendor/jquery-v-3.6.0.0.min.js"></script>
-<script src="assets/js/bootstrap4.min.js"></script>
-<script src="assets/js/bootstrap.min.js"></script>
-<script src="assets/js/isotope.pkgd.min.js"></script>
-<script src="assets/js/jquery.meanmenu.min.js"></script>
-<script src="assets/js/wow.min.js"></script>
-<script src="assets/js/jquery.magnific-popup.min.js"></script>
-<script src="assets/js/slick.min.js"></script>
-<script src="assets/js/jquery.event.move.js"></script>
-<script src="assets/js/scriptfour.js"></script>
-<script src="assets/js/scriptSix.js"></script>
-<script src="assets/js/scriptseven.js"></script>
-<script src="assets/js/jquery.twentytwenty.js"></script>
-<script src="assets/js/jquery.lazy.min.js"></script>
-<script src="assets/js/scroll.js"></script>
-<script src="assets/js/multiple-image-video(MIV).js"></script>
-<script src="assets/js/preloader.js"></script>
-<script src="assets/js/imagesloaded.pkgd.min.js"></script>
-<script src="assets/js/main.js"></script>
+<script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
+<script src="/assets/js/vendor/jquery-v-3.6.0.0.min.js"></script>
+<script src="/assets/js/bootstrap4.min.js"></script>
+<script src="/assets/js/bootstrap.min.js"></script>
+<script src="/assets/js/isotope.pkgd.min.js"></script>
+<script src="/assets/js/jquery.meanmenu.min.js"></script>
+<script src="/assets/js/wow.min.js"></script>
+<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+<script src="/assets/js/slick.min.js"></script>
+<script src="/assets/js/jquery.event.move.js"></script>
+<script src="/assets/js/scriptfour.js"></script>
+<script src="/assets/js/scriptSix.js"></script>
+<script src="/assets/js/scriptseven.js"></script>
+<script src="/assets/js/jquery.twentytwenty.js"></script>
+<script src="/assets/js/jquery.lazy.min.js"></script>
+<script src="/assets/js/scroll.js"></script>
+<script src="/assets/js/multiple-image-video(MIV).js"></script>
+<script src="/assets/js/preloader.js"></script>
+<script src="/assets/js/imagesloaded.pkgd.min.js"></script>
+<script src="/assets/js/main.js"></script>
 </body>
 
 </html>
