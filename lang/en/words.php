@@ -18,11 +18,17 @@ return
         'service' => 'Service',
         'meetUp' => 'Meet Our Expert Team Members',
         'clients' => "Partners",
+        'feedback' => 'Feedback',
         'ourClients' => 'Our Partners',
         'table' => 'Table',
         'metal' => "Metal",
         'company' => 'Company',
         'read' => 'Read More',
         'expStaff' => 'our Experienced Members',
+        'popular' => 'Popular',
+        'choose' => 'Choose Plan',
+        'send' => 'Send',
+        'usefull' => "Useful",
+        'links' => 'Links',
         'expMember' => 'We have many employees with many years of experience in the metal industry.We are proud of such experienced employees'
     ];

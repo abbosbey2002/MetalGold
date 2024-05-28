@@ -69,6 +69,23 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <!-- pricing area end  -->
+    <!-- subscribe area start  -->
+    <div class="subscribe_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="subscribe_card">
+                        <form action="#" method="post">
+                            <input type="text" class="form-control" placeholder="enter your phone">
+                            <button type="submit" class="subcribe_btn">{{__('words.send')}}<i class="icon-serviceicon"></i></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- subscribe area end  -->
+
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">
         <div class="footer_shape">
@@ -117,7 +134,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-2 col-sm-5  fixed_width">
                     <div class="widget_two">
-                        <h4>usefull links</h4>
+                        <h4>{{__('words.usefull')}} {{__('words.links')}}</h4>
                         <ul>
                             <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
@@ -130,7 +147,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <li><a href="{{ route('product')}}"><svg width="7.514" height="11.563">
                                         <path id="poek" data-name="dfdsr" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                {{ __('words.product') }}</a></li>
+                                    {{ __('words.product') }}</a></li>
                             <li><a href="/blog"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
@@ -140,7 +157,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-3 justify-content-end">
-                    <h4>Contact Us</h4>
+                    <h4>{{__('words.contact')}}</h4>
                     <div class="input-group mt-4 align-items-center">
                         <input type="text" aria-label="Last name" class="form-control" placeholder="Name">
                     </div>

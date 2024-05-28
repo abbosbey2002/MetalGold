@@ -14,7 +14,7 @@ class CommitController extends Controller
      */
     public function index()
     {
-        $commit = Commit::all();
+        $commit = Commit::all()->sortDesc();
         return view('commit.index')->with('commits', $commit);
     }
 

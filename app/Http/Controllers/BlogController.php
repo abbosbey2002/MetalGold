@@ -13,7 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::all();
+        $blog = Blog::all()->sortDesc();
         return view('blog.index')->with('blogs', $blog);
     }
 

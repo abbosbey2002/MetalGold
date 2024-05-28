@@ -197,7 +197,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
 </div>
 
-<!-- map end  -->
+
+
+
+ 
 
 
     <!-- footer area start  -->
@@ -248,7 +251,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-2 col-sm-5  fixed_width">
                     <div class="widget_two">
-                        <h4>usefull links</h4>
+                        <h4>{{__('words.usefull')}} {{__('words.links')}}</h4>
                         <ul>
                             <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
@@ -271,7 +274,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-3 justify-content-end">
-                    <h4>Contact Us</h4>
+                    <h4>{{__('words.contact')}}</h4>
                     <div class="input-group mt-4 align-items-center">
                         <input type="text" aria-label="Last name" class="form-control" placeholder="Name">
                     </div>
@@ -287,30 +290,29 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     </div>
     <!-- footer area end  -->
 
-<!-- copyright section  -->
-<div class="copyright_area">
-    <div class="container">
-        <div class="row top-border align-items-center">
-            <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
-                <div class="logo">
-                    <a href="index.html"><img src="/assets/img/logo/logo2.png" alt="site_logo"></a>
+    <!-- copyright section  -->
+    <div class="copyright_area">
+        <div class="container">
+            <div class="row top-border align-items-center">
+                <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
+                    <div class="logo">
+                        <a href="/"><img src="./assets/img/logo/logo2.png" alt="site_logo"></a>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
-                <div class="copyright_text">
-                    <p>&copy; 2022 Cliper theme by <span>ThemeIM</span>. All Rights Reserved.</p>
+                <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
+                    <div class="copyright_text">
+                        <p>&copy; 2024 Megagold.uz by <a href="https://dora.uz"><span>Dora Dev.</span></a>. All Rights Reserved.</p>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
-                <div class="copyright_menu">
-                    <ul>
-                        <li><a href="about.html">terms & condition</a></li>
-                        <li><a href="faq.html">privicey policey</a></li>
-                    </ul>
+                <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
+                    <div class="copyright_menu">
+                        <ul>
+                            <li><a href="#">+998 (93) 512 5324</a></li>
+                            <li><a href="#">+998 (93) 513 5324</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 </x-layouts.main>

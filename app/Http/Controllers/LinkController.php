@@ -13,7 +13,7 @@ class LinkController extends Controller
      */
     public function index()
     {
-        $link = Link::all();
+        $link = Link::all()->sortDesc();
         return view('link.index')->with('links', $link);
     }
 

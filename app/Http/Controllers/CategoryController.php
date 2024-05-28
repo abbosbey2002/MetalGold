@@ -14,7 +14,7 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        $category = Category::all();
+        $category = Category::all()->sortDesc();
         return view('category.index')->with('categories', $category);
     }
 

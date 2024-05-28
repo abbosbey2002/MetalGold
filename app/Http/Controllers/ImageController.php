@@ -13,7 +13,7 @@ class ImageController extends Controller
      */
     public function index()
     {
-        $image = Image::all();
+        $image = Image::all()->sortDesc();
         return view('image.index')->with('images', $image);
     }
 

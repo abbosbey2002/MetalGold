@@ -26,7 +26,7 @@ class MainController extends Controller
     {
         $homes = Home::latest()->take(1)->get();
         $abouts = About::latest()->take(1)->get();
-        $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(3)->get(['id', 'name_uz', 'name_ru', 'name_en', 'photo', 'category_id']);
+        $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(6)->get(['id', 'name_uz', 'name_ru', 'name_en', 'photo', 'category_id']);
         $teams = Team::latest()->take(2)->get();
         $categories = Category::latest()->take(6)->get();
         $our_teams = Team::latest()->skip(2)->take(4)->get();

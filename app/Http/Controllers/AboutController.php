@@ -13,7 +13,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::all();
+        $about = About::all()->sortDesc();
         return view('about.index')->with('abouts', $about);
     }
 

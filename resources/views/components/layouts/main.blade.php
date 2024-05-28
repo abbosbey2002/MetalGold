@@ -109,7 +109,7 @@ $contacts = \App\Models\Contact::latest()->first();
                                             <li><a href="/product">{{__('words.product')}}</a></li>
                                             <li><a href="/blog">{{__('words.blog')}}</a></li>
                                             <li><a href="/contact">{{__('words.contact')}}</a></li>
-                                            <li><a href="#" id="quote_btn"><span>{{ $contacts->phone_number }}</span> <i
+                                            <li><a href="#" id="quote_btn"><span>{{ $contacts->phone_number?? null }}</span> <i
                                                             class="fas fa-chevron-right"></i></a></li>
                                         </ul>
                                     </nav>

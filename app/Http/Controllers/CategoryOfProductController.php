@@ -15,7 +15,7 @@ class CategoryOfProductController extends Controller
      */
     public function index()
     {
-        $category_of_product = CategoryOfProduct::all();
+        $category_of_product = CategoryOfProduct::all()->sortDesc();
         return view('category_of_product.index')->with('products', $category_of_product);
     }
 

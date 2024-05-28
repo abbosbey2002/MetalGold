@@ -14,7 +14,7 @@ class TeamController extends Controller
      */
     public function index()
     {
-        $team = Team::all();
+        $team = Team::all()->sortDesc();
         return view('team.index')->with('teams', $team);
     }
 
