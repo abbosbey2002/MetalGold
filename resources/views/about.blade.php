@@ -50,15 +50,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-12 col-lg-7">
                     <div class="about_images scroll_01">
                         <div class="about_image_1">
-                            <img class="about_shape_one" src="./assets/img/about/about_since.png" alt="about_shape_01">
-                            <img class="about_shape_two" src="./assets/img/about/about_shape1.png" alt="about_image_01">
-                            <img class="about_shape_three" src="./assets/img/about/about_shape_2.png"
+                            <img class="about_shape_one" src="/assets/img/about/about_since.png" alt="about_shape_01">
+                            <img class="about_shape_two" src="/assets/img/about/about_shape1.png" alt="about_image_01">
+                            <img class="about_shape_three" src="/assets/img/about/about_shape_2.png"
                                  alt="about_image_01">
                         </div>
                         <div class="about_img_2">
-                            <img class="about_img_one" src="./assets/img/about/show_sh.png" alt="about_shape_02">
+                            <img class="about_img_one" src="/assets/img/about/show_sh.png" alt="about_shape_02">
                             <img class="about_img_two" src="{{ asset( 'storage/' . $about->photo ) }}" alt="about_image_02">
-                            <p class="rotate">SINCE 1980.</p>
                         </div>
                     </div>
                 </div>
@@ -66,7 +65,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="wrap_about">
                         <div class="section_wrapper aboutwraper">
                             <h4 class="sub_title wow animate__flipInX" data-animation="fadeInUp" data-delay="1s">
-                                About us
+                                {{ __('words.about')}}
                             </h4>
                             <h2 class="title wow animate__bounceIn" data-animation="fadeInUp" data-delay="1.5s">
                                 {{ $about['title_' . $lang] }}</h2>
@@ -76,7 +75,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <p> {{ $about['content_' . $lang] }}
                             </p>
                             <div class="site_button">
-                                <a class="cmn_btn cmn_outline " href="#"><span>Read more</span> <i
+                                <a class="cmn_btn cmn_outline " href="#"><span>{{__('words.read')}}</span> <i
                                         class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
@@ -95,8 +94,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="row">
                     <div class="col-md-12">
                         <div class="section_wrapper text-center mb-50">
-                            <h4 class="title">{!! $product['title_' . $lang] !!}</h4>
-                            <p>{!! $product['short_content_' . $lang] !!}</p>
+                            <h4 class="title"></h4>
+                            <p></p>
                         </div>
                     </div>
                 </div>
@@ -128,13 +127,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="col-md-9">
                                 <div class="shoot_icon shoot_icon_two">
 {{--                                    <img src="./assets/img/video/ach-icon2.png" alt="">--}}
-                                    <h5>our Experienced
-                                        Members</h5>
+                                    <h5>{{__('words.expStaff')}}</h5>
                                 </div>
                             </div>
                             <div class="col-md-3">
                                 <div class="shoot_count_2">
-                                    <h2>20+</h2>
+                                    <h2>50+</h2>
                                 </div>
                             </div>
                         </div>
@@ -146,8 +144,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <div class="col-md-9">
                                 <div class="shoot_icon">
                                     <img src="./assets/img/video/vd-or-1.png" alt="">
-                                    <h5>Years Providing
-                                        Services</h5>
+                                    <h5>{{__('words.yearService')}}</h5>
                                 </div>
                             </div>
                             <div class="col-md-3">
@@ -170,12 +167,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-6">
                     <div class="team_content">
                         <h2 class="title">
-                            Meet Our <span class="expert_color">Expert</span> Team <br>
-                            Members
+                            {{ __('words.meetUp')}}
                         </h2>
-                        <p>Sed ut perspiciatis unde omnis iste natus error voluptatem <br> cusantium dolore mque
-                            laudantium totam rem <br>
-                            inventore veritatis et quasi architecto</p>
+                        <p>{{__('words.expMember')}}</p>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -195,7 +189,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                         </ul>
                                     </div>
                                     <div class="team__content">
-                                        <h4><a href="team-details.html">{{ $team->name }}</a></h4>
+                                        <h4>{{ $team->name }}</h4>
                                         <p>{{ $team['title_' . $lang] }}</p>
                                     </div>
                                 </div>
@@ -218,7 +212,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 </ul>
                             </div>
                             <div class="team__content">
-                                <h4><a href="team-details.html">{{ $our->name }}</a></h4>
+                                <h4><a href="{{route('about')}}">{{ $our->name }}</a></h4>
                                 <p>{{ $our['title_' . $lang] }}</p>
                             </div>
                         </div>
@@ -235,8 +229,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper text-center mb-40">
-                        <h4 class="sub_title">clients</h4>
-                        <h2 class="title">some of our clients</h2>
+                        <h4 class="sub_title">{{__('words.clients')}}</h4>
+                        <h2 class="title">{{__('words.ourClients')}}</h2>
                     </div>
                 </div>
             </div>
@@ -269,57 +263,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
     <!-- testimonial two area start  -->
     <div class="testimonial_area mb-120 clients_area about_testimonial">
-        <div class="preview_shape">
-            <img class="preview_shape_01" src="./assets/img/preview/polygon.png" alt="fd">
-            <img class="preview_shape_02" src="./assets/img/preview/smallcircle.png" alt="sfd">
-            <img class="preview_shape__test" src="./assets/img/preview/patternbefore.png" alt="sered">
-            <img class="preview_shape_04" src="./assets/img/preview/midcircle.png" alt="f">
-            <img class="preview_shape_05" src="./assets/img/preview/large.png" alt="asd">
-        </div>
+        
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section_wrapper text-center">
-                        <h2 class="title">Explore Clients Review</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row">
-                <div class="testimonial_two_active">
-                    @foreach($commits as $commit)
-                        <div class="col-md-4">
-                            <div class="testimonial_wrapper test_two">
-                                <div class="test_two_image">
-                                    <img src="./assets/img/home_two_ass/projects/quote.png" class="position-absolute quote"
-                                         alt="">
-                                    <img src="{{ asset('storage/' . $commit->photo) }}" class="test_image_two" alt="author_info">
-                                </div>
-                                <div class="testtimonial_content">
-                                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, vel?</p>
-                                </div>
-                                <div class="rows">
-                                    <div class="client_info d-flex align-items-center">
-                                        <div class="clientinfo">
-                                            <h4>{{ $commit->name }}</h4>
-                                            <p>{{ $commit['title_' . $lang] }}</p>
-                                        </div>
-                                        <div class="client_meta client_star">
-
-                                            <div class="testimonial_star">
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                                <i class="fas fa-star"></i>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    @endforeach
-                </div>
-            </div>
+            
         </div>
     </div>
     <!-- testimonial two area start  -->

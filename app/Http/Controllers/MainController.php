@@ -105,10 +105,10 @@ class MainController extends Controller
     }
     public function product()
     {
-        $product = CategoryOfProduct::all();
         $links = Link::latest()->take(1)->get();
+        $products = Category::orderBy('created_at', 'desc')->paginate(20); 
 
-        return view('product', compact('links'))->with('products', $product);
+        return view('product', compact('links'))->with('products', $products);
     }
     public function contact()
     {

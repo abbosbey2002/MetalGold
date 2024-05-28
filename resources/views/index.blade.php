@@ -74,7 +74,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <img class="shape_05 position-absolute" src="./assets/img/slide/sl-5.png" alt="shape_05">
             <img class="shape_06 position-absolute" src="./assets/img/slide/sl-6.png" alt="shape_06">
             <img class="shape_07 position-absolute" src="./assets/img/slide/sl-7.png" alt="shape_07">
-            <img class="shape_08 position-absolute" src="./assets/img/hero-one.png" alt="shape_07">
             <img class="shape_09 position-absolute" src="./assets/img/slide/face.png" alt="shape_07">
             <img class="shape_10 position-absolute" src="./assets/img/shapes/header_left.png" alt="shape_10">
             <img class="shape_11 position-absolute" src="./assets/img/shapes/header_middle.png" alt="shape_11">
@@ -96,8 +95,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-6">
                     <div class="slide_content">
-                        <h4 class="animated wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">Photo
-                            <span>Editing Company</span>
+                        <h4 class="animated wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">{{__('words.metal')}}
+                            <span>{{__('words.company')}}</span>
                         </h4>
                         @foreach($homes as $home)
                             <h2 class="wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2.5s">{{ $home['title_' . $lang] }}</h2>
@@ -106,8 +105,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </p>
                         @endforeach
                         <div class="site_button site_button-two">
-                            <a class="cmn_btn slide_btn slide_btn_01 " href="login.html">Free Trail <i class="fas fa-chevron-right"></i></a>
-                            <a class="cmn_btn cmn_outline " href="customQuote.html"><span>Make A Budget</span><i class="fas fa-chevron-right"></i>
+                            <a class="cmn_btn slide_btn slide_btn_01 " href="{{ route('product')}}">{{__('words.product')}}<i class="fas fa-chevron-right"></i></a>
+                            <a class="cmn_btn cmn_outline " href="{{ route('category')}}"><span>{{__('words.category')}}</span><i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                     </div>
@@ -169,7 +168,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <p> {{ $about['content_' . $lang] }}
                             </p>
                             <div class="site_button">
-                                <a class="cmn_btn cmn_outline " href="{{ route('about')}}"><span>Read more</span> <i class="fas fa-chevron-right"></i></a>
+                                <a class="cmn_btn cmn_outline " href="{{ route('about')}}"><span>{{__('words.read')}}</span> <i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>
@@ -189,9 +188,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper service_wraper mb-40">
-                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">Our
-                            products</h4>
-                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">Product categories</h2>
+                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">{{ __('words.our')}}
+                            {{__('words.product')}}</h4>
+                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">{{__('words.product')}}</h2>
                     </div>
                 </div>
             </div>
@@ -199,7 +198,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-12">
 
                     <div class="service_activition">
-                    @foreach ($photos as $product)
+                        @foreach ($photos as $product)
                         <div class="service_card">
                             <div class="service_img text-center">
                                 <img src="{{ asset('storage/' . $product->photo) }}" alt="service_img">
@@ -372,21 +371,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row custom-center">
                 <div class="col-xl-8">
                     <div class="shoot_box">
-                        <div class="wrapper wrapper_two">
-                            <div class="video-main">
-                                <div class="promo-video">
-                                    <div class="waves-block">
-                                        <div class="wavesTwo wave-1"></div>
-                                        <div class="wavesTwo wave-2"></div>
-                                        <div class="wavesTwo wave-3"></div>
-                                    </div>
-                                </div>
-                                @foreach($links as $link)
-                                <a href="{{ $link->link }}" class="videoTwo video-popup mfp-iframe popupImage" data-lity><i class="fa fa-play"></i></a>
-                                @endforeach
-                            </div>
+                        
+                        <div class="vd-grid">
+                            <iframe width="695" height="391" src="https://www.youtube.com/embed/Yrokj0SqRJA" title="Какой Метал Самый Дорогой? Платина Золото Серебро Медь" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                         </div>
-                        <img class="vd-grid" src="./assets/img/video/bg_shoot.png" alt="">
                     </div>
                 </div>
                 <div class="col-xl-4">
@@ -431,17 +419,17 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <!-- clients area start  -->
     <div class="clients_area mb-120 mobile-res-mb">
         <div class="clients_shapes">
-            <img src="./assets/img/testimonial/test_01.png" class="clients_01 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_02.png" class="clients_02 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_03.png" class="clients_03 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_04.png" class="clients_04 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_05.png" class="clients_05 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_06.png" class="clients_06 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_07.png" class="clients_07 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test_08.png" class="clients_08 position-absolute" alt="">
-            <img src="./assets/img/testimonial/test-bottom-right.png" class="clients_09 position-absolute" alt="">
-            <img src="./assets/img/testimonial/bottom-left-one.png" class="clients_10 position-absolute" alt="">
-            <img src="./assets/img/testimonial/bottom-right-one.png" class="clients_11 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_01.png" class="clients_01 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_02.png" class="clients_02 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_03.png" class="clients_03 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_04.png" class="clients_04 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_05.png" class="clients_05 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_06.png" class="clients_06 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_07.png" class="clients_07 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test_08.png" class="clients_08 position-absolute" alt="">
+            <img src="/assets/img/testimonial/test-bottom-right.png" class="clients_09 position-absolute" alt="">
+            <img src="/assets/img/testimonial/bottom-left-one.png" class="clients_10 position-absolute" alt="">
+            <img src="/assets/img/testimonial/bottom-right-one.png" class="clients_11 position-absolute" alt="">
         </div>
         <div class="container">
             <div class="row">
@@ -458,11 +446,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="col-md-4">
                         <div class="testimonial_wrapper test_two">
                             <div class="test_two_image">
-                                <img src="./assets/img/first_photo_two_ass/projects/quote.png" class="position-absolute quote" alt="">
+                                <img src="/assets/img/first_photo_two_ass/projects/quote.png" class="position-absolute quote" alt="">
                                 <img src="{{ asset('storage/' . $commit->photo) }}" class="test_image_two" alt="author_info">
-                            </div>
-                            <div class="testtimonial_content">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, vel?</p>
                             </div>
                             <div class="rows">
                                 <div class="client_info d-flex align-items-center">
@@ -471,7 +456,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                         <p>{{ $commit['title_' . $lang] }}</p>
                                     </div>
                                     <div class="client_meta client_star">
-
                                         <div class="testimonial_star">
                                             <i class="fas fa-star"></i>
                                             <i class="fas fa-star"></i>
@@ -508,7 +492,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="single_price d-flex wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
                         <div class="price_img">
                             <img src="{{ asset('storage/' . $popular->photo) }}" alt="">
-                            
+
                         </div>
                         <div class="price_content">
                             <h4>{{ $popular['title_' . $lang] }}</h4>
@@ -541,24 +525,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="brand_img d-flex">
                         @foreach($clients as $client)
                         <div class="brand_items">
-                            <img src="{{ asset('storage/' . $client->photo) }}" alt="brand_image">
+                            <img src="/storage/{{$client->photo}}" alt="brand_image">
                         </div>
                         @endforeach
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/iconic.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/microw.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/tree.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/bakery.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/white.png" alt="brand_image">
-                        </div>
                     </div>
                 </div>
             </div>
@@ -569,8 +538,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <!-- news area start  -->
     <div class="news_area mobile-res-mb">
         <div class="blog_shape">
-            <img src="./assets/img/blog/patternblog.png" class="blog_pattern" alt="">
-            <img src="./assets/img/blog/blog-shape.png" class="blog_circle_shpae position-absolute" alt="">
+            <img src="/assets/img/blog/patternblog.png" class="blog_pattern" alt="">
+            <img src="/assets/img/blog/blog-shape.png" class="blog_circle_shpae position-absolute" alt="">
         </div>
         <div class="container">
             <div class="row">
@@ -704,7 +673,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                         <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
                                     {{__('words.blog')}}</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
