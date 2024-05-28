@@ -61,7 +61,7 @@ class AboutController extends Controller
     public function show(About $about)
     {
         return view('about.show')->with([
-            'abouts' => $about,
+            'about' => $about,
         ]);
     }
 
@@ -108,6 +108,10 @@ class AboutController extends Controller
     public function destroy(About $about)
     {
         $about->delete();
+        if (isset($about->photo))
+        {
+            Storage::delete($about->photo);
+        }
         return redirect()->route('about.index');
     }
 }

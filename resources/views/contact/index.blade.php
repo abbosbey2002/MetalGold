@@ -14,6 +14,7 @@
                                 <th scope="col">qisqacha malumot uz</th>
                                 <th scope="col">qisqacha malumot ru</th>
                                 <th scope="col">qisqacha malumot en</th>
+                                <th scope="col">Email</th>
                                 <th scope="col">telefon raqam</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
@@ -25,6 +26,7 @@
                                     <td>{{ $contact->title_uz }}</td>
                                     <td>{{ $contact->title_ru }}</td>
                                     <td>{{ $contact->title_en }}</td>
+                                    <td>{{ $contact->email }}</td>
                                     <td>{{ $contact->phone_number }}</td>
                                     <td>
                                         <div class="d-flex tools">

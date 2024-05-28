@@ -79,9 +79,9 @@ class TeamController extends Controller
         {
             if ($request->hasFile('photo'))
             {
-                if (isset($category_of_product->photo))
+                if (isset($team->photo))
                 {
-                    Storage::delete($category_of_product->photo);
+                    Storage::delete($team->photo);
                 }
 
                 $name = $request->file('photo')->getClientOriginalName();
@@ -111,6 +111,10 @@ class TeamController extends Controller
     public function destroy(Team $team)
     {
         $team->delete();
+        if (isset($team->photo))
+        {
+            Storage::delete($team->photo);
+        }
         return redirect()->route('team.index');
     }
 }

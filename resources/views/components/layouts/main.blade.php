@@ -1,6 +1,6 @@
 <?php
-$lang = \Illuminate\Support\Facades\App::getLocale()
-
+$lang = \Illuminate\Support\Facades\App::getLocale();
+$contacts = \App\Models\Contact::latest()->first();
 ?>
 
 <!doctype html>
@@ -108,8 +108,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                             <li><a href="/product">{{__('words.product')}}</a></li>
                                             <li><a href="/blog">{{__('words.blog')}}</a></li>
                                             <li><a href="/contact">{{__('words.contact')}}</a></li>
-                                            <li><a href="#" id="quote_btn"><span>+998 (93) 512 5324</span> <i
-                                                        class="fas fa-chevron-right"></i></a></li>
+                                            <li><a href="#" id="quote_btn"><span>{{ $contacts->phone_number }}</span> <i
+                                                            class="fas fa-chevron-right"></i></a></li>
                                         </ul>
                                     </nav>
                                 </div>

@@ -114,6 +114,10 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         $blog->delete();
+        if (isset($blog->photo))
+        {
+            Storage::delete($blog->photo);
+        }
         return redirect()->route('blog.index');
     }
 }
