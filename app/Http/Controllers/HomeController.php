@@ -102,9 +102,9 @@ class HomeController extends Controller
     {
         if ($request->hasFile('first_photo'))
         {
-            if (isset($category_of_product->first_photo))
+            if (isset($home->first_photo))
             {
-                Storage::delete($category_of_product->first_photo);
+                Storage::delete($home->first_photo);
             }
 
             $name = $request->file('first_photo')->getClientOriginalName();
@@ -112,9 +112,9 @@ class HomeController extends Controller
         }
         if ($request->hasFile('second_photo'))
         {
-            if (isset($category_of_product->second_photo))
+            if (isset($home->second_photo))
             {
-                Storage::delete($category_of_product->second_photo);
+                Storage::delete($home->second_photo);
             }
 
             $name = $request->file('second_photo')->getClientOriginalName();
@@ -122,9 +122,9 @@ class HomeController extends Controller
         }
         if ($request->hasFile('third_photo'))
         {
-            if (isset($category_of_product->third_photo))
+            if (isset($home->third_photo))
             {
-                Storage::delete($category_of_product->third_photo);
+                Storage::delete($home->third_photo);
             }
 
             $name = $request->file('third_photo')->getClientOriginalName();
@@ -132,9 +132,9 @@ class HomeController extends Controller
         }
         if ($request->hasFile('fourth_photo'))
         {
-            if (isset($category_of_product->fourth_photo))
+            if (isset($home->fourth_photo))
             {
-                Storage::delete($category_of_product->fourth_photo);
+                Storage::delete($home->fourth_photo);
             }
 
             $name = $request->file('fourth_photo')->getClientOriginalName();
@@ -142,9 +142,9 @@ class HomeController extends Controller
         }
         if ($request->hasFile('fifth_photo'))
         {
-            if (isset($category_of_product->fifth_photo))
+            if (isset($home->fifth_photo))
             {
-                Storage::delete($category_of_product->fifth_photo);
+                Storage::delete($home->fifth_photo);
             }
 
             $name = $request->file('fifth_photo')->getClientOriginalName();
@@ -158,11 +158,11 @@ class HomeController extends Controller
             'short_content_uz' => $request->short_content_uz,
             'short_content_ru' => $request->short_content_ru,
             'short_content_en' => $request->short_content_en,
-            'first_photo' => $path ?? $category_of_product->first_photo,
-            'second_photo' => $path ?? $category_of_product->second_photo,
-            'third_photo' => $path ?? $category_of_product->third_photo,
-            'fourth_photo' => $path ?? $category_of_product->fourth_photo,
-            'fifth_photo' => $path ?? $category_of_product->fifth_photo,
+            'first_photo' => $path ?? $home->first_photo,
+            'second_photo' => $path ?? $home->second_photo,
+            'third_photo' => $path ?? $home->third_photo,
+            'fourth_photo' => $path ?? $home->fourth_photo,
+            'fifth_photo' => $path ?? $home->fifth_photo,
         ]);
 
         return redirect()->route('home.index', ['homes' => $home->id]);
@@ -174,25 +174,25 @@ class HomeController extends Controller
     public function destroy(Home $home)
     {
         $home->delete();
-        if (isset($category_of_product->first_photo))
+        if (isset($home->first_photo))
         {
-            Storage::delete($category_of_product->first_photo);
+            Storage::delete($home->first_photo);
         }
-        if (isset($category_of_product->second_photo))
+        if (isset($home->second_photo))
         {
-            Storage::delete($category_of_product->second_photo);
+            Storage::delete($home->second_photo);
         }
-        if (isset($category_of_product->third_photo))
+        if (isset($home->third_photo))
         {
-            Storage::delete($category_of_product->third_photo);
+            Storage::delete($home->third_photo);
         }
-        if (isset($category_of_product->fourth_photo))
+        if (isset($home->fourth_photo))
         {
-            Storage::delete($category_of_product->fourth_photo);
+            Storage::delete($home->fourth_photo);
         }
-        if (isset($category_of_product->fifth_photo))
+        if (isset($home->fifth_photo))
         {
-            Storage::delete($category_of_product->fifth_photo);
+            Storage::delete($home->fifth_photo);
         }
         return redirect()->route('home.index');
     }

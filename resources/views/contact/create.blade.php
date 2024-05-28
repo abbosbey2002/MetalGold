@@ -32,6 +32,14 @@
                         <p class="help-block text-danger"></p>
                     </div>
                     <div class="control-group">
+                        <input type="email" id="if" class="form-control p-2" name="email"
+                               placeholder="email" value="{{ old('email') }}"/>
+                        @error('email')
+                        <label for="if" class="text-danger">phone_number</label>
+                        @enderror
+                        <p class="help-block text-danger"></p>
+                    </div>
+                    <div class="control-group">
                         <input type="text" id="if" class="form-control p-2" name="phone_number"
                                placeholder="bizning telefon raqam" value="{{ old('phone_number') }}"/>
                         @error('phone_number')

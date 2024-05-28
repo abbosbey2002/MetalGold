@@ -90,11 +90,11 @@ class CategoryOfProductController extends Controller
         $categoryOfProduct = CategoryOfProduct::findOrFail($id);
 
         if ($request->hasFile('photo')) {
-            $name = $request->file('photo')->getClientOriginalName();
-            $path = $request->file('photo')->storeAs('post_photo', $name);
             if ($categoryOfProduct->photo) {
                 Storage::delete('post_photo/' . $categoryOfProduct->photo);
             }
+            $name = $request->file('photo')->getClientOriginalName();
+            $path = $request->file('photo')->storeAs('post_photo', $name);
             $categoryOfProduct->photo = $path;
         }
 
@@ -122,9 +122,12 @@ class CategoryOfProductController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(CategoryOfProduct $category_of_product)
+    public function destroy(CategoryOfProduct $categoryOfProduct)
     {
-        $category_of_product->delete();
+        $categoryOfProduct->delete();
+        if ($categoryOfProduct->photo) {
+            Storage::delete('post_photo/' . $categoryOfProduct->photo);
+        }
         return redirect()->route('category_of_product.index');
     }
 }
