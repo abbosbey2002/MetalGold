@@ -1,6 +1,7 @@
 <?php
 $lang = \Illuminate\Support\Facades\App::getLocale();
 $contacts = \App\Models\Contact::latest()->first();
+//ismoil
 ?>
 
 <!doctype html>
