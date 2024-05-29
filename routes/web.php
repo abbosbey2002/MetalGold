@@ -80,8 +80,10 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
 | Barcha foydalanuvshilar ko'raoladigan qism
 |-------------------------------------------------------------
 */
+Route::middleware(['web', 'log.visits'])->group(function () {
+    Route::get('/', [MainController::class, 'index'])->name('index');
+});
 
-Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/blog', [MainController::class, 'blog'])->name('blog');
 Route::get('/blog/{blog}', [MainController::class, 'single_blog'])->name('single_blog');

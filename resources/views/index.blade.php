@@ -197,10 +197,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             </div>
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="service_activition">
                     @foreach ($photos as $product)
-
                         <div class="service_card">
                             <div class="service_img text-center">
                                 <img src="{{ asset('storage/' . $product->photo) }}" alt="service_img">
@@ -214,118 +212,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </a>
                         </div>
                         @endforeach
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <!-- .services area end  -->
- 
-    <!-- process area start  -->
-    <div class="process_area mb-120 mobile-res-mb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section_wrapper mb-80 text-center">
-                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">How it
-                            works</h4>
-                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">How
-                            Cliper
-                            works</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-12 col-xl-8 text-center">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="1s" data-wow-duration="1s">
-                                <div class="process_icon">
-                                    <img class="process_one" src="./assets/img/services/ss_one.png" alt="process_icon">
-
-                                </div>
-                                <div class="process_content">
-                                    <h4>01.PLACE WORK ORDER</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="1.5s" data-wow-duration="1.2s">
-                                <div class="process_icon process_icon_2">
-                                    <img class="process_two" src="/assets/img/services/ss_two.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>02.quick response</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="1.5s">
-                                <div class="process_icon process_icon_3">
-                                    <img class="process_three" src="/assets/img/services/ss_three.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>03.image files</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="1.8s">
-                                <div class="process_icon process_icon_4">
-                                    <img class="process_four" src="/assets/img/services/ss_four.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>04.download image</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="2s">
-                                <div class="process_icon process_icon_5">
-                                    <img class="process_five" src="/assets/img/services/ss_five.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>05.made payment</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card mb-0 wow animate__fadeIn" data-animation="fadeInUp" data-delay="3.5s">
-                                <div class="process_icon process_icon_6">
-                                    <img class="process_six" src="/assets/img/services/ss_six.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>06.give us review</h4>
-                                    <p class="mb-0">There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-none d-xl-block">
-                    <div class="process_image">
-                        <div class="process_shape">
-                            <img class="process_shape_02" src="./assets/img/services/shape_ss_02.png" alt="process_shape_02">
-                            <img class="process_shape_04" src="./assets/img/services/shape_ss_04.png" alt="process_shape_04">
-                            <img class="process_shape_05" src="./assets/img/services/shape_ss_05.png" alt="process_shape_05">
-                            <img class="process_shape_06" src="./assets/img/services/shape_ss_06.png" alt="process_shape_06">
-                            <img class="process_shape_07" src="./assets/img/services/shape_ss_07.png" alt="process_shape_08">
-                            <!-- <img class="process_shape_09" src="./assets/img/services/rocket.png" alt="process_shape_06"> -->
-                            <img class="process_shape_10" src="./assets/img/services/rocketwithpeople.png" alt="process_shape_06">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- process area end  -->
 
     <!-- idea area start  -->
     <div class="idea_area mb-120 mobile-res-mb">

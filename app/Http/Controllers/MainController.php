@@ -14,6 +14,7 @@ use App\Models\Image;
 use App\Models\Link;
 use App\Models\Team;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MainController extends Controller
 {
@@ -24,6 +25,8 @@ class MainController extends Controller
 
     public function index()
     {
+        $visitorCount = DB::table('website_visits')->count();
+
         $homes = Home::latest()->take(1)->get();
         $abouts = About::latest()->take(1)->get();
         $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(6)->get(['id', 'name_uz', 'name_ru', 'name_en', 'photo', 'category_id']);
@@ -53,7 +56,8 @@ class MainController extends Controller
             'teams',
             'our_teams',
             'commits',
-            'photos'
+            'photos',
+            'visitorCount'
         ));
     }
 
