@@ -144,65 +144,50 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 <!-- contact area end  -->
 
 <!-- map  -->
-<div class="google-map contact-map mb-100">
-    <iframe class="w-100" height="530"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.91477055202!2d-74.11976321327155!3d40.69740344214894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1612427122501!5m2!1sen!2sbd">
-    </iframe>
+    <div class="google-map contact-map mb-100">
+        <iframe class="w-100" height="530"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.91477055202!2d-74.11976321327155!3d40.69740344214894!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY%2C%20USA!5e0!3m2!1sen!2sbd!4v1612427122501!5m2!1sen!2sbd">
+        </iframe>
 
-    <div class="map_overlay_text quotMain__body">
-        <div class="container">
-            <div class="contact_bg">
-                <div class="row">
-                    <div class="col-md-12 col-lg-8">
-                        <form action="#">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="wrap-form">
-                                        <img src="./assets/img/service/user.png" class="user" alt="">
-                                        <input type="text" placeholder="your name">
+        <div class="map_overlay_text quotMain__body">
+            <div class="container">
+                <div class="contact_bg">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-8">
+                            <form action="javascript:sendMessage();">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="wrap-form">
+                                            <img src="./assets/img/service/user.png" class="user" alt="">
+                                            <input type="text" id="name" placeholder="your name">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="wrap-form">
+                                            <img src="./assets/img/service/dial.png" class="contact-dial" alt="">
+                                            <input type="text" id="phone_number" placeholder="+998" value="+998">
+                                        </div>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <textarea id="message" rows="8" placeholder="write here..."></textarea>
+                                    </div>
+                                    <div class="col-md-12">
+                                        <button type="submit" class="cmn_btn contact-btn mt-30">send message<i class="far fa-long-arrow-right"></i></button>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="wrap-form">
-                                        <img src="./assets/img/service/dial.png" class="contact-dial" alt="">
-                                        <input type="text" placeholder="+10">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <div class="wrap-form">
-                                        <img src="/assets/img/service/email.png" class="email" alt="">
-                                        <input type="text" placeholder="your email">
-                                    </div>
-                                </div>
-                                <div class="col-md-12">
-                                    <textarea rows="8" placeholder="write here..."></textarea>
-                                </div>
-                                <div class="col-md-12">
-                                    <button type="submit" class="cmn_btn contact-btn mt-30">send message<i
-                                            class="far fa-long-arrow-right"></i></button>
-
-                                </div>
+                            </form>
+                        </div>
+                        <div class="col-md-4 d-none d-lg-block">
+                            <div class="contact_imge">
+                                <img src="/assets/img/contact/contactImage.jpg" alt="">
                             </div>
-                        </form>
-                    </div>
-                    <div class="col-md-4 d-none d-lg-block">
-                        <div class="contact_imge">
-                            <img src="/assets/img/contact/contactImage.jpg" alt="">
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-
-</div>
-
-
-
-
- 
-
-
+{{-- map end --}}
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">
         <div class="footer_shape">
@@ -276,15 +261,60 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-8 col-lg-3 justify-content-end">
                     <h4>{{__('words.contact')}}</h4>
                     <div class="input-group mt-4 align-items-center">
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="Name">
+                        <input type="text" id="last_name" class="form-control" required placeholder="Name">
                     </div>
                     <div class="input-group mt-3 align-items-center">
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="+998" value="+998">
+                        <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
                     </div>
                     <div class="input-group mt-3">
-                        <button type="submit" aria-label="Last name" class="btn btn-primary form-control">Yuborish</button>
+                        <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
                     </div>
                 </div>
+
+                <script>
+                    function sendphone() {
+                        const phone_number_footer = document.getElementById('phone_number_footer').value;
+                        const last_name = document.getElementById('last_name').value;
+
+                        if (!last_name || !phone_number_footer) {
+                            alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                            return;
+                        }
+
+                        const message = `A contact form submission has been received:\n\nName: ${last_name}\nPhone Number: ${phone_number_footer}`;
+                        const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+                        const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+                        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+                        const data = {
+                            chat_id: telegramChatId,
+                            text: message
+                        };
+
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.ok) {
+                                    alert('Xabar yuborildi!');
+                                    document.getElementById('last_name').value = '';
+                                    document.getElementById('phone_number_footer').value = '';
+                                } else {
+                                    alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Xatolik:', error);
+                                alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                            });
+                    }
+                </script>
+
             </div>
         </div>
     </div>

@@ -153,15 +153,59 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                 <div class="col-md-8 col-lg-3 justify-content-end">
                     <h4>{{__('words.contact')}}</h4>
                     <div class="input-group mt-4 align-items-center">
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="Name">
+                        <input type="text" id="last_name" class="form-control" required placeholder="Name">
                     </div>
                     <div class="input-group mt-3 align-items-center">
-                        <input type="text" aria-label="Last name" class="form-control" placeholder="+998" value="+998">
+                        <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
                     </div>
                     <div class="input-group mt-3">
-                        <button type="submit" aria-label="Last name" class="btn btn-primary form-control">Yuborish</button>
+                        <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
                     </div>
                 </div>
+
+                <script>
+                    function sendphone() {
+                        const phone_number_footer = document.getElementById('phone_number_footer').value;
+                        const last_name = document.getElementById('last_name').value;
+
+                        if (!last_name || !phone_number_footer) {
+                            alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                            return;
+                        }
+
+                        const message = `A contact form submission has been received:\n\nName: ${last_name}\nPhone Number: ${phone_number_footer}`;
+                        const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+                        const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+                        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+                        const data = {
+                            chat_id: telegramChatId,
+                            text: message
+                        };
+
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.ok) {
+                                    alert('Xabar yuborildi!');
+                                    document.getElementById('last_name').value = '';
+                                    document.getElementById('phone_number_footer').value = '';
+                                } else {
+                                    alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Xatolik:', error);
+                                alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                            });
+                    }
+                </script>
             </div>
         </div>
     </div>
