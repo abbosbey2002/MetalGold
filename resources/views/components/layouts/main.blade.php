@@ -219,6 +219,53 @@ $contacts = \App\Models\Contact::latest()->first();
 <!-- ==========================================
             javascript FILES HERE
 ========================================== -->
+
+<script>
+    function sendMessage() {
+        const name = document.getElementById('name').value;
+        const phone_number = document.getElementById('phone_number').value;
+        const messagesText = document.getElementById('message').value;
+
+        if (!name || !phone_number || !messagesText) {
+            alert('Iltimos, barcha maydonlarni to\'ldiring.');
+            return;
+        }
+
+        const message = `A contact form submission has been received:\n\nName: ${name}\nPhone Number: ${phone_number}\nMessage: ${messagesText}`;
+        const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+        const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+        const data = {
+            chat_id: telegramChatId,
+            text: message
+        };
+
+        fetch(url, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        })
+            .then(response => response.json())
+            .then(data => {
+                if (data.ok) {
+                    alert('Xabar yuborildi!');
+                    document.getElementById('name').value = '';
+                    document.getElementById('phone_number').value = '';
+                    document.getElementById('message').value = '';
+                } else {
+                    alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                }
+            })
+            .catch(error => {
+                console.error('Xatolik:', error);
+                alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+            });
+    }
+</script>
+
 <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-v-3.6.0.0.min.js"></script>
 <script src="/assets/js/bootstrap4.min.js"></script>
