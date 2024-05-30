@@ -239,7 +239,74 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
     </div>
     <!-- pricing area end  -->
 
+{{--    Kalkulyator start --}}
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h1 class="card-title text-center">Armatura Kalkulyatori</h1>
+                        <form>
+                            <div class="form-group">
+                                <label for="length">Uzunlik (metr):</label>
+                                <input type="number" class="form-control" id="length" placeholder="Armatura uzunligini kiriting" oninput="calculateFromLength()">
+                            </div>
+                            <div class="form-group">
+                                <label for="weight">Vazn (kg):</label>
+                                <input type="number" class="form-control" id="weight" placeholder="Armatura vaznini kiriting" oninput="calculateFromWeight()">
+                            </div>
+                        </form>
+                        <div id="result" class="mt-4 text-center"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
+    <script>
+        const weightPerMeter = 1 / 0.7;
+        const pricePerKg = 130000;
+
+        function calculateFromLength() {
+            const length = parseFloat(document.getElementById('length').value);
+            const weightInput = document.getElementById('weight');
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(length) || length <= 0) {
+                weightInput.value = '';
+                resultDiv.innerHTML = 'Iltimos, to\'g\'ri uzunlik qiymatini kiriting.';
+                return;
+            }
+
+            const totalWeight = length * weightPerMeter;
+            const totalPrice = totalWeight * pricePerKg;
+
+            weightInput.value = totalWeight.toFixed(2);
+            resultDiv.innerHTML = `Umumiy vazn: ${totalWeight.toFixed(2)} kg<br>Umumiy narx: ${totalPrice.toFixed(2)} so'm`;
+        }
+
+        function calculateFromWeight() {
+            const weight = parseFloat(document.getElementById('weight').value);
+            const lengthInput = document.getElementById('length');
+            const resultDiv = document.getElementById('result');
+
+            if (isNaN(weight) || weight <= 0) {
+                lengthInput.value = '';
+                resultDiv.innerHTML = 'Iltimos, to\'g\'ri vazn qiymatini kiriting.';
+                return;
+            }
+
+            const totalLength = weight / weightPerMeter;
+            const totalPrice = weight * pricePerKg;
+
+            lengthInput.value = totalLength.toFixed(2);
+            resultDiv.innerHTML = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr<br>Umumiy narx: ${totalPrice.toFixed(2)} so'm`;
+        }
+
+
+    </script>
+
+{{--    Kalkulyator end --}}
 
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">
