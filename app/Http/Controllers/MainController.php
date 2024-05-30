@@ -72,6 +72,7 @@ class MainController extends Controller
         $commits = Commit::latest()->take(3)->get();
         $links = Link::latest()->take(1)->get();
         $contacts = Contact::latest()->take(1)->get();
+        $actives = ActiveClient::latest()->take(1)->get();
 
         return view('about', compact(
             'abouts',
@@ -83,6 +84,7 @@ class MainController extends Controller
             'links',
             'photos',
             'contacts',
+            'actives',
         ));
     }
     public function blog()

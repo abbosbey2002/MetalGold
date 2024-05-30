@@ -4,7 +4,7 @@ $contacts = \App\Models\Contact::latest()->first();
 //ismoil Usmonov
 ?>
 
-<!doctype html>
+        <!DOCTYPE html>
 <html class="no-js" lang="en">
 
 <head>
@@ -13,7 +13,7 @@ $contacts = \App\Models\Contact::latest()->first();
     <title>Cliper - Cliper Photo Studio HTML5 Template</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" type="image/x-icon" href="/assets/img/fav.png">
 
     <!-- Place favicon.ico in the root directory -->
@@ -21,6 +21,7 @@ $contacts = \App\Models\Contact::latest()->first();
     <!-- ==========================================
                 CSS FILES HERE
     ========================================== -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/bootstrap.min.css">
     <link rel="stylesheet" href="/assets/css/animate.min.css">
     <link rel="stylesheet" href="/assets/css/magnific-popup.css">
@@ -30,8 +31,6 @@ $contacts = \App\Models\Contact::latest()->first();
     <link rel="stylesheet" href="/assets/css/twentytwenty.css">
     <link rel="stylesheet" href="/assets/css/style.css">
     <link rel="stylesheet" href="/assets/css/responsive.css">
-    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 
 <body>
@@ -93,14 +92,14 @@ $contacts = \App\Models\Contact::latest()->first();
         <div class="custom-container">
             <div class="container-fluid">
                 <div class="row align-items-center">
-                    <div class="col-md-4 col-xl-2 col-lg-2 col-xxl-3 ">
+                    <div class="col-md-2">
                         <div class="logo">
                             <a href="/"> <img src="/assets/img/logo/log.png" alt="site_logo"></a>
                         </div>
                     </div>
-                    <div class="col-md-8 col-xl-10 col-lg-10 col-xxl-9">
-                        <div class="row align-items-center">
-                            <div class="col-md-9 col-lg-12 col-xl-9 text-end">
+                    <div class="col-md-10">
+                        <div class="row align-items-center text-end">
+                            <div class="col-md-11 col-lg-11 text-end">
                                 <div class="main_menu">
                                     <nav id="mobile-menu">
                                         <ul>
@@ -116,7 +115,7 @@ $contacts = \App\Models\Contact::latest()->first();
                                 </div>
                                 <!-- <div class="mobile-menu"></div> -->
                             </div>
-                            <div class="col-md-3 d-sm-none d-xl-block">
+                            <div class="col-md-1 d-sm-none d-xl-block">
                                 <div class="menu_essential">
                                     <div class="quote">
 
@@ -137,9 +136,8 @@ $contacts = \App\Models\Contact::latest()->first();
                                             </li>
                                         </ul>
                                     </div>
-                                    <div class="sidebar_icon">
-                                        <a href="javascript:void();" class="open_burger"> <img
-                                                src="./assets/img/slide/menuicon.png" alt=""></a>
+                                    <div class="">
+                                        <a href="javascript:void();" class="open_burger"></a>
                                     </div>
                                 </div>
                             </div>
@@ -154,7 +152,7 @@ $contacts = \App\Models\Contact::latest()->first();
     <div class="sidebar">
         <div class="wrap d-flex">
             <div class="logo mb-30">
-                <img src="./assets/img/slide/whitelogo.png" alt="">
+                <img src="/assets/img/slide/whitelogo.png" alt="">
             </div>
             <div class="close_btn_sidebar">
                 <span class="searchClose sidebarClose"> <i class="fal fa-times-circle"></i></span>
@@ -175,19 +173,19 @@ $contacts = \App\Models\Contact::latest()->first();
             <div class="project_slider text-center">
                 <div class="project_activitionn">
                     <div class="project_items">
-                        <img src="./assets/img/home_two_ass/projects/p1.png" alt="">
+                        <img src="/assets/img/home_two_ass/projects/p1.png" alt="">
                     </div>
                     <div class="project_items">
-                        <img src="./assets/img/home_two_ass/projects/p3.png" alt="">
+                        <img src="/assets/img/home_two_ass/projects/p3.png" alt="">
                     </div>
                     <div class="project_items">
-                        <img src="./assets/img/home_two_ass/projects/p1.png" alt="">
+                        <img src="/assets/img/home_two_ass/projects/p1.png" alt="">
                     </div>
                     <div class="project_items">
-                        <img src="./assets/img/home_two_ass/projects/p3.png" alt="">
+                        <img src="/assets/img/home_two_ass/projects/p3.png" alt="">
                     </div>
                     <div class="project_items">
-                        <img src="./assets/img/home_two_ass/projects/p1.png" alt="">
+                        <img src="/assets/img/home_two_ass/projects/p1.png" alt="">
                     </div>
                 </div>
             </div>
@@ -196,9 +194,9 @@ $contacts = \App\Models\Contact::latest()->first();
         <div class="contact_us pt-70">
             <h4 class="contact-title mb-20">contact us</h4>
             <ul class="inline_list">
-                <li><img src="./assets/img/slide/mailblue.png" alt=""><a
+                <li><img src="/assets/img/slide/mailblue.png" alt=""><a
                         href="mailto:name@email.com">info.cliper@email.com</a></li>
-                <li><img src="./assets/img/slide/phonblue.png" alt=""><a href="tel:+4733378901">+4733378901"</a>
+                <li><img src="/assets/img/slide/phonblue.png" alt=""><a href="tel:+4733378901">+4733378901"</a>
                 </li>
             </ul>
             <div class="social_link pt-20 mb-20">
@@ -211,6 +209,66 @@ $contacts = \App\Models\Contact::latest()->first();
             </div>
         </div>
     </div>
+    <div class="activemobile">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-2">
+                    <div class="mobile-logo">
+                        <a href="/"><img src="/assets/img/logo/logo.png" alt=""></a>
+                    </div>
+                </div>
+                <div class="col-8 text-end">
+                    <div class="icon">
+                        <a href="#" class="open-mobile-menu"><i class="far fa-bars"></i></a>
+                        <!-- <div class="mobile-menu">
+                        </div> -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- mobile menu -->
+    <div class="fix">
+        <div class="side-info">
+            <button class="side-info-close"><i class="fal fa-times"></i></button>
+            <div class="side__logo mb-25">
+                <a href="/">
+                    <img src="assets/img/logo/log.png" alt="logo" />
+                </a>
+            </div>
+            <div class="mobile-menu"></div>
+            <div class="contact-infos mt-30 mb-30">
+                <div class="contact-list mb-30">
+                    <h4>
+                        Contact Info
+                    </h4>
+                    <ul>
+                        <li><i class="fal fa-map"></i>
+                            <a href="#">12/A, Mirnada City Tower, NYC</a>
+                        </li>
+
+                        <li><i class="fal fa-clock"></i>
+                            <a href="#">Mon - Fri: 9.00am - 11.00pm</a>
+                        </li>
+
+                        <li><i class="fal fa-phone"></i><a href="tell:+876864764764">
+                                +876 864 764 764
+                            </a>
+                        </li>
+
+                        <li><i class="far fa-envelope"></i><a href="mailto:info@webmail.com">
+                                info@webmail.com
+                            </a>
+                        </li>
+                    </ul>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="offcanvas-overlay"></div>
+    <!-- slide area start  -->
 
     {{ $slot }}
 </main>
@@ -265,7 +323,9 @@ $contacts = \App\Models\Contact::latest()->first();
             });
     }
 </script>
-
+<!-- ==========================================
+                javascript FILES HERE
+    ========================================== -->
 <script src="/assets/js/vendor/modernizr-3.5.0.min.js"></script>
 <script src="/assets/js/vendor/jquery-v-3.6.0.0.min.js"></script>
 <script src="/assets/js/bootstrap4.min.js"></script>
@@ -289,4 +349,3 @@ $contacts = \App\Models\Contact::latest()->first();
 </body>
 
 </html>
-

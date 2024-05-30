@@ -17,7 +17,7 @@
                     </div>
                     <div class="control-group">
                         <input type="text" id="if" class="form-control p-2" name="title_uz"
-                               placeholder="mahsulot nomi uz" value="{{ old('title_uz') }}"/>
+                               placeholder="Hodim haqida ma'lumot uz" value="{{ old('title_uz') }}"/>
                         @error('title_uz')
                         <label for="if" class="text-danger">title_uz</label>
                         @enderror
@@ -25,7 +25,7 @@
                     </div>
                     <div class="control-group">
                         <input type="text" id="if" class="form-control p-2" name="title_ru"
-                               placeholder="Mahsulot nomi ru" value="{{ old('title_ru') }}"/>
+                               placeholder="Hodim haqida ma'lumot ru" value="{{ old('title_ru') }}"/>
                         @error('title_ru')
                         <label for="if" class="text-danger">title_ru</label>
                         @enderror
@@ -33,7 +33,7 @@
                     </div>
                     <div class="control-group">
                         <input type="text" id="if" class="form-control p-2" name="title_en"
-                               placeholder="mahsulot nomi en" value="{{ old('title_en') }}"/>
+                               placeholder="Hodim haqida ma'lumot en" value="{{ old('title_en') }}"/>
                         @error('title_en')
                         <label for="if" class="text-danger">title_en</label>
                         @enderror
