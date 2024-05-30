@@ -100,22 +100,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <!-- blog area end  -->
-<!-- subscribe area start  -->
-<div class="subscribe_area">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="subscribe_card">
-                        <form action="#" method="post">
-                            <input type="text" class="form-control" placeholder="enter your phone">
-                            <button type="submit" class="subcribe_btn">{{__('words.send')}}<i class="icon-serviceicon"></i></button>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- subscribe area end  -->
 
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">

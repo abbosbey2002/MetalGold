@@ -25,6 +25,19 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     <div class="breadcrumb_content">
                         <h3>{{__('words.category')}}</h3>
                         <ul>
+                            <p>
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
+                                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
+                                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
+                                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
+                                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
+                                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
+                                tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
+                                quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
+                                sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
+                                recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
+                                minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
+                            </p>
                             <li><a href="index.html">Home<i class="far fa-chevron-right"></i></a></li>
                             <li><a href="#">{{__('words.category')}}</a></li>
                         </ul>
@@ -34,57 +47,205 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         </div>
     </div>
     <!-- breadcrumb_area end  -->
-    <!-- service details area start  -->
-    <div class="service_details_area pt-120 mb-120">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="details_nav">
-                        <div class="tab-content pt-50 service-details-tab-content" id="pills-tabContent">
-                            <div class="tab-pane fade show active" id="pills-home">
-                                <div class="row">
-                                    @foreach ($categories as $category )
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="preview_image preview_two">
-                                            <img src="{{ asset('storage/' . $category->photo) }}" alt="jn">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-12 col-lg-6">
-                                        <div class="preview_details_content">
-                                            <h2 class="title">{{ $category['name_'.$lang]}} <br>{{ __('words.cost')}}: {{ $category->price}}</h2>
-                                            <div class="all_fetautes">
-                                                <ul>
-                                                    <li><i class="far fa-chevron-right"></i>{{__('words.size')}}: {{ $category->size}}
-                                                    </li>
-                                                    <li><i class="far fa-chevron-right"></i>{{__('words.theory')}}: {{ $category->theory }}</li>
-                                                    <li><i class="far fa-chevron-right"></i>{{__('words.manufacturer')}}: {{ $category->manufacturer}}</li>
-                                                    <li><i class="far fa-chevron-right"></i>{{__('words.unit')}}: {{ $category->unit}}</li>
-                                                </ul>
-                                            </div>
-                                            <div class="site_button site_button-two">
-                                                <a class="cmn_btn slide_btn slide_btn_01 " href="{{ route('category')}}">{{__('words.back')}}<i class="fas fa-chevron-right"></i></a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    @endforeach
 
-                                </div>
-                            </div>
-                        </div>
+
+    <!-- pricing area start  -->
+    <!-- pricing area start  -->
+    <div class="pricing_area mobile-res-mb py-3 category1" style="background-color: #f1f1f1">
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Size</th>
+                        <th>Theory</th>
+                        <th>Manufacturer</th>
+                        <th>Unit</th>
+                        <th>Price</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn btn-danger mx-2">xarid</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>name</td>
+                        <td>123</td>
+                        <td>1234</td>
+                        <td>O'zbekistan</td>
+                        <td>Tn</td>
+                        <td>
+                            140000 so'm
+                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing_area mobile-res-mb py-3 category2" style="background-color: #f1f1f1">
+        <div class="container">
+            <div class="row mx-2 mb-3">
+                <div class="col-md-12">
+                    <div class="d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>Name</b></div>
+                        <div class="col-md-2"><b>Size</b></div>
+                        <div class="col-md-2"><b>Theory</b></div>
+                        <div class="col-md-2"><b>Manufacturer</b></div>
+                        <div class="col-md-2"><b>Unit</b></div>
+                        <div class="col-md-2"><b>Price</b></div>
                     </div>
                 </div>
             </div>
         </div>
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn btn-danger mx-2">xarid</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="col-md-2"><b>name</b></div>
+                        <div class="col-md-2"><b>123</b></div>
+                        <div class="col-md-2"><b>1234</b></div>
+                        <div class="col-md-2"><b>O'zbekistan</b></div>
+                        <div class="col-md-2"><b>Tn</b></div>
+                        <div class="col-md-2">
+                            <b>140000 so'm</b>
+                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+{{--            {{ $products->links() }}--}}
+        </div>
     </div>
-    <!-- service details area end  -->
+    <!-- pricing area end  -->
 
 
 
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">
         <div class="footer_shape">
-            <img src="./assets/img/footer/footerPattern.png" class="f-shape_one" alt="">
-            <img src="./assets/img/footer/polygonFooter.png" class="f-shape_two" alt="">
+            <img src="/assets/img/footer/footerPattern.png" class="f-shape_one" alt="">
+            <img src="/assets/img/footer/polygonFooter.png" class="f-shape_two" alt="">
         </div>
         <div class="container">
             <div class="row">
@@ -217,7 +378,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <div class="row top-border align-items-center">
                 <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
                     <div class="logo">
-                        <a href="/"><img src="./assets/img/logo/logo2.png" alt="site_logo"></a>
+                        <a href="/"><img src="/assets/img/logo/logo2.png" alt="site_logo"></a>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
@@ -236,4 +397,5 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             </div>
         </div>
     </div>
+
 </x-layouts.main>

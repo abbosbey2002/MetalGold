@@ -90,71 +90,72 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
     <!-- .about_services area start  -->
     <div class="about_services mb-120">
         <div class="container">
-            @foreach($category_of_product as $product)
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="section_wrapper text-center mb-50">
-                            <h4 class="title"></h4>
-                            <p></p>
-                        </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section_wrapper text-center mb-50">
+                        <h4 class="title">We're Serious About Helping <br>
+                            Small Businesses</h4>
+                        <p>Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium dolore mque laudantium
+                            totam <br> rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto</p>
                     </div>
                 </div>
-            @endforeach
+            </div>
             <div class="row">
-                @foreach($photos as $index => $photo)
-{{--                    @dd($photo)--}}
+                @foreach($actives as $active)
+                    <div class="col-md-4">
+                        <div class="shoot_card shoot_about_card_one">
+                            <div class="row">
+                                <div class="col-md-9 col-xs-9">
+                                    <div class="shoot_icon">
+                                        <img src="./assets/img/video/vd-or-2.png" alt="">
+                                        <h5>OUR TRUSTED ACTIVE CLIENTS</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3 col-xs-3">
+                                    <div class="shoot_count_1">
+                                        <h2>{{ $active->active_client }}+</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="shoot_card shoot_about_card_two">
+                            <div class="row">
+                                <div class="col-md-9">
+                                    <div class="shoot_icon shoot_icon_two">
+                                        <img src="./assets/img/video/ach-icon2.png" alt="">
+                                        <h5>our Experienced
+                                            Members</h5>
+                                    </div>
+                                </div>
+                                <div class="col-md-3">
+                                    <div class="shoot_count_2">
+                                        <h2>{{ $active->experienced }}+</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                     <div class="col-md-4">
                         <div class="shoot_card shoot_about_card_three">
                             <div class="row">
                                 <div class="col-md-9">
                                     <div class="shoot_icon">
-                                        <img src="{{ asset( 'storage/' . $photo->photo ) }}" alt="">
-                                        <h5>{{ $photo['name_' . $lang] }}</h5>
+                                        <img src="./assets/img/video/vd-or-1.png" alt="">
+                                        <h5>Years Providing
+                                            Services</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
                                     <div class="shoot_count_3">
-                                        <h2>{{ ++$index }}+</h2>
+                                        <h2>{{ $active->years_services }}+</h2>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 @endforeach
-                <div class="col-md-4">
-                    <div class="shoot_card shoot_about_card_two">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="shoot_icon shoot_icon_two">
-{{--                                    <img src="./assets/img/video/ach-icon2.png" alt="">--}}
-                                    <h5>{{__('words.expStaff')}}</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="shoot_count_2">
-                                    <h2>50+</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="shoot_card shoot_about_card_three">
-                        <div class="row">
-                            <div class="col-md-9">
-                                <div class="shoot_icon">
-                                    <img src="./assets/img/video/vd-or-1.png" alt="">
-                                    <h5>{{__('words.yearService')}}</h5>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="shoot_count_3">
-                                    <h2>12+</h2>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>
@@ -242,18 +243,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <img src="{{ asset('storage/' . $client->photo) }}" alt="brand_image">
                             </div>
                         @endforeach
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/microw.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/tree.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/bakery.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/white.png" alt="brand_image">
-                        </div>
                     </div>
                 </div>
             </div>

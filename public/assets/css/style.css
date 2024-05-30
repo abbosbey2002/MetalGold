@@ -15954,7 +15954,53 @@ img.clients_11 {
   border-radius: 15px;
   border: 2px solid #2B1B9A;
 }
+/*=========================ismoil===========================*/
 
+@media (min-width: 720px) {
+    .category1{
+        display: none;
+    }
+}
+@media (max-width: 720px) {
+    .category2{
+        display: none;
+    }
+}
+
+
+
+
+.single_price1 {
+    background: #ffffff;
+    box-shadow: rgba(0, 0, 0, 0.4) -10px 12px 54px -51px;
+    margin-bottom: 23px;
+    padding: 10px 20px;
+    display: block;
+    position: relative;
+    align-items: center;
+    text-decoration: none;
+    z-index: 1;
+    overflow: hidden;
+    flex-wrap: wrap;
+    -webkit-transition: all 0.5s ease-out 0s;
+    -moz-transition: all 0.5s ease-out 0s;
+    -ms-transition: all 0.5s ease-out 0s;
+    -o-transition: all 0.5s ease-out 0s;
+    transition: all 0.5s ease-out 0s;
+    border-radius: 10px;
+}
+.single_price1:hover {
+    background-color: #6c757d;
+    -webkit-transition: all 0.2s ease-out 0s;
+    -moz-transition: all 0.2s ease-out 0s;
+    -ms-transition: all 0.2s ease-out 0s;
+    -o-transition: all 0.2s ease-out 0s;
+    transition: all 0.2s ease-out 0s;
+    color: #ffffff;
+}
+
+
+/*-----------------------------------------------------------------------*/
 .single_price {
   background: #ffffff;
   box-shadow: rgba(0, 0, 0, 0.4) -10px 12px 54px -51px;
