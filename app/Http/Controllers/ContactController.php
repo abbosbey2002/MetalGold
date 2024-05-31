@@ -50,7 +50,7 @@ class ContactController extends Controller
 
     public function edit(Contact $contact)
     {
-        return view('contact.edit')->with(['contacts' => $contact]);
+        return view('contact.edit')->with(['contact' => $contact]);
     }
 
     /**

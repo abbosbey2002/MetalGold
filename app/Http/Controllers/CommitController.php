@@ -63,7 +63,7 @@ class CommitController extends Controller
 
     public function edit(Commit $commit)
     {
-        return view('commit.edit')->with(['commits' => $commit]);
+        return view('commit.edit')->with(['commit' => $commit]);
     }
 
     /**

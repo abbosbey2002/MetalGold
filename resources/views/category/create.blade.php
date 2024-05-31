@@ -3,7 +3,7 @@
         <div class="row justify-content-start">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Add New Category</div>
+                    <div class="card-header"><h2><b>Add New Category</b></h2></div>
                     <div class="card-body">
                         <form action="{{ route('categories.store') }}" method="post" enctype="multipart/form-data">
                             @csrf

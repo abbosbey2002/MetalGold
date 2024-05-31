@@ -64,13 +64,13 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return view('blog.show')->with([
-            'blogs' => $blog,
+            'blog' => $blog,
         ]);
     }
 
     public function edit(Blog $blog)
     {
-        return view('blog.edit')->with(['blogs' => $blog]);
+        return view('blog.edit')->with(['blog' => $blog]);
     }
 
     /**

@@ -58,7 +58,7 @@ class LinkController extends Controller
 
     public function edit(Link $link)
     {
-        return view('link.edit')->with(['links' => $link]);
+        return view('link.edit')->with(['link' => $link]);
     }
 
     /**

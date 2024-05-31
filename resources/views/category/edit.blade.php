@@ -3,7 +3,7 @@
         <div class="row justify-content-start">
             <div class="col-md-10">
                 <div class="card">
-                    <div class="card-header">Edit Category</div>
+                    <div class="card-header"><h2><b>Edit Category</b></h2></div>
                     <div class="card-body">
                         <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
                             @csrf

@@ -4,7 +4,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 ?>
 
 <x-layouts.main>
-    <!-- breadcrumb_area start  -->
 
     <div class="breadcrumb_area">
         <div class="breadcrumb-shapes">
@@ -20,6 +19,13 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <img class="shape_11 position-absolute" src="/assets/img/shapes/header_middle.png" alt="shape_11">
         </div>
         <div class="container">
+            @if (session('success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                <strong>{{session('success')}}</strong> 
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            </div>
+            @endif
+
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumb_content">
@@ -38,8 +44,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
                                 minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
                             </p>
-                            <li><a href="index.html">Home<i class="far fa-chevron-right"></i></a></li>
-                            <li><a href="#">{{__('words.category')}}</a></li>
+                            <li><a href="{{ route('index')}}">Home<i class="far fa-chevron-right"></i></a></li>
+                            <li><a href="{{ route('product')}}">{{__('words.category')}}</a></li>
                         </ul>
                     </div>
                 </div>
@@ -49,94 +55,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
     <!-- breadcrumb_area end  -->
 
 
-    <!-- pricing area start  -->
-    <!-- pricing area start  -->
-    <div class="pricing_area mobile-res-mb py-3 category1" style="background-color: #f1f1f1">
-        <div class="container">
-            <div class="table-responsive">
-                <table class="table table-bordered">
-                    <thead>
-                    <tr>
-                        <th>Name</th>
-                        <th>Size</th>
-                        <th>Theory</th>
-                        <th>Manufacturer</th>
-                        <th>Unit</th>
-                        <th>Price</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn btn-danger mx-2">xarid</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>name</td>
-                        <td>123</td>
-                        <td>1234</td>
-                        <td>O'zbekistan</td>
-                        <td>Tn</td>
-                        <td>
-                            140000 so'm
-                            <button class="btn mx-4"><i class="fa fa-cart-arrow-down"></i></button>
-                        </td>
-                    </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-    </div>
+
 
     <div class="pricing_area mobile-res-mb py-3 category2" style="background-color: #f1f1f1">
         <div class="container">
@@ -145,183 +64,207 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     <div class="d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
                         <div class="col-md-2"><b>Name</b></div>
                         <div class="col-md-2"><b>Size</b></div>
-                        <div class="col-md-2"><b>Theory</b></div>
+                        <div class="col-md-2"><b>Metr -Tonna</b></div>
+                        <div class="col-md-2"><b>Tonna - Metr</b></div>
                         <div class="col-md-2"><b>Manufacturer</b></div>
-                        <div class="col-md-2"><b>Unit</b></div>
                         <div class="col-md-2"><b>Price</b></div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="container">
+        <!-- pricing area start -->
+        <!-- Pricing area start -->
+        <div class="container mt-5">
             <div class="row align-items-center">
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn btn-danger mx-2">xarid</button>
+                @foreach ($products as $product)
+                <div class="col-md-12 mb-3">
+                    <div class="card single_price1 animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                        <div class="card-body d-flex justify-content-between">
+                            <div class="col-md-2"><b>{{ $product->{'name_'.$lang} }}</b></div>
+                            <div class="col-md-2"><b>{{ $product->size}}</b></div>
+                            <div class="col-md-2"><b>{{ $product->metr_tonna}}</b></div>
+                            <div class="col-md-2"><b>{{ $product->tonna_metr}}</b></div>
+                            <div class="col-md-2"><b>{{ $product->manufacturer }}</b></div>
+                            <div class="col-md-2">
+                                <b>{{ $product->price}}</b>
+                                <button onclick="xarid({{ $product->id }})" type="button" class="btn btn-danger mx-2 xarid-btn" data-bs-toggle="modal" data-bs-target="#purchaseModal">Xarid</button>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-12">
-                    <div class="single_price1 d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="col-md-2"><b>name</b></div>
-                        <div class="col-md-2"><b>123</b></div>
-                        <div class="col-md-2"><b>1234</b></div>
-                        <div class="col-md-2"><b>O'zbekistan</b></div>
-                        <div class="col-md-2"><b>Tn</b></div>
-                        <div class="col-md-2">
-                            <b>140000 so'm</b>
-                            <button class="btn mx-4"> <i class="fa fa-cart-arrow-down"></i></button>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
-{{--            {{ $products->links() }}--}}
         </div>
-    </div>
-    <!-- pricing area end  -->
+        <!-- Pricing area end -->
 
-{{--    Kalkulyator start --}}
-    <div class="container mt-5">
-        <div class="row justify-content-center">
-            <div class="col-md-6">
-                <div class="card">
-                    <div class="card-body">
-                        <h1 class="card-title text-center">Armatura Kalkulyatori</h1>
-                        <form>
-                            <div class="form-group">
-                                <label for="length">Uzunlik (metr):</label>
-                                <input type="number" class="form-control" id="length" placeholder="Armatura uzunligini kiriting" oninput="calculateFromLength()">
+        <!-- Modal -->
+        <div class="modal fade" style="margin-top: 90px;" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="purchaseModalLabel">Select Option and Provide Details</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- Display Product Name and Price -->
+                        <h4 id="productName"></h4>
+                        <p id="productPrice"></p>
+
+                        <!-- Form for user input -->
+                        <form id="purchaseForm" action="{{ route('orders.store')}}" method="post" onsubmit="return confirm('Maxsulotni o\'zlashtirishga ruxsat berasizmi')">
+                            @csrf
+                            <div class="row">
+                                <input type="hidden" name="product_id" id="productId">
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="fullName" class="form-label">Full Name</label>
+                                        <input type="text" name="name" class="form-control" id="fullName" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="phoneNumber" class="form-label">Phone Number</label>
+                                        <input type="text" class="form-control" name="phone_number" id="phoneNumber" required placeholder="+998" :value="+998">
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="weight" class="form-label">Vazn (kg):</label>
+                                        <input type="text" class="form-control" name="total_weight" id="weight" placeholder="Armatura vaznini kiriting" oninput="calculateFromWeight()" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="mb-3">
+                                        <label for="length" class="form-label">Uzunlik (metr):</label>
+                                        <input type="text" class="form-control" name="total_length" id="length" placeholder="Armatura uzunligini kiriting" oninput="calculateFromLength()" required>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="form-group">
-                                <label for="weight">Vazn (kg):</label>
-                                <input type="number" class="form-control" id="weight" placeholder="Armatura vaznini kiriting" oninput="calculateFromWeight()">
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Narx (so'm):</label>
+                                <input type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
                             </div>
+                            <div class="mt-4 text-center" style="display:none;">
+                                <textarea id="result" class="form-control" rows="4"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
                         </form>
-                        <div id="result" class="mt-4 text-center"></div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
-    <script>
-        const weightPerMeter = 1 / 0.7;
-        const pricePerKg = 130000;
+        <script>
+            // Create a products array in JavaScript
+            const products = @json($products);
 
-        function calculateFromLength() {
-            const length = parseFloat(document.getElementById('length').value);
-            const weightInput = document.getElementById('weight');
-            const resultDiv = document.getElementById('result');
+            function xarid(productId) {
+                // Find the product by ID
+                const product = products.find(p => p.id === productId);
 
-            if (isNaN(length) || length <= 0) {
-                weightInput.value = '';
-                resultDiv.innerHTML = 'Iltimos, to\'g\'ri uzunlik qiymatini kiriting.';
-                return;
+                // Clear input fields
+                document.getElementById('fullName').value = '';
+                document.getElementById('phoneNumber').value = '';
+                document.getElementById('length').value = '';
+                document.getElementById('weight').value = '';
+                document.getElementById('price').value = '';
+                document.getElementById('result').value = '';
+
+                // Populate modal with product details
+                document.getElementById('productId').value = productId;
+
+                document.getElementById('productName').innerText = product['name_{{ $lang }}'];
+                document.getElementById('productPrice').innerText = "Price per kg: " + product.price;
+
+                // Set global variable for current product price
+                currentProductPrice = product.price;
             }
 
-            const totalWeight = length * weightPerMeter;
-            const totalPrice = totalWeight * pricePerKg;
+            let currentProductPrice = 0;
+            const weightPerMeter = 1 / 0.7;
 
-            weightInput.value = totalWeight.toFixed(2);
-            resultDiv.innerHTML = `Umumiy vazn: ${totalWeight.toFixed(2)} kg<br>Umumiy narx: ${totalPrice.toFixed(2)} so'm`;
-        }
+            function calculateFromLength() {
+                const length = parseFloat(document.getElementById('length').value);
+                const weightInput = document.getElementById('weight');
+                const priceInput = document.getElementById('price');
+                const resultDiv = document.getElementById('result');
 
-        function calculateFromWeight() {
-            const weight = parseFloat(document.getElementById('weight').value);
-            const lengthInput = document.getElementById('length');
-            const resultDiv = document.getElementById('result');
+                if (isNaN(length) || length <= 0) {
+                    weightInput.value = '';
+                    priceInput.value = '';
+                    resultDiv.value = 'Iltimos, to\'g\'ri uzunlik qiymatini kiriting.';
+                    return;
+                }
 
-            if (isNaN(weight) || weight <= 0) {
-                lengthInput.value = '';
-                resultDiv.innerHTML = 'Iltimos, to\'g\'ri vazn qiymatini kiriting.';
-                return;
+                const totalWeight = length * weightPerMeter;
+                const totalPrice = totalWeight * currentProductPrice;
+
+                weightInput.value = totalWeight.toFixed(2);
+                priceInput.value = totalPrice.toFixed(2);
+                resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy narx: ${totalPrice.toFixed(2)} so'm`;
             }
 
-            const totalLength = weight / weightPerMeter;
-            const totalPrice = weight * pricePerKg;
+            function calculateFromWeight() {
+                const weight = parseFloat(document.getElementById('weight').value);
+                const lengthInput = document.getElementById('length');
+                const priceInput = document.getElementById('price');
+                const resultDiv = document.getElementById('result');
 
-            lengthInput.value = totalLength.toFixed(2);
-            resultDiv.innerHTML = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr<br>Umumiy narx: ${totalPrice.toFixed(2)} so'm`;
-        }
+                if (isNaN(weight) || weight <= 0) {
+                    lengthInput.value = '';
+                    priceInput.value = '';
+                    resultDiv.value = 'Iltimos, to\'g\'ri vazn qiymatini kiriting.';
+                    return;
+                }
+
+                const totalLength = weight / weightPerMeter;
+                const totalPrice = weight * currentProductPrice;
+
+                lengthInput.value = totalLength.toFixed(2);
+                priceInput.value = totalPrice.toFixed(2);
+                resultDiv.value = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr\nUmumiy narx: ${totalPrice.toFixed(2)} so'm`;
+            }
+
+            function calculateFromPrice() {
+                const price = parseFloat(document.getElementById('price').value);
+                const lengthInput = document.getElementById('length');
+                const weightInput = document.getElementById('weight');
+                const resultDiv = document.getElementById('result');
+
+                if (isNaN(price) || price <= 0) {
+                    lengthInput.value = '';
+                    weightInput.value = '';
+                    resultDiv.value = 'Iltimos, to\'g\'ri narx qiymatini kiriting.';
+                    return;
+                }
+
+                const totalWeight = price / currentProductPrice;
+                const totalLength = totalWeight / weightPerMeter;
+
+                weightInput.value = totalWeight.toFixed(2);
+                lengthInput.value = totalLength.toFixed(2);
+                resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy uzunlik: ${totalLength.toFixed(2)} metr`;
+            }
+        </script>
 
 
-    </script>
 
-{{--    Kalkulyator end --}}
+        {{-- Kalkulyator end --}}
 
-    <!-- footer area start  -->
-    <div class="footer_area pt-120 pb-50">
-        <div class="footer_shape">
-            <img src="/assets/img/footer/footerPattern.png" class="f-shape_one" alt="">
-            <img src="/assets/img/footer/polygonFooter.png" class="f-shape_two" alt="">
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8 col-lg-6 col-xl-5 col-sm-7 ">
-                    <div class="footer_widget">
-                        <h4>{{ __('about')}}</h4>
-                        <p>{{ __('words.expMember') }}</p>
-                        <div class="social_contact">
-                            @foreach($contacts as $contact)
+        <!-- footer area start  -->
+        <div class="footer_area pt-120 pb-50">
+            <div class="footer_shape">
+                <img src="/assets/img/footer/footerPattern.png" class="f-shape_one" alt="">
+                <img src="/assets/img/footer/polygonFooter.png" class="f-shape_two" alt="">
+            </div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-lg-6 col-xl-5 col-sm-7 ">
+                        <div class="footer_widget">
+                            <h4>{{ __('about')}}</h4>
+                            <p>{{ __('words.expMember') }}</p>
+                            <div class="social_contact">
+                                @foreach($contacts as $contact)
                                 <a href="{{ $contact->email }}"><svg width="20.87" height="15">
                                         <g id="Mail_2" data-name="Mail 2" transform="translate(-163.667 -153.91)">
                                             <path id="dfdf" data-name="Path 22" d="M181.928,153.91H166.276a2.611,2.611,0,0,0-2.609,2.609V166.3a2.611,2.611,0,0,0,2.609,2.609h15.652a2.612,2.612,0,0,0,2.609-2.609v-9.783A2.612,2.612,0,0,0,181.928,153.91Zm1.3,12.391a1.306,1.306,0,0,1-1.3,1.3H166.276a1.306,1.306,0,0,1-1.3-1.3v-9.783a1.306,1.306,0,0,1,1.3-1.3h15.652a1.306,1.306,0,0,1,1.3,1.3Z" fill="#438ff9" />
@@ -339,9 +282,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                         </g>
                                     </svg>
                                     {{ $contact->phone_number }}</a>
-                            @endforeach
-                        </div>
-                        @foreach($links as $link)
+                                @endforeach
+                            </div>
+                            @foreach($links as $link)
                             <div class="social_link pt-25">
                                 <ul>
                                     <li><a href="{{ $link->telegram }}"><i class="fab fa-telegram icon"></i></a></li>
@@ -351,118 +294,119 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                     <li><a href="{{ $link->youtube }}"><i class="fab fa-youtube icon"></i></a></li>
                                 </ul>
                             </div>
-                        @endforeach
+                            @endforeach
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-lg-3 col-xl-2 col-sm-5  fixed_width">
-                    <div class="widget_two">
-                        <h4>{{__('words.usefull')}} {{__('words.links')}}</h4>
-                        <ul>
-                            <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    {{__('words.home')}}</a></li>
-                            <li><a href="/about"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="dfdfa" data-name="ojkj" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    {{__('words.about')}}</a></li>
-                            <li><a href="{{ route('product')}}"><svg width="7.514" height="11.563">
-                                        <path id="poek" data-name="dfdsr" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    {{ __('words.product') }}</a></li>
-                            <li><a href="/blog"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    {{__('words.blog')}}</a></li>
+                    <div class="col-md-4 col-lg-3 col-xl-2 col-sm-5  fixed_width">
+                        <div class="widget_two">
+                            <h4>{{__('words.usefull')}} {{__('words.links')}}</h4>
+                            <ul>
+                                <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
+                                            <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
+                                        </svg>
+                                        {{__('words.home')}}</a></li>
+                                <li><a href="/about"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
+                                            <path id="dfdfa" data-name="ojkj" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
+                                        </svg>
+                                        {{__('words.about')}}</a></li>
+                                <li><a href="{{ route('product')}}"><svg width="7.514" height="11.563">
+                                            <path id="poek" data-name="dfdsr" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
+                                        </svg>
+                                        {{ __('words.product') }}</a></li>
+                                <li><a href="/blog"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
+                                            <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
+                                        </svg>
+                                        {{__('words.blog')}}</a></li>
 
-                        </ul>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8 col-lg-3 justify-content-end">
-                    <h4>{{__('words.contact')}}</h4>
-                    <div class="input-group mt-4 align-items-center">
-                        <input type="text" id="last_name" class="form-control" required placeholder="Name">
+                    <div class="col-md-8 col-lg-3 justify-content-end">
+                        <h4>{{__('words.contact')}}</h4>
+                        <div class="input-group mt-4 align-items-center">
+                            <input type="text" id="last_name" class="form-control" required placeholder="Name">
+                        </div>
+                        <div class="input-group mt-3 align-items-center">
+                            <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
+                        </div>
+                        <div class="input-group mt-3">
+                            <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
+                        </div>
                     </div>
-                    <div class="input-group mt-3 align-items-center">
-                        <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
-                    </div>
-                    <div class="input-group mt-3">
-                        <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
-                    </div>
-                </div>
 
-                <script>
-                    function sendphone() {
-                        const phone_number_footer = document.getElementById('phone_number_footer').value;
-                        const last_name = document.getElementById('last_name').value;
+                    <script>
+                        function sendphone() {
+                            const phone_number_footer = document.getElementById('phone_number_footer').value;
+                            const last_name = document.getElementById('last_name').value;
 
-                        if (!last_name || !phone_number_footer) {
-                            alert('Iltimos, barcha maydonlarni to\'ldiring.');
-                            return;
-                        }
+                            if (!last_name || !phone_number_footer) {
+                                alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                                return;
+                            }
 
-                        const message = `A contact form submission has been received:\n\nName: ${last_name}\nPhone Number: ${phone_number_footer}`;
-                        const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
-                        const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+                            const message = `A contact form submission has been received:\n\nName: ${last_name}\nPhone Number: ${phone_number_footer}`;
+                            const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+                            const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
 
-                        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
-                        const data = {
-                            chat_id: telegramChatId,
-                            text: message
-                        };
+                            const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+                            const data = {
+                                chat_id: telegramChatId,
+                                text: message
+                            };
 
-                        fetch(url, {
-                            method: 'POST',
-                            headers: {
-                                'Content-Type': 'application/json'
-                            },
-                            body: JSON.stringify(data)
-                        })
-                            .then(response => response.json())
-                            .then(data => {
-                                if (data.ok) {
-                                    alert('Xabar yuborildi!');
-                                    document.getElementById('last_name').value = '';
-                                    document.getElementById('phone_number_footer').value = '';
-                                } else {
+                            fetch(url, {
+                                    method: 'POST',
+                                    headers: {
+                                        'Content-Type': 'application/json'
+                                    },
+                                    body: JSON.stringify(data)
+                                })
+                                .then(response => response.json())
+                                .then(data => {
+                                    if (data.ok) {
+                                        alert('Xabar yuborildi!');
+                                        document.getElementById('last_name').value = '';
+                                        document.getElementById('phone_number_footer').value = '';
+                                    } else {
+                                        alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                                    }
+                                })
+                                .catch(error => {
+                                    console.error('Xatolik:', error);
                                     alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
-                                }
-                            })
-                            .catch(error => {
-                                console.error('Xatolik:', error);
-                                alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
-                            });
-                    }
-                </script>
+                                });
+                        }
+                    </script>
+                </div>
             </div>
         </div>
-    </div>
-    <!-- footer area end  -->
+        <!-- footer area end  -->
 
-    <!-- copyright section  -->
-    <div class="copyright_area">
-        <div class="container">
-            <div class="row top-border align-items-center">
-                <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
-                    <div class="logo">
-                        <a href="/"><img src="/assets/img/logo/logo2.png" alt="site_logo"></a>
+        <!-- copyright section  -->
+        <div class="copyright_area">
+            <div class="container">
+                <div class="row top-border align-items-center">
+                    <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
+                        <div class="logo">
+                            <a href="/"><img src="/assets/img/logo/logo2.png" alt="site_logo"></a>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
-                    <div class="copyright_text">
-                        <p>&copy; 2024 Megagold.uz by <a href="https://dora.uz"><span>Dora Dev.</span></a>. All Rights Reserved.</p>
+                    <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
+                        <div class="copyright_text">
+                            <p>&copy; 2024 Megagold.uz by <a href="https://dora.uz"><span>Dora Dev.</span></a>. All Rights Reserved.</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
-                    <div class="copyright_menu">
-                        <ul>
-                            <li><a href="#">+998 (93) 512 5324</a></li>
-                            <li><a href="#">+998 (93) 513 5324</a></li>
-                        </ul>
+                    <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
+                        <div class="copyright_menu">
+                            <ul>
+                                <li><a href="#">+998 (93) 512 5324</a></li>
+                                <li><a href="#">+998 (93) 513 5324</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+
 
 </x-layouts.main>

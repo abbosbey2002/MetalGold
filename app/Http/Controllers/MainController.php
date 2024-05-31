@@ -64,7 +64,7 @@ class MainController extends Controller
     public function about()
     {
         $abouts = About::latest()->take(1)->get();
-        $category_of_product = CategoryOfProduct::orderBy('created_at', 'desc')->take(1)->get(['title_uz', 'title_ru', 'title_en', 'short_content_uz', 'short_content_ru', 'short_content_en']);
+        $category_of_product = CategoryOfProduct::orderBy('created_at', 'desc')->take(1)->get(['name_uz', 'name_ru', 'name_en']);
         $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(3)->get(['name_uz', 'name_ru', 'name_en', 'photo']);
         $clients = Image::latest()->take(8)->get();
         $teams = Team::latest()->take(2)->get();
@@ -119,8 +119,9 @@ class MainController extends Controller
         $links = Link::latest()->take(1)->get();
         $products = Category::orderBy('created_at', 'desc')->paginate(20);
         $contacts = Contact::latest()->take(1)->get();
+        $numbers = 1;
 
-        return view('product', compact('links', 'contacts'))->with('products', $products);
+        return view('product', compact('links', 'contacts', 'numbers'))->with('products', $products);
     }
     public function contact()
     {
@@ -146,20 +147,16 @@ class MainController extends Controller
     {
         $links = Link::latest()->take(1)->get();
 
-        $product = CategoryOfProduct::find($product);
-        $category_ids = json_decode($product->category_id, true);
+        $products = DB::table('products')
+            ->select('*')
+            ->where('category_id', $product)
+            ->orderBy('created_at', 'desc')
+            ->get();
+
         $contacts = Contact::latest()->take(1)->get();
 
-        $categories = [];
-        if (is_array($category_ids)) {
-            foreach ($category_ids as $category_id) {
-                $category = Category::find($category_id);
-                if ($category) {
-                    $categories[] = $category;
-                }
-            }
-        }
+        
 
-        return view('singleProduct', compact('product', 'categories', 'links', 'contacts'));
+        return view('singleProduct', compact('products', 'links', 'contacts'));
     }
 }

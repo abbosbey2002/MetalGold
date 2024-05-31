@@ -545,11 +545,11 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
 
                             </div>
                             <div class="price_content">
-                                <h4>{{ $popular['title_' . $lang] }}</h4>
+                                <h4>{{ $popular['name_' . $lang] }}</h4>
                                 <p>{{ $popular['short_content_' . $lang] }}</p>
                             </div>
                             <div class="choose_plan">
-                                <a class="cmn_btn  increase_width   cmn_outline  effect" href="{{route('product')}}"><span>{{__('words.choose')}}</span><i class="fas fa-chevron-right"></i></a>
+                                <a class="cmn_btn  increase_width   cmn_outline  effect" href="{{route('products',['product'=>$popular->id])}}"><span>{{__('words.choose')}}</span><i class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>
                     </div>

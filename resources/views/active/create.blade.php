@@ -1,37 +1,46 @@
 <x-layouts.admin>
 
-    <div class="container">
-        <div class="w-50 py-4">
+    <div class="card">
+        <div class="py-4 mx-3">
+        <div class="card-header"><h2><b>Add Active</b></h2></div>
+
             <div class="contact-form">
                 <div id="success"></div>
 
                 <form action="{{ route('active_client.store') }}" method="post" enctype="multipart/form-data">
                     @csrf
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="active_client"
-                               placeholder="Faol mijozlarimiz soni" value="{{ old('active_client') }}"/>
-                        @error('active_client')
-                        <label for="if" class="text-danger">active_client soni</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <!-- Active Client field -->
+                            <div class="mb-3">
+                                <label for="active_client" class="form-label">Faol mijozlarimiz soni</label>
+                                <input type="text" id="active_client" class="form-control" name="active_client" placeholder="Faol mijozlarimiz soni" value="{{ old('active_client') }}">
+                                @error('active_client')
+                                <div class="text-danger">active_client soni: {{ $message }}</div>
+                                @enderror
+                            </div>
+                            <!-- Experienced field -->
+                            <div class="mb-3">
+                                <label for="experienced" class="form-label">Tajribali azolarimiz soni</label>
+                                <input type="text" id="experienced" class="form-control" name="experienced" placeholder="Tajribali azolarimiz soni" value="{{ old('experienced') }}">
+                                @error('experienced')
+                                <div class="text-danger">experienced: {{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Years of Service field -->
+                            <div class="mb-3">
+                                <label for="years_services" class="form-label">Hizmat ko'rsatishni boshlangan yil</label>
+                                <input type="text" id="years_services" class="form-control" name="years_services" placeholder="Hizmat ko'rsatishni boshlangan yil" value="{{ old('years_services') }}">
+                                @error('years_services')
+                                <div class="text-danger">years_services: {{ $message }}</div>
+                                @enderror
+                            </div>
+                        </div>
                     </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="experienced"
-                               placeholder="Tajribali azolarimi soni" value="{{ old('experienced') }}"/>
-                        @error('experienced')
-                        <label for="if" class="text-danger">experienced</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="years_services"
-                               placeholder="Hizmat ko'rsatishni boshlangan yil" value="{{ old('years_services') }}"/>
-                        @error('years_services')
-                        <label for="if" class="text-danger">years_services</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('active_client.index') }}" class="btn btn-outline-secondary">Orqaga</a>
                         <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Saqlash</button>
                     </div>
                 </form>

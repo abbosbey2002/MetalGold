@@ -75,7 +75,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <p> {{ $about['content_' . $lang] }}
                             </p>
                             <div class="site_button">
-                                <a class="cmn_btn cmn_outline " href="#"><span>{{__('words.read')}}</span> <i
+                                <a class="cmn_btn cmn_outline " href="{{ route('about')}}"><span>{{__('words.read')}}</span> <i
                                         class="fas fa-chevron-right"></i></a>
                             </div>
                         </div>

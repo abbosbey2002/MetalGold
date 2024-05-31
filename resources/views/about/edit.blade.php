@@ -2,6 +2,8 @@
 
     <div class="card">
         <div class="py-4 mx-3">
+        <div class="card-header"><h2><b>Edit About</b></h2></div>
+
             <div class="contact-form">
                 <div id="success"></div>
 
