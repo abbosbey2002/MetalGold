@@ -36,7 +36,6 @@ class AboutController extends Controller
         {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post_photo', $name);
-
         }
 
         About::create([
@@ -67,7 +66,7 @@ class AboutController extends Controller
 
     public function edit(About $about)
     {
-        return view('about.edit')->with(['abouts' => $about]);
+        return view('about.edit')->with(['about' => $about]);
     }
 
     /**

@@ -92,7 +92,7 @@ class HomeController extends Controller
 
     public function edit(Home $home)
     {
-        return view('home.edit')->with(['homes' => $home]);
+        return view('home.edit')->with(['item' => $home]);
     }
 
     /**
@@ -108,7 +108,7 @@ class HomeController extends Controller
             }
 
             $name = $request->file('first_photo')->getClientOriginalName();
-            $path = $request->file('first_photo')->storeAs('post_photo', $name);
+            $path1 = $request->file('first_photo')->storeAs('post_photo', $name);
         }
         if ($request->hasFile('second_photo'))
         {
@@ -118,7 +118,7 @@ class HomeController extends Controller
             }
 
             $name = $request->file('second_photo')->getClientOriginalName();
-            $path = $request->file('second_photo')->storeAs('post_photo', $name);
+            $path2 = $request->file('second_photo')->storeAs('post_photo', $name);
         }
         if ($request->hasFile('third_photo'))
         {
@@ -128,7 +128,7 @@ class HomeController extends Controller
             }
 
             $name = $request->file('third_photo')->getClientOriginalName();
-            $path = $request->file('third_photo')->storeAs('post_photo', $name);
+            $path3 = $request->file('third_photo')->storeAs('post_photo', $name);
         }
         if ($request->hasFile('fourth_photo'))
         {
@@ -138,7 +138,7 @@ class HomeController extends Controller
             }
 
             $name = $request->file('fourth_photo')->getClientOriginalName();
-            $path = $request->file('fourth_photo')->storeAs('post_photo', $name);
+            $path4 = $request->file('fourth_photo')->storeAs('post_photo', $name);
         }
         if ($request->hasFile('fifth_photo'))
         {
@@ -148,7 +148,7 @@ class HomeController extends Controller
             }
 
             $name = $request->file('fifth_photo')->getClientOriginalName();
-            $path = $request->file('fifth_photo')->storeAs('post_photo', $name);
+            $path5 = $request->file('fifth_photo')->storeAs('post_photo', $name);
         }
 
         $home->update([
@@ -158,11 +158,11 @@ class HomeController extends Controller
             'short_content_uz' => $request->short_content_uz,
             'short_content_ru' => $request->short_content_ru,
             'short_content_en' => $request->short_content_en,
-            'first_photo' => $path ?? $home->first_photo,
-            'second_photo' => $path ?? $home->second_photo,
-            'third_photo' => $path ?? $home->third_photo,
-            'fourth_photo' => $path ?? $home->fourth_photo,
-            'fifth_photo' => $path ?? $home->fifth_photo,
+            'first_photo' => $path1 ?? $home->first_photo,
+            'second_photo' => $path2 ?? $home->second_photo,
+            'third_photo' => $path3 ?? $home->third_photo,
+            'fourth_photo' => $path4 ?? $home->fourth_photo,
+            'fifth_photo' => $path5 ?? $home->fifth_photo,
         ]);
 
         return redirect()->route('home.index', ['homes' => $home->id]);

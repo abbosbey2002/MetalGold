@@ -44,11 +44,6 @@ class CategoryController extends Controller
             'name_uz' => $request->name_uz,
             'name_ru' => $request->name_ru,
             'name_en' => $request->name_en,
-            'size' => $request->size,
-            'theory' => $request->theory,
-            'manufacturer' => $request->manufacturer,
-            'unit' => $request->unit,
-            'price' => $request->price,
             'photo' => $path ?? null,
         ]);
 
@@ -61,13 +56,13 @@ class CategoryController extends Controller
     public function show(Category $category)
     {
         return view('category.show')->with([
-            'categories' => $category,
+            'category' => $category,
         ]);
     }
 
     public function edit(Category $category)
     {
-        return view('category.edit')->with(['categories' => $category]);
+        return view('category.edit')->with(['category' => $category]);
     }
 
     /**
@@ -90,15 +85,10 @@ class CategoryController extends Controller
             'name_uz' => $request->name_uz,
             'name_ru' => $request->name_ru,
             'name_en' => $request->name_en,
-            'size' => $request->size,
-            'theory' => $request->theory,
-            'manufacturer' => $request->manufacturer,
-            'unit' => $request->unit,
-            'price' => $request->price,
             'photo' => $path ?? $category->photo,
         ]);
 
-        return redirect()->route('category.index', ['categories' => $category->id]);
+        return redirect()->route('categories.index', ['categories' => $category->id]);
     }
 
 

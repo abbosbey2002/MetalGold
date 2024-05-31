@@ -111,31 +111,31 @@
                                         <li class="nav-item">
                                             <a href="/admin/team" class="nav-link" id="link">
                                                 <i class="far fa-circle nav-icon text-danger"></i>
-                                                <p>bzining jamoa</p>
+                                                <p>Bizning jamoa</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="/admin/image" class="nav-link" id="link">
                                                 <i class="far fa-circle nav-icon text-danger"></i>
-                                                <p>Clientlarimiz logolari</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/admin/category_of_product" class="nav-link" id="link">
-                                                <i class="far fa-circle nav-icon text-danger"></i>
-                                                <p>mahsulot turlari</p>
-                                            </a>
-                                        </li>
-                                        <li class="nav-item">
-                                            <a href="/admin/commit" class="nav-link" id="link">
-                                                <i class="far fa-circle nav-icon text-danger"></i>
-                                                <p>Clientlar Commiti</p>
+                                                <p>Hamkorlarimiz logolari</p>
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="/admin/categories" class="nav-link" id="link">
                                                 <i class="far fa-circle nav-icon text-danger"></i>
-                                                <p>Categoriyalar ro'yhati</p>
+                                                <p>Kategoriyalar ro'yhati</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/admin/category_of_product" class="nav-link" id="link">
+                                                <i class="far fa-circle nav-icon text-danger"></i>
+                                                <p>Mahsulot turlari</p>
+                                            </a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="/admin/commit" class="nav-link" id="link">
+                                                <i class="far fa-circle nav-icon text-danger"></i>
+                                                <p>Mijozlar fikri</p>
                                             </a>
                                         </li>
                                     </ul>
@@ -144,7 +144,7 @@
                             <li class="nav-item">
                                 <a href="/admin/active_client" class="nav-link" id="link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Active kilentlarimiz</p>
+                                    <p>Faol mijozlarimiz</p>
                                 </a>
                             </li>
                             <li class="nav-item">
@@ -162,13 +162,13 @@
                             <li class="nav-item">
                                 <a href="/admin/link" class="nav-link" id="link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>ijtimoiy tarmoqlarimiz</p>
+                                    <p>Ijtimoiy tarmoqlarimiz</p>
                                 </a>
                             </li>
                             <li class="nav-item">
                                 <a href="/admin/profile" class="nav-link" id="link">
                                     <i class="far fa-circle nav-icon"></i>
-                                    <p>Profile</p>
+                                    <p>Profil</p>
                                 </a>
                             </li>
                         </ul>
@@ -191,7 +191,7 @@
 
 
     <footer class="main-footer">
-        <strong>Copyright &copy; 2014-2019 <a href="http://adminlte.io">AdminLTE.io</a>.</strong>
+        <strong>Copyright &copy; 2024 <a href="http://adminlte.io">Dora Dev</a>.</strong>
         All rights reserved.
         <div class="float-right d-none d-sm-inline-block">
             <b>Version</b> 3.0.1-pre

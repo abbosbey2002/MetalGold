@@ -93,7 +93,8 @@
                             </div>
                         </div>
                     </div>
-                    <div class="">
+                    <div class="d-flex justify-content-between">
+                        <a href="{{ route('home.index') }}" class="btn btn-outline-danger">Orqaga</a>
                         <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Saqlash</button>
                     </div>
                 </form>

@@ -1,47 +1,39 @@
 <x-layouts.admin>
-    <div class="container-fluid">
-
-        <div class="row">
-            <section class="col-lg-12 connectedSortable">
+    <div class="container my-5">
+        <div class="row justify-content-start">
+            <div class="col-md-8">
                 <div class="card">
-                    <h3>Categoriyalar ro'yxati</h3>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">mahsulot nomi uz</th>
-                                <th scope="col">mahsulot nomi ru</th>
-                                <th scope="col">mahsulot nomi en</th>
-                                <th scope="col">hajmi</th>
-                                <th scope="col">nazariya</th>
-                                <th scope="col">ishlab chiqarilgan</th>
-                                <th scope="col">birligi</th>
-                                <th scope="col">narxi</th>
-                                <th scope="col">photo</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{{ $categories->id }}</td>
-                                <td>{{ $categories->name_uz }}</td>
-                                <td>{{ $categories->name_ru }}</td>
-                                <td>{{ $categories->name_en }}</td>
-                                <td>{{ $categories->size }}</td>
-                                <td>{{ $categories->theory }}</td>
-                                <td>{{ $categories->manufacturer }}</td>
-                                <td>{{ $categories->unit }}</td>
-                                <td>{{ $categories->price }}</td>
-                                <td><img src="{{ asset('storage/' . $categories->photo) }}" alt="" style="width: 80px;"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                    <a href="{{ route('categories.index') }}" class="btn btn-outline-info">Orqaga <i class="fa fa-arrow-left"></i></a>
-
+                    <div class="card-header"><h2><b>Category Details</b></h2></div>
+                    <div class="card-body">
+                        <div class="mb-3">
+                            <label for="name_uz" class="form-label">Mahsulot nomi (Uzbek)</label>
+                            <p>{{ $category->name_uz }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name_ru" class="form-label">Mahsulot nomi (Russian)</label>
+                            <p>{{ $category->name_ru }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <label for="name_en" class="form-label">Mahsulot nomi (English)</label>
+                            <p>{{ $category->name_en }}</p>
+                        </div>
+                        <!-- Display Image -->
+                        <div class="mb-3">
+                            <label for="photo" class="form-label">Category Image</label>
+                            <img src="{{ asset('storage/' . $category->photo) }}" alt="Category Image" style="height: 90px;">
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{ route('categories.index') }}" class="btn btn-secondary">Back</a>
+                        <a href="{{ route('categories.edit', ['category' => $category->id]) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('categories.destroy', ['category' => $category->id]) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete?')">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit" class="btn btn-danger">Delete</button>
+                        </form>
                     </div>
                 </div>
-            </section>
+            </div>
         </div>
-
     </div>
 </x-layouts.admin>

@@ -61,13 +61,13 @@ class TeamController extends Controller
     public function show(Team $team)
     {
         return view('team.show')->with([
-            'teams' => $team,
+            'team' => $team,
         ]);
     }
 
     public function edit(Team $team)
     {
-        return view('team.edit')->with(['teams' => $team]);
+        return view('team.edit')->with(['team' => $team]);
     }
 
     /**

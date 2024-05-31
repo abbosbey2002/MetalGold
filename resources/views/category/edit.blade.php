@@ -1,90 +1,62 @@
 <x-layouts.admin>
-
     <div class="container">
-        <div class="w-50 py-4">
-            <div class="contact-form">
-                <div id="success"></div>
+        <div class="row justify-content-start">
+            <div class="col-md-10">
+                <div class="card">
+                    <div class="card-header">Edit Category</div>
+                    <div class="card-body">
+                        <form action="{{ route('categories.update', $category->id) }}" method="post" enctype="multipart/form-data">
+                            @csrf
+                            @method('PUT')
+                            <div class="mb-3">
+                                <label for="name_uz" class="form-label">Mahsulot nomi (Uzbek)</label>
+                                <input type="text" id="name_uz" class="form-control" name="name_uz" placeholder="Mahsulot nomi (Uzbek)" value="{{ $category->name_uz }}">
+                                @error('name_uz')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="name_ru" class="form-label">Mahsulot nomi (Russian)</label>
+                                <input type="text" id="name_ru" class="form-control" name="name_ru" placeholder="Mahsulot nomi (Russian)" value="{{ $category->name_ru }}">
+                                @error('name_ru')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <div class="mb-3">
+                                <label for="name_en" class="form-label">Mahsulot nomi (English)</label>
+                                <input type="text" id="name_en" class="form-control" name="name_en" placeholder="Mahsulot nomi (English)" value="{{ $category->name_en }}">
+                                @error('name_en')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
+                            </div>
+                            <!-- Image upload field -->
+                            <div class="mb-3">
+                                <label for="photo" class="form-label">Rasm hajmi: Custom Size</label>
+                                <div class="custom-file">
+                                    <input type="file" class="custom-file-input" id="photo" name="photo" onchange="displayFileName()">
+                                    <label class="custom-file-label" for="photo" id="photoLabel">Rasm Tanlash</label>
+                                </div>
+                                @error('photo')
+                                <div class="text-danger">Faylni yuklashni unutdingiz: {{ $message }}</div>
+                                @enderror
+                                <div class="mt-2">
+                                    <img src="{{ asset('storage/' . $category->photo) }}" alt="Category Image" style="height: 90px;">
+                                </div>
+                            </div>
 
-                <form action="{{ route('categories.update', ['category' => $categories->id]) }}" method="post" enctype="multipart/form-data">
-                    @csrf
-                    @method('PUT')
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="name_uz"
-                               placeholder="mahsulot nomi uz" value="{{ $categories->name_uz }}"/>
-                        @error('name_uz')
-                        <label for="if" class="text-danger">Ism familiyasi</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
+                            <script>
+                                function displayFileName() {
+                                    const input = document.getElementById('photo');
+                                    const label = document.getElementById('photoLabel');
+                                    const fileName = input.files[0].name;
+                                    label.textContent = fileName;
+                                }
+                            </script>
+                            <button type="submit" class="btn btn-primary">Saqlash</button>
+                        </form>
                     </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="name_ru"
-                               placeholder="mahsulot nomi ru" value="{{ $categories->name_ru }}"/>
-                        @error('name_ru')
-                        <label for="if" class="text-danger">name_ru</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="name_en"
-                               placeholder="Mahsulot nomi en" value="{{ $categories->name_en }}"/>
-                        @error('name_en')
-                        <label for="if" class="text-danger">name_en</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="size"
-                               placeholder="mahsulot hajmi" value="{{ $categories->size }}"/>
-                        @error('size')
-                        <label for="if" class="text-danger">size</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="theory"
-                               placeholder="nazariya" value="{{ $categories->theory }}"/>
-                        @error('theory')
-                        <label for="if" class="text-danger">theory</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="manufacturer"
-                               placeholder="ishlab chiqarilgan joyi" value="{{ $categories->manufacturer }}"/>
-                        @error('manufacturer')
-                        <label for="if" class="text-danger">manufacturer</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="unit"
-                               placeholder="birligi" value="{{ $categories->unit }}"/>
-                        @error('unit')
-                        <label for="if" class="text-danger">unit</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group">
-                        <input type="text" id="if" class="form-control p-2" name="price"
-                               placeholder="narxi" value="{{ $categories->price }}"/>
-                        @error('price')
-                        <label for="if" class="text-danger">price</label>
-                        @enderror
-                        <p class="help-block text-danger"></p>
-                    </div>
-                    <div class="control-group form-control mb-3 pb-2">
-                        <input name="photo" type="file" class="input-group m-2" id="subject"/>
-                    </div>
-                    @error('photo')
-                    <label for="if" class="text-danger">faylni yuklashni unutdingiz3</label>
-                    @enderror
-                    <div class="control-group">
-                        <button class="btn btn-outline-primary" type="submit" id="sendMessageButton">Saqlash</button>
-                        <a href="{{ route('categories.index') }}" class="btn btn-outline-info">Orqaga <i class="fa fa-arrow-left"></i></a>
-                    </div>
-                </form>
+                </div>
             </div>
         </div>
     </div>
-
 </x-layouts.admin>
