@@ -21,7 +21,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         <div class="container">
             @if (session('success'))
             <div class="alert alert-success alert-dismissible fade show" role="alert">
-                <strong>{{session('success')}}</strong> 
+                <strong>{{session('success')}}</strong>
                 <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
             </div>
             @endif
@@ -147,12 +147,61 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             <div class="mt-4 text-center" style="display:none;">
                                 <textarea id="result" class="form-control" rows="4"></textarea>
                             </div>
-                            <button type="submit" class="btn btn-primary mt-3">Submit</button>
+                            <button type="submit" onclick="sendOrderInfo()" class="btn btn-primary mt-3">Submit</button>
                         </form>
                     </div>
                 </div>
             </div>
         </div>
+        <script>
+            function sendOrderInfo() {
+                const fullName = document.getElementById('fullName').value;
+                const phoneNumber = document.getElementById('phoneNumber').value;
+                const weight = document.getElementById('weight').value;
+                const length = document.getElementById('length').value;
+                const price = document.getElementById('price').value;
+
+                if (!fullName || !phoneNumber || !weight || !length || !price) {
+                    alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                    return;
+                }
+
+                const message = `Buyurtma Yaratildi:\n\nXaridor ismi: ${fullName}\nTelefon Raqam: ${phoneNumber}\nWeight: ${weight}\nlenght: ${length}\nPrice: ${price}`;
+                const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+                const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+                const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+                const data = {
+                    chat_id: telegramChatId,
+                    text: message
+                };
+
+                fetch(url, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(data)
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        if (data.ok) {
+                            alert('Xabar yuborildi!');
+                            document.getElementById('fullName').value = '';
+                            document.getElementById('phoneNumber').value = '';
+                            document.getElementById('weight').value = '';
+                            document.getElementById('length').value = '';
+                            document.getElementById('price').value = '';
+                        } else {
+                            alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Xatolik:', error);
+                        alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                    });
+            }
+        </script>
 
         <script>
             // Create a products array in JavaScript

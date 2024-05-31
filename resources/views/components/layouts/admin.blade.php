@@ -1,3 +1,11 @@
+<?php
+
+use App\Models\Order;
+use Illuminate\Support\Facades\DB;
+
+$orders = Order::where('status', '=', 'yangi')->count();
+$visit = DB::table('website_visits')->count();
+?>
 <!DOCTYPE html>
 <html>
 
@@ -40,6 +48,11 @@
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <p class="nav-link" style="color:brown">saytga tashrif buyuruvchilar soni: {{$visit}} ta</p>
+                </li>
+            </ul>
 
 
         </nav>
@@ -74,7 +87,6 @@
                     </div>
                 </div>
 
-
                 <!-- Sidebar Menu -->
                 <nav class="mt-2">
                     <ul class="nav nav-pills nav-sidebar" data-widget="treeview" role="menu" data-accordion="false">
@@ -89,8 +101,8 @@
                             <ul class="nav nav-treeview">
                                 <li class="nav-item">
                                     <a href="{{ route('orders.index')}}" class="nav-link" id="link">
-                                        <i class="far fa-circle nav-icon"></i>
-                                        <p>Buyurtmalar</p>
+                                        <i class="fas fa-shopping-cart icon"></i>
+                                        <p>Buyurtmalar {{ $orders }}</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
