@@ -30,5 +30,14 @@ return
         'send' => 'Send',
         'usefull' => "Useful",
         'links' => 'Links',
-        'expMember' => 'We have many employees with many years of experience in the metal industry.We are proud of such experienced employees'
+        'expMember' => 'We have many employees with many years of experience in the metal industry.We are proud of such experienced employees',
+        'email' => 'Email',
+        'phone' => 'Phone',
+        'address' => 'Address',
+        'timeTable' => 'Opening Hours',
+        'MonFri' => 'Monday - Friday',
+        'SatSun' => 'Saturday - Sunday',
+        'connect' => "We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.",
+        'getTouch' => 'Get in touch',
+
     ];

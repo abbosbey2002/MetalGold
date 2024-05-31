@@ -66,7 +66,7 @@ class MainController extends Controller
         $abouts = About::latest()->take(1)->get();
         $category_of_product = CategoryOfProduct::orderBy('created_at', 'desc')->take(1)->get(['name_uz', 'name_ru', 'name_en']);
         $photos = CategoryOfProduct::orderBy('created_at', 'desc')->take(3)->get(['name_uz', 'name_ru', 'name_en', 'photo']);
-        $clients = Image::latest()->take(8)->get();
+        $clients = Image::latest()->get();
         $teams = Team::latest()->take(2)->get();
         $our_teams = Team::latest()->skip(2)->take(4)->get();
         $commits = Commit::latest()->take(3)->get();
