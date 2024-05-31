@@ -13,7 +13,7 @@ class AboutController extends Controller
      */
     public function index()
     {
-        $about = About::all();
+        $about = About::all()->sortDesc();
         return view('about.index')->with('abouts', $about);
     }
 
@@ -36,7 +36,6 @@ class AboutController extends Controller
         {
             $name = $request->file('photo')->getClientOriginalName();
             $path = $request->file('photo')->storeAs('post_photo', $name);
-
         }
 
         About::create([
@@ -61,13 +60,13 @@ class AboutController extends Controller
     public function show(About $about)
     {
         return view('about.show')->with([
-            'abouts' => $about,
+            'about' => $about,
         ]);
     }
 
     public function edit(About $about)
     {
-        return view('about.edit')->with(['abouts' => $about]);
+        return view('about.edit')->with(['about' => $about]);
     }
 
     /**
@@ -108,6 +107,10 @@ class AboutController extends Controller
     public function destroy(About $about)
     {
         $about->delete();
+        if (isset($about->photo))
+        {
+            Storage::delete($about->photo);
+        }
         return redirect()->route('about.index');
     }
 }

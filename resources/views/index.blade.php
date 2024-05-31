@@ -1,28 +1,10 @@
+
 <?php
 $lang = \Illuminate\Support\Facades\App::getLocale()
 ?>
 
 <x-layouts.main>
     <!-- mobile menu -->
-    <div class="activemobile">
-        <div class="container">
-            <div class="row align-items-center justify-content-between">
-                <div class="col-2">
-                    <div class="mobile-logo">
-                        <a href="/"><img src="./assets/img/logo/logo.png" alt=""></a>
-                    </div>
-                </div>
-                <div class="col-8 text-end">
-                    <div class="icon">
-                        <a href="#" class="open-mobile-menu"><i class="far fa-bars"></i></a>
-                        <!-- <div class="mobile-menu">
-                        </div> -->
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="fix">
         <div class="side-info">
             <button class="side-info-close"><i class="fal fa-times"></i></button>
@@ -63,7 +45,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <div class="offcanvas-overlay"></div>
-
     <!-- slide area start  -->
     <div class="slide_area">
         <div class="slide_shape">
@@ -74,7 +55,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <img class="shape_05 position-absolute" src="./assets/img/slide/sl-5.png" alt="shape_05">
             <img class="shape_06 position-absolute" src="./assets/img/slide/sl-6.png" alt="shape_06">
             <img class="shape_07 position-absolute" src="./assets/img/slide/sl-7.png" alt="shape_07">
-            <img class="shape_08 position-absolute" src="./assets/img/hero-one.png" alt="shape_07">
             <img class="shape_09 position-absolute" src="./assets/img/slide/face.png" alt="shape_07">
             <img class="shape_10 position-absolute" src="./assets/img/shapes/header_left.png" alt="shape_10">
             <img class="shape_11 position-absolute" src="./assets/img/shapes/header_middle.png" alt="shape_11">
@@ -96,8 +76,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 </div>
                 <div class="col-md-12 col-lg-8 col-xl-6">
                     <div class="slide_content">
-                        <h4 class="animated wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">Photo
-                            <span>Editing Company</span>
+                        <h4 class="animated wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">{{__('words.metal')}}
+                            <span>{{__('words.company')}}</span>
                         </h4>
                         @foreach($homes as $home)
                             <h2 class="wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2.5s">{{ $home['title_' . $lang] }}</h2>
@@ -106,8 +86,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             </p>
                         @endforeach
                         <div class="site_button site_button-two">
-                            <a class="cmn_btn slide_btn slide_btn_01 " href="login.html">Free Trail <i class="fas fa-chevron-right"></i></a>
-                            <a class="cmn_btn cmn_outline " href="customQuote.html"><span>Make A Budget</span><i class="fas fa-chevron-right"></i>
+                            <a class="cmn_btn slide_btn slide_btn_01 " href="{{ route('product')}}">{{__('words.product')}}<i class="fas fa-chevron-right"></i></a>
+                            <a class="cmn_btn cmn_outline " href="{{ route('category')}}"><span>{{__('words.category')}}</span><i class="fas fa-chevron-right"></i>
                             </a>
                         </div>
                     </div>
@@ -129,7 +109,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <!-- slide area end  -->
-
     <!-- about us area start  -->
     <div class="about_area custom_animation mb-0">
         <div class="about_shapes">
@@ -140,46 +119,45 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
         <div class="custom-width">
             @foreach($abouts as $about)
-            <div class="row">
-                <div class="col-md-12 col-lg-7">
-                    <div class="about_images scroll_01">
-                        <div class="about_image_1">
-                            <img class="about_shape_one" src="/assets/img/about/about_since.png" alt="about_shape_01">
-                            <img class="about_shape_two" src="/assets/img/about/about_shape1.png" alt="about_image_01">
-                            <img class="about_shape_three" src="/assets/img/about/about_shape_2.png" alt="about_image_01">
-                        </div>
-                        <div class="about_img_2">
-                            <img class="about_img_one" src="/assets/img/about/show_sh.png" alt="about_shape_02">
-                            <img class="about_img_two" src="{{ asset( 'storage/' . $about->photo ) }}" alt="about_image_02">
+                <div class="row">
+                    <div class="col-md-12 col-lg-7">
+                        <div class="about_images scroll_01">
+                            <div class="about_image_1">
+                                <img class="about_shape_one" src="/assets/img/about/about_since.png" alt="about_shape_01">
+                                <img class="about_shape_two" src="/assets/img/about/about_shape1.png" alt="about_image_01">
+                                <img class="about_shape_three" src="/assets/img/about/about_shape_2.png" alt="about_image_01">
+                            </div>
+                            <div class="about_img_2">
+                                <img class="about_img_one" src="/assets/img/about/show_sh.png" alt="about_shape_02">
+                                <img class="about_img_two" src="{{ asset( 'storage/' . $about->photo ) }}" alt="about_image_02">
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-12 col-lg-5">
-                    <div class="wrap_about">
-                        <div class="section_wrapper aboutwraper">
-                            <h4 class="sub_title wow animate__flipInX" data-animation="fadeInUp" data-delay="1s">
-                                {{__('words.about')}}
-                            </h4>
-                            <h2 class="title wow animate__bounceIn" data-animation="fadeInUp" data-delay="1.5s">
-                                {{ $about['title_' . $lang] }}
-                            </h2>
-                        </div>
-                        <div class="about_content">
-                            <h3>{{ $about['short_content_' . $lang] }}</h3>
-                            <p> {{ $about['content_' . $lang] }}
-                            </p>
-                            <div class="site_button">
-                                <a class="cmn_btn cmn_outline " href="{{ route('about')}}"><span>Read more</span> <i class="fas fa-chevron-right"></i></a>
+                    <div class="col-md-12 col-lg-5">
+                        <div class="wrap_about">
+                            <div class="section_wrapper aboutwraper">
+                                <h4 class="sub_title wow animate__flipInX" data-animation="fadeInUp" data-delay="1s">
+                                    {{__('words.about')}}
+                                </h4>
+                                <h2 class="title wow animate__bounceIn" data-animation="fadeInUp" data-delay="1.5s">
+                                    {{ $about['title_' . $lang] }}
+                                </h2>
+                            </div>
+                            <div class="about_content">
+                                <h3>{{ $about['short_content_' . $lang] }}</h3>
+                                <p> {{ $about['content_' . $lang] }}
+                                </p>
+                                <div class="site_button">
+                                    <a class="cmn_btn cmn_outline " href="{{ route('about')}}"><span>{{__('words.read')}}</span> <i class="fas fa-chevron-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
             @endforeach
         </div>
     </div>
     <!-- about us area end  -->
-
     <!-- .services area start  -->
     <div class="service_area custom_animation mb-120 mobile-res-mb">
         <div class="service_shapes">
@@ -189,143 +167,36 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper service_wraper mb-40">
-                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">Our
-                            products</h4>
-                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">Product categories</h2>
+                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">{{ __('words.our')}}
+                            {{__('words.product')}}
+                        </h4>
+                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">{{__('words.product')}}</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="col-md-12">
-
                     <div class="service_activition">
-                    @foreach ($photos as $product)
-                        <div class="service_card">
-                            <div class="service_img text-center">
-                                <img src="{{ asset('storage/' . $product->photo) }}" alt="service_img">
+                        @foreach ($photos as $product)
+                            <div class="service_card">
+                                <div class="service_img text-center">
+                                    <img src="{{ asset('storage/' . $product->photo) }}" alt="service_img">
+                                </div>
+                                <div class="service_content text-center">
+                                    <h3 class="service_title">{{ $product['name_'.$lang]}}</h3>
+                                    <p class="light_color">{{ $product['title_uz'.$lang]}}</p>
+                                </div>
+                                <a class="radius_btn effectPlus" href="{{ route('products', ['product'=> $product->id]) }}">
+                                    <i class="icon-serviceicon"></i>
+                                </a>
                             </div>
-                            <div class="service_content text-center">
-                                <h3 class="service_title">{{ $product['name_'.$lang]}}</h3>
-                                <p class="light_color">{{ $product['title_uz'.$lang]}}</p>
-                            </div>
-                            <a class="radius_btn effectPlus" href="{{ route('products', ['product'=> $product->id]) }}">
-                                <i class="icon-serviceicon"></i>
-                            </a>
-                        </div>
                         @endforeach
-
                     </div>
-
                 </div>
             </div>
         </div>
     </div>
     <!-- .services area end  -->
-
-    <!-- process area start  -->
-    <div class="process_area mb-120 mobile-res-mb">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section_wrapper mb-80 text-center">
-                        <h4 class="sub_title wow animate__flipInXx" data-animation="fadeInUp" data-delay="1s">How it
-                            works</h4>
-                        <h2 class="title wow animate__bounceInn" data-animation="fadeInUp" data-delay="1.5s">How
-                            Cliper
-                            works</h2>
-                    </div>
-                </div>
-            </div>
-            <div class="row align-items-center">
-                <div class="col-md-12 col-xl-8 text-center">
-                    <div class="row">
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="1s" data-wow-duration="1s">
-                                <div class="process_icon">
-                                    <img class="process_one" src="./assets/img/services/ss_one.png" alt="process_icon">
-
-                                </div>
-                                <div class="process_content">
-                                    <h4>01.PLACE WORK ORDER</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="1.5s" data-wow-duration="1.2s">
-                                <div class="process_icon process_icon_2">
-                                    <img class="process_two" src="/assets/img/services/ss_two.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>02.quick response</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="1.5s">
-                                <div class="process_icon process_icon_3">
-                                    <img class="process_three" src="/assets/img/services/ss_three.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>03.image files</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="1.8s">
-                                <div class="process_icon process_icon_4">
-                                    <img class="process_four" src="/assets/img/services/ss_four.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>04.download image</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="2s">
-                                <div class="process_icon process_icon_5">
-                                    <img class="process_five" src="/assets/img/services/ss_five.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>05.made payment</h4>
-                                    <p>There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4 col-sm-6">
-                            <div class="process_card mb-0 wow animate__fadeIn" data-animation="fadeInUp" data-delay="3.5s">
-                                <div class="process_icon process_icon_6">
-                                    <img class="process_six" src="/assets/img/services/ss_six.png" alt="process_icon">
-                                </div>
-                                <div class="process_content">
-                                    <h4>06.give us review</h4>
-                                    <p class="mb-0">There are many variation and of passages</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 d-none d-xl-block">
-                    <div class="process_image">
-                        <div class="process_shape">
-                            <img class="process_shape_02" src="./assets/img/services/shape_ss_02.png" alt="process_shape_02">
-                            <img class="process_shape_04" src="./assets/img/services/shape_ss_04.png" alt="process_shape_04">
-                            <img class="process_shape_05" src="./assets/img/services/shape_ss_05.png" alt="process_shape_05">
-                            <img class="process_shape_06" src="./assets/img/services/shape_ss_06.png" alt="process_shape_06">
-                            <img class="process_shape_07" src="./assets/img/services/shape_ss_07.png" alt="process_shape_08">
-                            <!-- <img class="process_shape_09" src="./assets/img/services/rocket.png" alt="process_shape_06"> -->
-                            <img class="process_shape_10" src="./assets/img/services/rocketwithpeople.png" alt="process_shape_06">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <!-- process area end  -->
-
     <!-- idea area start  -->
     <div class="idea_area mb-120 mobile-res-mb">
         <div class="container">
@@ -337,29 +208,28 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <img class="idea_area_05" src="./assets/img/preview/idea_1.png" alt="">
                 <img class="position-absolute idea_area_06" src="./assets/img/shapes/calltoAction.png" alt="">
                 @foreach($contacts as $contact)
-                <div class="row">
-                    <div class="d-none d-lg-block col-lg-6">
-                        <div class="idea_title">
-                            <h2 class="idea_heading">{{ $contact['title_' . $lang] }}</h2>
+                    <div class="row">
+                        <div class="d-none d-lg-block col-lg-6">
+                            <div class="idea_title">
+                                <h2 class="idea_heading">{{ $contact['title_' . $lang] }}</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6">
-                        <div class="dial d-flex">
-                            <a href="tel:+88888" class="dial_call">
-                                <h2 class="text-white bold"> <span class="bgwhite">
+                        <div class="col-md-6">
+                            <div class="dial d-flex">
+                                <a href="tel:+88888" class="dial_call">
+                                    <h2 class="text-white bold"> <span class="bgwhite">
                                         <i class="fal fa-phone"></i>
                                     </span>{{ $contact->phone_number }}
-                                </h2>
-                            </a>
+                                    </h2>
+                                </a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
     <!-- idea area end  -->
-
     <!-- shoot area start  -->
     <div class="shoot_area mb-120 mobile-res-mb">
         <div class="shoot_shapes">
@@ -372,62 +242,227 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row custom-center">
                 <div class="col-xl-8">
                     <div class="shoot_box">
-                        <div class="wrapper wrapper_two">
-                            <div class="video-main">
-                                <div class="promo-video">
-                                    <div class="waves-block">
-                                        <div class="wavesTwo wave-1"></div>
-                                        <div class="wavesTwo wave-2"></div>
-                                        <div class="wavesTwo wave-3"></div>
-                                    </div>
-                                </div>
-                                @foreach($links as $link)
-                                <a href="{{ $link->link }}" class="videoTwo video-popup mfp-iframe popupImage" data-lity><i class="fa fa-play"></i></a>
-                                @endforeach
-                            </div>
+                        <div class="vd-grid">
+                            @foreach($links as $link)
+                                @if($link->link)
+                                    {!! $link->link !!}
+                                @endif
+                            @endforeach
                         </div>
-                        <img class="vd-grid" src="./assets/img/video/bg_shoot.png" alt="">
                     </div>
                 </div>
                 <div class="col-xl-4">
                     @foreach($actives as $active)
-                    <div class="shoot_card before_shoot_01 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="1s">
-                        <div class="shoot_icon">
-                            <img src="./assets/img/video/vd-or-2.png" alt="">
-                            <h5>OUR TRUSTED <br> ACTIVE CLIENTS</h5>
+                        <div class="shoot_card before_shoot_01 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="1s">
+                            <div class="shoot_icon">
+                                <img src="./assets/img/video/vd-or-2.png" alt="">
+                                <h5>OUR TRUSTED <br> ACTIVE CLIENTS</h5>
+                            </div>
+                            <div class="shoot_count_1">
+                                <h2>{{ $active->active_client }}+</h2>
+                            </div>
                         </div>
-                        <div class="shoot_count_1">
-                            <h2>{{ $active->active_client }}+</h2>
+                        <div class="shoot_card before_shoot_02 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2s">
+                            <div class="shoot_icon">
+                                <img src="./assets/img/video/ach-icon2.png" alt="">
+                                <h5>our Experienced <br>
+                                    Members</h5>
+                            </div>
+                            <div class="shoot_count_2">
+                                <h2>{{ $active->experienced }}+</h2>
+                            </div>
                         </div>
-                    </div>
-                    <div class="shoot_card before_shoot_02 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2s">
-                        <div class="shoot_icon">
-                            <img src="./assets/img/video/ach-icon2.png" alt="">
-                            <h5>our Experienced <br>
-                                Members</h5>
+                        <div class="shoot_card before_shoot_03 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">
+                            <div class="shoot_icon">
+                                <img src="./assets/img/video/vd-or-1.png" alt="">
+                                <h5>Years Providing <br>
+                                    Services</h5>
+                            </div>
+                            <div class="shoot_count_3">
+                                <h2>{{ $active->years_services }}+</h2>
+                            </div>
                         </div>
-                        <div class="shoot_count_2">
-                            <h2>{{ $active->experienced }}+</h2>
-                        </div>
-                    </div>
-                    <div class="shoot_card before_shoot_03 wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">
-                        <div class="shoot_icon">
-                            <img src="./assets/img/video/vd-or-1.png" alt="">
-                            <h5>Years Providing <br>
-                                Services</h5>
-                        </div>
-                        <div class="shoot_count_3">
-                            <h2>{{ $active->years_services }}+</h2>
-                        </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
-    </div>
     <!-- shoot area end  -->
+    {{--    Contact form start --}}
 
+    <!-- Contact 3 - Bootstrap Brain Component -->
+    <section class="bg-light py-3 py-md-5">
+        <div class="container">
+            <div class="row gy-3 gy-md-4 gy-lg-0 align-items-md-center">
+                <div class="col-12 col-lg-6">
+                    <div class="row justify-content-xl-center">
+                        <div class="col-12 col-xl-11">
+                            <h2 class="h1 mb-3">Get in touch</h2>
+                            <p class="lead fs-4 text-secondary mb-5">We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.</p>
+                            <div class="d-flex mb-5">
+                                <div class="me-4 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-geo" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 1a3 3 0 1 0 0 6 3 3 0 0 0 0-6zM4 4a4 4 0 1 1 4.5 3.969V13.5a.5.5 0 0 1-1 0V7.97A4 4 0 0 1 4 3.999zm2.493 8.574a.5.5 0 0 1-.411.575c-.712.118-1.28.295-1.655.493a1.319 1.319 0 0 0-.37.265.301.301 0 0 0-.057.09V14l.002.008a.147.147 0 0 0 .016.033.617.617 0 0 0 .145.15c.165.13.435.27.813.395.751.25 1.82.414 3.024.414s2.273-.163 3.024-.414c.378-.126.648-.265.813-.395a.619.619 0 0 0 .146-.15.148.148 0 0 0 .015-.033L12 14v-.004a.301.301 0 0 0-.057-.09 1.318 1.318 0 0 0-.37-.264c-.376-.198-.943-.375-1.655-.493a.5.5 0 1 1 .164-.986c.77.127 1.452.328 1.957.594C12.5 13 13 13.4 13 14c0 .426-.26.752-.544.977-.29.228-.68.413-1.116.558-.878.293-2.059.465-3.34.465-1.281 0-2.462-.172-3.34-.465-.436-.145-.826-.33-1.116-.558C3.26 14.752 3 14.426 3 14c0-.599.5-1 .961-1.243.505-.266 1.187-.467 1.957-.594a.5.5 0 0 1 .575.411z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="mb-3">Address</h4>
+                                    <address class="mb-0 text-secondary">8014 Edith Blvd NE, Albuquerque, New York, United States</address>
+                                </div>
+                            </div>
+                            <div class="row mb-5">
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex mb-5 mb-sm-0">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-telephone-outbound" viewBox="0 0 16 16">
+                                                <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511zM11 .5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-1 0V1.707l-4.146 4.147a.5.5 0 0 1-.708-.708L14.293 1H11.5a.5.5 0 0 1-.5-.5z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-3">Phone</h4>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="tel:+15057922430">(505) 792-2430</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-sm-6">
+                                    <div class="d-flex mb-0">
+                                        <div class="me-4 text-primary">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-envelope-at" viewBox="0 0 16 16">
+                                                <path d="M2 2a2 2 0 0 0-2 2v8.01A2 2 0 0 0 2 14h5.5a.5.5 0 0 0 0-1H2a1 1 0 0 1-.966-.741l5.64-3.471L8 9.583l7-4.2V8.5a.5.5 0 0 0 1 0V4a2 2 0 0 0-2-2H2Zm3.708 6.208L1 11.105V5.383l4.708 2.825ZM1 4.217V4a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1v.217l-7 4.2-7-4.2Z" />
+                                                <path d="M14.247 14.269c1.01 0 1.587-.857 1.587-2.025v-.21C15.834 10.43 14.64 9 12.52 9h-.035C10.42 9 9 10.36 9 12.432v.214C9 14.82 10.438 16 12.358 16h.044c.594 0 1.018-.074 1.237-.175v-.73c-.245.11-.673.18-1.18.18h-.044c-1.334 0-2.571-.788-2.571-2.655v-.157c0-1.657 1.058-2.724 2.64-2.724h.04c1.535 0 2.484 1.05 2.484 2.326v.118c0 .975-.324 1.39-.639 1.39-.232 0-.41-.148-.41-.42v-2.19h-.906v.569h-.03c-.084-.298-.368-.63-.954-.63-.778 0-1.259.555-1.259 1.4v.528c0 .892.49 1.434 1.26 1.434.471 0 .896-.227 1.014-.643h.043c.118.42.617.648 1.12.648Zm-2.453-1.588v-.227c0-.546.227-.791.573-.791.297 0 .572.192.572.708v.367c0 .573-.253.744-.564.744-.354 0-.581-.215-.581-.8Z" />
+                                            </svg>
+                                        </div>
+                                        <div>
+                                            <h4 class="mb-3">E-Mail</h4>
+                                            <p class="mb-0">
+                                                <a class="link-secondary text-decoration-none" href="mailto:demo@yourdomain.com">demo@yourdomain.com</a>
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="d-flex">
+                                <div class="me-4 text-primary">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
+                                        <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z" />
+                                        <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="mb-3">Opening Hours</h4>
+                                    <div class="d-flex mb-1">
+                                        <p class="text-secondary fw-bold mb-0 me-5">Mon - Fri</p>
+                                        <p class="text-secondary mb-0">9am - 5pm</p>
+                                    </div>
+                                    <div class="d-flex">
+                                        <p class="text-secondary fw-bold mb-0 me-5">Sat - Sun</p>
+                                        <p class="text-secondary mb-0">9am - 2pm</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <div class="bg-white border rounded shadow-sm overflow-hidden">
+
+                        <form action="#!">
+                            <div class="row gy-4 gy-xl-5 p-4 p-xl-5">
+                                <div class="col-12">
+                                    <label for="full_name" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                    <input type="text" class="form-control" id="full_name" name="full_name" value="" required>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="email" class="form-label">Email <span class="text-danger">*</span></label>
+                                    <div class="input-group">
+                  <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+                      <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z" />
+                    </svg>
+                  </span>
+                                        <input type="email" class="form-control" id="email" name="email" value="" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <label for="phone_number_con" class="form-label">Phone Number</label>
+                                    <div class="input-group">
+                  <span class="input-group-text">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-telephone" viewBox="0 0 16 16">
+                      <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                    </svg>
+                  </span>
+                                        <input type="tel" class="form-control" id="phone_number_con" name="phone_number_con" value="+998">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="send_message" class="form-label">Message <span class="text-danger">*</span></label>
+                                    <textarea class="form-control" id="send_message" name="send_message" rows="3" required></textarea>
+                                </div>
+                                <div class="col-12">
+                                    <div class="d-grid">
+                                        <button class="btn btn-primary btn-lg" onclick="send()" type="submit">Send Message</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script>
+        function send() {
+            const phone_number_con = document.getElementById('phone_number_con').value;
+            const full_name = document.getElementById('full_name').value;
+            const email = document.getElementById('email').value;
+            const send_message = document.getElementById('send_message').value;
+
+            if (!full_name || !phone_number_con || !email || !send_message) {
+                alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                return;
+            }
+
+            const message = `A contact form submission has been received:\n\nName: ${full_name}\nPhone Number: ${phone_number_con}\nEmail: ${email}\nMessage ${send_message}`;
+            const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+            const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+            const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+            const data = {
+                chat_id: telegramChatId,
+                text: message
+            };
+
+            fetch(url, {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.ok) {
+                        alert('Xabar yuborildi!');
+                        document.getElementById('full_name').value = '';
+                        document.getElementById('phone_number_con').value = '';
+                        document.getElementById('email').value = '';
+                        document.getElementById('send_message').value = '';
+                    } else {
+                        alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                    }
+                })
+                .catch(error => {
+                    console.error('Xatolik:', error);
+                    alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                });
+        }
+    </script>
+
+
+    {{--   Contact from end --}}
     <!-- clients area start  -->
     <div class="clients_area mb-120 mobile-res-mb">
         <div class="clients_shapes">
@@ -447,92 +482,90 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper text-center mb-10">
-                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">Clients Feedback</h4>
-                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2.5s">explore clients review</h2>
+                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s"
+                            data-wow-duration="3s">Clients Feedback</h4>
+                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s"
+                            data-wow-duration="2.5s">explore clients review</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="testimonial-active dot-style">
                     @foreach($commits as $commit)
-                    <div class="col-md-4">
-                        <div class="testimonial_wrapper test_two">
-                            <div class="test_two_image">
-                                <img src="./assets/img/first_photo_two_ass/projects/quote.png" class="position-absolute quote" alt="">
-                                <img src="{{ asset('storage/' . $commit->photo) }}" class="test_image_two" alt="author_info">
-                            </div>
-                            <div class="testtimonial_content">
-                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Explicabo, vel?</p>
-                            </div>
-                            <div class="rows">
-                                <div class="client_info d-flex align-items-center">
-                                    <div class="clientinfo">
-                                        <h4>{{ $commit->name }}</h4>
-                                        <p>{{ $commit['title_' . $lang] }}</p>
+                        <div class="col-md-4">
+                            <div class="testimonial_wrapper wow animate__fadeIn" data-animation="fadeInUp"
+                                 data-delay="2s" data-wow-duration="3s">
+                                <div class="testtimonial_content">
+                                    <div class="testimonial_star">
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
+                                        <i class="fas fa-star"></i>
                                     </div>
-                                    <div class="client_meta client_star">
-
-                                        <div class="testimonial_star">
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
-                                            <i class="fas fa-star"></i>
+                                    <h4>awesome work</h4>
+                                    <p>{{ $commit['title_'. $lang] }}</p>
+                                </div>
+                                <div class="rows">
+                                    <div class="client_info client_info-one d-flex">
+                                        <div class="client_img">
+                                            <img src="{{ asset('storage/' . $commit->photo) }}" alt="author_info" style="width: 70px;height: 70px;border-radius: 50%">
+                                        </div>
+                                        <div class="client_meta">
+                                            <h4>{{ $commit->name }}</h4>
+                                            <p>company of client</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
                     @endforeach
                 </div>
             </div>
         </div>
     </div>
     <!-- clients area end  -->
-
     <!-- pricing area start  -->
     <div class="pricing_area mb-120 mobile-res-mb">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper section_wrapper_mobile text-center mb-60">
-                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">Our products</h4>
-                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">Popular products</h2>
+                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">{{__('words.our')}} {{__('words.product')}}</h4>
+                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">{{__('words.popular')}} {{__('words.product')}}</h2>
                     </div>
                 </div>
             </div>
             <div class="row align-items-center">
                 @foreach($popular_products as $popular)
-                <div class="col-md-12">
-                    <div class="single_price d-flex wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
-                        <div class="price_img">
-                            <img src="{{ asset('storage/' . $popular->photo) }}" alt="">
-                            
-                        </div>
-                        <div class="price_content">
-                            <h4>{{ $popular['title_' . $lang] }}</h4>
-                            <p>{{ $popular['short_content_' . $lang] }}</p>
-                        </div>
-                        <div class="choose_plan">
-                            <a class="cmn_btn  increase_width   cmn_outline  effect" href="{{route('product')}}"><span>choose plan</span><i class="fas fa-chevron-right"></i></a>
+                    <div class="col-md-12">
+                        <div class="single_price d-flex wow animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
+                            <div class="price_img">
+                                <img src="{{ asset('storage/' . $popular->photo) }}" alt="" style="width: 150px;height: 150px;">
+
+                            </div>
+                            <div class="price_content">
+                                <h4>{{ $popular['name_' . $lang] }}</h4>
+                                <p>{{ $popular['short_content_' . $lang] }}</p>
+                            </div>
+                            <div class="choose_plan">
+                                <a class="cmn_btn  increase_width   cmn_outline  effect" href="{{route('products',['product'=>$popular->id])}}"><span>{{__('words.choose')}}</span><i class="fas fa-chevron-right"></i></a>
+                            </div>
                         </div>
                     </div>
-                </div>
                 @endforeach
             </div>
         </div>
     </div>
     <!-- pricing area end  -->
-
     <!-- brand partner area start  -->
     <div class="brand_area mb-110 mobile-res-mb">
         <div class="container text-center">
             <div class="row">
                 <div class="col-md-12">
                     <div class="section_wrapper text-center mb-40">
-                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">clients</h4>
-                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">some of our clients</h2>
+                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">{{__('words.clients')}}</h4>
+                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">{{__('words.our')}} {{__('words.clients')}}</h2>
                     </div>
                 </div>
             </div>
@@ -540,77 +573,61 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-12">
                     <div class="brand_img d-flex">
                         @foreach($clients as $client)
-                        <div class="brand_items">
-                            <img src="{{ asset('storage/' . $client->photo) }}" alt="brand_image">
-                        </div>
+                            <div class="brand_items">
+                                <img src="/storage/{{$client->photo}}" alt="brand_image" style="width: 150px;height: 150px;border-radius: 10px">
+                            </div>
                         @endforeach
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/iconic.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/microw.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/tree.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/bakery.png" alt="brand_image">
-                        </div>
-                        <div class="brand_items">
-                            <img src="./assets/img/brand/white.png" alt="brand_image">
-                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
     <!-- brand partner area end  -->
-
     <!-- news area start  -->
     <div class="news_area mobile-res-mb">
         <div class="blog_shape">
-            <img src="./assets/img/blog/patternblog.png" class="blog_pattern" alt="">
-            <img src="./assets/img/blog/blog-shape.png" class="blog_circle_shpae position-absolute" alt="">
+            <img src="/assets/img/blog/patternblog.png" class="blog_pattern" alt="">
+            <img src="/assets/img/blog/blog-shape.png" class="blog_circle_shpae position-absolute" alt="">
         </div>
         <div class="container">
             <div class="row">
                 @foreach($blog_text as $text)
-                <div class="col-md-12 col-lg-5">
-                    <div class="section_wrapper news-wrapper">
-                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">{{ $text['title_' . $lang] }}</h4>
-                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2s">{{ $text['short_content_' . $lang] }}</h2>
-                        <p>{{ $text['content_' . $lang] }}</p>
-                        <div class="blog-buttons">
-                            <span class="prev b-arrow-01"></span>
-                            <span class="next b-arrow-02"></span>
-                        </div>
+                    <div class="col-md-12 col-lg-5">
+                        <div class="section_wrapper news-wrapper">
+                            <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="2s">{{ $text['title_' . $lang] }}</h4>
+                            <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="2s">{{ $text['short_content_' . $lang] }}</h2>
+                            <p>{{ $text['content_' . $lang] }}</p>
+                            <div class="blog-buttons">
+                                <span class="prev b-arrow-01"></span>
+                                <span class="next b-arrow-02"></span>
+                            </div>
 
+                        </div>
                     </div>
-                </div>
                 @endforeach
                 <div class="col-md-12 col-lg-7">
                     <div class="row blog_activition_first_photo_one">
                         @foreach($blogs as $blog)
-                        <div class="col-md-6">
-                            <div class="blog_activition">
-                                <div class="blog">
-                                    <div class="blog_image">
-                                        <img src="{{ asset('storage/' . $blog->photo) }}" alt="blog_image">
-                                        <div class="blog_content">
-                                            <div class="meta_content d-flex">
-                                                <span>By : Admin</span>
-                                                @if ($blog->created_at)
-                                                <span>{{ $blog->created_at->format('F j Y') }}</span>
-                                                @else
-                                                <span>{{ __('No date available') }}</span>
-                                                @endif
+                            <div class="col-md-6">
+                                <div class="blog_activition">
+                                    <div class="blog">
+                                        <div class="blog_image">
+                                            <img src="{{ asset('storage/' . $blog->photo) }}" alt="blog_image">
+                                            <div class="blog_content">
+                                                <div class="meta_content d-flex">
+                                                    <span>By : Admin</span>
+                                                    @if ($blog->created_at)
+                                                        <span>{{ $blog->created_at->format('F j Y') }}</span>
+                                                    @else
+                                                        <span>{{ __('No date available') }}</span>
+                                                    @endif
+                                                </div>
+                                                <h4><a href="/blog">{{ $blog['description_' . $lang] }}</a></h4>
                                             </div>
-                                            <h4><a href="/blog">{{ $blog['description_' . $lang] }}</a></h4>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
                         @endforeach
 
                     </div>
@@ -619,7 +636,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <!-- news area end  -->
-
     <!-- subscribe area start  -->
     <div class="subscribe_area">
         <div class="container">
@@ -628,7 +644,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="subscribe_card">
                         <form action="#" method="post">
                             <input type="text" class="form-control" placeholder="enter your phone">
-                            <button type="submit" class="subcribe_btn">yuborish<i class="icon-serviceicon"></i></button>
+                            <button type="submit" class="subcribe_btn">{{__('words.send')}}<i class="icon-serviceicon"></i></button>
                         </form>
                     </div>
                 </div>
@@ -636,7 +652,6 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         </div>
     </div>
     <!-- subscribe area end  -->
-
     <!-- footer area start  -->
     <div class="footer_area pt-120 pb-50">
         <div class="footer_shape">
@@ -648,45 +663,44 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-8 col-lg-6 col-xl-5 col-sm-7 ">
                     <div class="footer_widget">
                         <h4>{{ __('about')}}</h4>
-                        <p>Sed ut perspiciatis unde omnis iste natus error voluptatem <br> Sed ut perspiciatis
-                            unde
-                            omnis
-                            iste natus error <br> voluptatem. Sed ut perspiciatis</p>
+                        <p>{{ __('words.expMember') }}</p>
                         <div class="social_contact">
-                            <a href="mailto:name@email.com"><svg width="20.87" height="15">
-                                    <g id="Mail_2" data-name="Mail 2" transform="translate(-163.667 -153.91)">
-                                        <path id="dfdf" data-name="Path 22" d="M181.928,153.91H166.276a2.611,2.611,0,0,0-2.609,2.609V166.3a2.611,2.611,0,0,0,2.609,2.609h15.652a2.612,2.612,0,0,0,2.609-2.609v-9.783A2.612,2.612,0,0,0,181.928,153.91Zm1.3,12.391a1.306,1.306,0,0,1-1.3,1.3H166.276a1.306,1.306,0,0,1-1.3-1.3v-9.783a1.306,1.306,0,0,1,1.3-1.3h15.652a1.306,1.306,0,0,1,1.3,1.3Z" fill="#438ff9" />
-                                        <path id="dfdeyyf" data-name="Path 23" d="M183.172,159.149a.653.653,0,0,0-.918-.092l-6.76,5.532-6.761-5.532a.652.652,0,0,0-.826,1.01l7.174,5.87a.653.653,0,0,0,.826,0l7.174-5.87A.653.653,0,0,0,183.172,159.149Z" transform="translate(-1.391 -1.739)" fill="#438ff9" />
-                                        <path id="sdfs" data-name="Path 24" d="M186.78,167.1a.652.652,0,1,0-.922.922l2.609,2.609a.652.652,0,0,0,.922-.922Z" transform="translate(-7.652 -4.522)" fill="#438ff9" />
-                                        <path id="Path_25" data-name="Path 25" d="M170.467,167.1l-2.609,2.609a.652.652,0,1,0,.922.922l2.609-2.609a.652.652,0,1,0-.922-.922Z" transform="translate(-1.391 -4.522)" fill="#438ff9" />
-                                    </g>
-                                </svg>
-                                info.cliper@email.com</a>
-                            <a href="tel:+4733378901"><svg width="17.224" height="17.224" viewBox="0 0 17.224 17.224">
-                                    <g id="dfde" transform="translate(-255.083 -150.41)">
-                                        <path id="dfd" data-name="Path 26" d="M279.005,158.071a14.427,14.427,0,0,0-7.655-7.618.551.551,0,0,0-.726.316.581.581,0,0,0,.307.749,13.3,13.3,0,0,1,7.058,7.024.557.557,0,0,0,.508.339.537.537,0,0,0,.228-.051A.582.582,0,0,0,279.005,158.071Z" transform="translate(-6.747 0)" fill="#438ff9" />
-                                        <path id="dfdplgw" data-name="Path 27" d="M270.42,156.979a8.059,8.059,0,0,1,4.281,4.251.538.538,0,0,0,.492.328.52.52,0,0,0,.22-.049.561.561,0,0,0,.271-.733,9.149,9.149,0,0,0-4.858-4.825.534.534,0,0,0-.7.306A.561.561,0,0,0,270.42,156.979Z" transform="translate(-6.529 -2.394)" fill="#438ff9" />
-                                        <path id="fpokmd" data-name="Path 28" d="M269.332,161.508a1.314,1.314,0,0,0-1.985,0c-.464.46-.928.921-1.385,1.389a.315.315,0,0,1-.222.119.324.324,0,0,1-.159-.049c-.3-.164-.621-.3-.909-.476a14.4,14.4,0,0,1-3.471-3.159,8.242,8.242,0,0,1-1.244-1.993.286.286,0,0,1,.07-.367c.464-.448.917-.909,1.373-1.369a1.318,1.318,0,0,0,0-2.032c-.363-.367-.726-.725-1.088-1.092s-.745-.753-1.123-1.124a1.322,1.322,0,0,0-1.985,0c-.468.46-.917.932-1.393,1.384a2.262,2.262,0,0,0-.71,1.525,6.455,6.455,0,0,0,.5,2.781,16.893,16.893,0,0,0,3,5,18.558,18.558,0,0,0,6.147,4.809,8.889,8.889,0,0,0,3.4.991c.074,0,.147.006.219.006a2.433,2.433,0,0,0,1.923-.821c.4-.445.846-.85,1.267-1.275a1.327,1.327,0,0,0,.008-2.021Q270.451,162.618,269.332,161.508Zm1.421,3.452c-.139.14-.281.278-.424.416-.293.285-.6.579-.884.9a1.314,1.314,0,0,1-1.08.444c-.051,0-.1,0-.157,0a7.671,7.671,0,0,1-2.972-.879,17.514,17.514,0,0,1-5.776-4.52,15.7,15.7,0,0,1-2.806-4.666,5.308,5.308,0,0,1-.431-2.295,1.141,1.141,0,0,1,.362-.8c.294-.279.578-.565.862-.852.18-.182.361-.365.546-.547a.223.223,0,0,1,.4,0c.249.244.494.491.739.738l.372.373c.185.187.369.372.554.556s.356.356.536.538c.208.209.2.246,0,.44l-.19.192c-.387.39-.771.779-1.179,1.174a1.407,1.407,0,0,0-.313,1.6,9.214,9.214,0,0,0,1.41,2.269,15.454,15.454,0,0,0,3.75,3.4c.222.138.447.248.644.346.108.053.215.105.3.154a1.442,1.442,0,0,0,.716.2,1.414,1.414,0,0,0,1.031-.46c.446-.457.9-.908,1.372-1.376a.217.217,0,0,1,.392,0q1.116,1.11,2.226,2.222C270.933,164.7,270.951,164.76,270.753,164.961Z" transform="translate(0 -0.218)" fill="#438ff9" />
-                                    </g>
-                                </svg>
-                                +998 (93) 512 5324</a>
+                            @foreach($contacts as $contact)
+                                <a href="{{ $contact->email }}"><svg width="20.87" height="15">
+                                        <g id="Mail_2" data-name="Mail 2" transform="translate(-163.667 -153.91)">
+                                            <path id="dfdf" data-name="Path 22" d="M181.928,153.91H166.276a2.611,2.611,0,0,0-2.609,2.609V166.3a2.611,2.611,0,0,0,2.609,2.609h15.652a2.612,2.612,0,0,0,2.609-2.609v-9.783A2.612,2.612,0,0,0,181.928,153.91Zm1.3,12.391a1.306,1.306,0,0,1-1.3,1.3H166.276a1.306,1.306,0,0,1-1.3-1.3v-9.783a1.306,1.306,0,0,1,1.3-1.3h15.652a1.306,1.306,0,0,1,1.3,1.3Z" fill="#438ff9" />
+                                            <path id="dfdeyyf" data-name="Path 23" d="M183.172,159.149a.653.653,0,0,0-.918-.092l-6.76,5.532-6.761-5.532a.652.652,0,0,0-.826,1.01l7.174,5.87a.653.653,0,0,0,.826,0l7.174-5.87A.653.653,0,0,0,183.172,159.149Z" transform="translate(-1.391 -1.739)" fill="#438ff9" />
+                                            <path id="sdfs" data-name="Path 24" d="M186.78,167.1a.652.652,0,1,0-.922.922l2.609,2.609a.652.652,0,0,0,.922-.922Z" transform="translate(-7.652 -4.522)" fill="#438ff9" />
+                                            <path id="Path_25" data-name="Path 25" d="M170.467,167.1l-2.609,2.609a.652.652,0,1,0,.922.922l2.609-2.609a.652.652,0,1,0-.922-.922Z" transform="translate(-1.391 -4.522)" fill="#438ff9" />
+                                        </g>
+                                    </svg>
+                                    {{ $contact->email }}</a>
+                                <a href="tel:{{ $contact->phone_number }}"><svg width="17.224" height="17.224" viewBox="0 0 17.224 17.224">
+                                        <g id="dfde" transform="translate(-255.083 -150.41)">
+                                            <path id="dfd" data-name="Path 26" d="M279.005,158.071a14.427,14.427,0,0,0-7.655-7.618.551.551,0,0,0-.726.316.581.581,0,0,0,.307.749,13.3,13.3,0,0,1,7.058,7.024.557.557,0,0,0,.508.339.537.537,0,0,0,.228-.051A.582.582,0,0,0,279.005,158.071Z" transform="translate(-6.747 0)" fill="#438ff9" />
+                                            <path id="dfdplgw" data-name="Path 27" d="M270.42,156.979a8.059,8.059,0,0,1,4.281,4.251.538.538,0,0,0,.492.328.52.52,0,0,0,.22-.049.561.561,0,0,0,.271-.733,9.149,9.149,0,0,0-4.858-4.825.534.534,0,0,0-.7.306A.561.561,0,0,0,270.42,156.979Z" transform="translate(-6.529 -2.394)" fill="#438ff9" />
+                                            <path id="fpokmd" data-name="Path 28" d="M269.332,161.508a1.314,1.314,0,0,0-1.985,0c-.464.46-.928.921-1.385,1.389a.315.315,0,0,1-.222.119.324.324,0,0,1-.159-.049c-.3-.164-.621-.3-.909-.476a14.4,14.4,0,0,1-3.471-3.159,8.242,8.242,0,0,1-1.244-1.993.286.286,0,0,1,.07-.367c.464-.448.917-.909,1.373-1.369a1.318,1.318,0,0,0,0-2.032c-.363-.367-.726-.725-1.088-1.092s-.745-.753-1.123-1.124a1.322,1.322,0,0,0-1.985,0c-.468.46-.917.932-1.393,1.384a2.262,2.262,0,0,0-.71,1.525,6.455,6.455,0,0,0,.5,2.781,16.893,16.893,0,0,0,3,5,18.558,18.558,0,0,0,6.147,4.809,8.889,8.889,0,0,0,3.4.991c.074,0,.147.006.219.006a2.433,2.433,0,0,0,1.923-.821c.4-.445.846-.85,1.267-1.275a1.327,1.327,0,0,0,.008-2.021Q270.451,162.618,269.332,161.508Zm1.421,3.452c-.139.14-.281.278-.424.416-.293.285-.6.579-.884.9a1.314,1.314,0,0,1-1.08.444c-.051,0-.1,0-.157,0a7.671,7.671,0,0,1-2.972-.879,17.514,17.514,0,0,1-5.776-4.52,15.7,15.7,0,0,1-2.806-4.666,5.308,5.308,0,0,1-.431-2.295,1.141,1.141,0,0,1,.362-.8c.294-.279.578-.565.862-.852.18-.182.361-.365.546-.547a.223.223,0,0,1,.4,0c.249.244.494.491.739.738l.372.373c.185.187.369.372.554.556s.356.356.536.538c.208.209.2.246,0,.44l-.19.192c-.387.39-.771.779-1.179,1.174a1.407,1.407,0,0,0-.313,1.6,9.214,9.214,0,0,0,1.41,2.269,15.454,15.454,0,0,0,3.75,3.4c.222.138.447.248.644.346.108.053.215.105.3.154a1.442,1.442,0,0,0,.716.2,1.414,1.414,0,0,0,1.031-.46c.446-.457.9-.908,1.372-1.376a.217.217,0,0,1,.392,0q1.116,1.11,2.226,2.222C270.933,164.7,270.951,164.76,270.753,164.961Z" transform="translate(0 -0.218)" fill="#438ff9" />
+                                        </g>
+                                    </svg>
+                                    {{ $contact->phone_number }}</a>
+                            @endforeach
                         </div>
                         @foreach($links as $link)
-                        <div class="social_link pt-25">
-                            <ul>
-                                <li><a href="{{ $link->telegram }}"><i class="fab fa-telegram icon"></i></a></li>
-                                <li><a href="{{ $link->facebook }}"><i class="fab fa-facebook-f icon"></i></a></li>
-                                <li><a href="{{ $link->twitter }}"><i class="fab fa-twitter icon"></i></a></li>
-                                <li><a href="{{ $link->instagram }}"><i class="fab fa-instagram icon"></i></a></li>
-                                <li><a href="{{ $link->youtube }}"><i class="fab fa-youtube icon"></i></a></li>
-                            </ul>
-                        </div>
+                            <div class="social_link pt-25">
+                                <ul>
+                                    <li><a href="{{ $link->telegram }}"><i class="fab fa-telegram icon"></i></a></li>
+                                    <li><a href="{{ $link->facebook }}"><i class="fab fa-facebook-f icon"></i></a></li>
+                                    <li><a href="{{ $link->twitter }}"><i class="fab fa-twitter icon"></i></a></li>
+                                    <li><a href="{{ $link->instagram }}"><i class="fab fa-instagram icon"></i></a></li>
+                                    <li><a href="{{ $link->youtube }}"><i class="fab fa-youtube icon"></i></a></li>
+                                </ul>
+                            </div>
                         @endforeach
                     </div>
                 </div>
                 <div class="col-md-4 col-lg-3 col-xl-2 col-sm-5  fixed_width">
                     <div class="widget_two">
-                        <h4>usefull links</h4>
+                        <h4>{{__('words.usefull')}} {{__('words.links')}}</h4>
                         <ul>
                             <li><a href="/"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfd" data-name="dfdfd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
@@ -695,79 +709,79 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                             <li><a href="/about"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="dfdfa" data-name="ojkj" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                    {{__('words.service')}}</a></li>
-                            <li><a href="{{ route('category')}}"><svg width="7.514" height="11.563">
+                                    {{__('words.about')}}</a></li>
+                            <li><a href="{{ route('product')}}"><svg width="7.514" height="11.563">
                                         <path id="poek" data-name="dfdsr" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
-                                    service</a></li>
+                                    {{ __('words.product') }}</a></li>
                             <li><a href="/blog"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
                                         <path id="pkks" data-name="dfkkij" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
                                     </svg>
                                     {{__('words.blog')}}</a></li>
-                            
+
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 col-xl-2 col-sm-7  fixed_width">
-                    <div class="widget_two">
-                        <h4>Categories</h4>
-                        <ul>
-                            <li><a href="portfolio.html">
-                                    <svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="dst" data-name="pqe" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    cliping path</a></li>
-                            <li><a href="portfolio.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="opijj" data-name="iuyh" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    background</a></li>
-                            <li><a href="portfolio.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="jkhh" data-name="rutrii" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    shadow create</a></li>
-                            <li><a href="portfolio.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="dfsdty" data-name="oppk" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    image retouch</a></li>
-                            <li><a href="portfolio.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="dfdnvb" data-name="optd" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    art gallary</a></li>
-                        </ul>
+                <div class="col-md-8 col-lg-3 justify-content-end">
+                    <h4>{{__('words.contact')}}</h4>
+                    <div class="input-group mt-4 align-items-center">
+                        <input type="text" id="last_name" class="form-control" required placeholder="Name">
+                    </div>
+                    <div class="input-group mt-3 align-items-center">
+                        <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
+                    </div>
+                    <div class="input-group mt-3">
+                        <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 col-xl-2 col-sm-5  fixed_width">
-                    <div class="widget_two">
-                        <h4>Popular products</h4>
-                        <ul>
-                            <li><a href="faq.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="spoom" data-name="poyut" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    faq</a></li>
-                            <li><a href="about.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="sdqwrt" data-name="plmk" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    terms & conditions</a></li>
-                            <li><a href="about.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="snbv" data-name="ouhn" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    reporting</a></li>
-                            <li><a href="#"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="sdfa" data-name="Patherh" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    documentation</a></li>
-                            <li><a href="contact.html"><svg width="7.514" height="11.563" viewBox="0 0 7.514 11.563">
-                                        <path id="azad" data-name="piuuj" d="M261.8,353l5.369,5.053-5.369,5.053" transform="translate(-261.112 -352.271)" fill="none" stroke="rgba(43,27,154,0.55)" stroke-miterlimit="10" stroke-width="2" />
-                                    </svg>
-                                    contact us</a></li>
-                        </ul>
-                    </div>
-                </div>
+
+                <script>
+                    function sendphone() {
+                        const phone_number_footer = document.getElementById('phone_number_footer').value;
+                        const last_name = document.getElementById('last_name').value;
+
+                        if (!last_name || !phone_number_footer) {
+                            alert('Iltimos, barcha maydonlarni to\'ldiring.');
+                            return;
+                        }
+
+                        const message = `A contact form submission has been received:\n\nName: ${last_name}\nPhone Number: ${phone_number_footer}`;
+                        const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
+                        const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+
+                        const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
+                        const data = {
+                            chat_id: telegramChatId,
+                            text: message
+                        };
+
+                        fetch(url, {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify(data)
+                        })
+                            .then(response => response.json())
+                            .then(data => {
+                                if (data.ok) {
+                                    alert('Xabar yuborildi!');
+                                    document.getElementById('last_name').value = '';
+                                    document.getElementById('phone_number_footer').value = '';
+                                } else {
+                                    alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                                }
+                            })
+                            .catch(error => {
+                                console.error('Xatolik:', error);
+                                alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
+                            });
+                    }
+                </script>
             </div>
         </div>
     </div>
     <!-- footer area end  -->
-
     <!-- copyright section  -->
     <div class="copyright_area">
         <div class="container">

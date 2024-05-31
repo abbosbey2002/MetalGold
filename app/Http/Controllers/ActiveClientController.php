@@ -14,7 +14,7 @@ class ActiveClientController extends Controller
      */
     public function index()
     {
-        $about = ActiveClient::all();
+        $about = ActiveClient::all()->sortDesc();
         return view('active.index')->with('active_clients', $about);
     }
 
@@ -55,7 +55,7 @@ class ActiveClientController extends Controller
 
     public function edit(ActiveClient $active_client)
     {
-        return view('active.edit')->with(['active_clients' => $active_client]);
+        return view('active.edit')->with(['activeClient' => $active_client]);
     }
 
     /**

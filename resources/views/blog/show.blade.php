@@ -1,55 +1,92 @@
 <x-layouts.admin>
-    <div class="container-fluid">
+    <div class="container my-5">
+        <div class="card">
+            <div class="card-header">
+                <h2><b>{{ $blog->title_uz }}</b></h2>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6">
+                        <!-- Title Fields -->
+                        <div class="mb-3">
+                            <h4>Title (Uzbek):</h4>
+                            <p>{{ $blog->title_uz }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Title (Russian):</h4>
+                            <p>{{ $blog->title_ru }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Title (English):</h4>
+                            <p>{{ $blog->title_en }}</p>
+                        </div>
 
-        <div class="row">
-            <section class="col-lg-12 connectedSortable">
-                <div class="card">
-                    <h3>Blog</h3>
-                    <div class="table-responsive">
-                        <table class="table">
-                            <thead>
-                            <tr>
-                                <th scope="col">Id</th>
-                                <th scope="col">title_uz</th>
-                                <th scope="col">title_ru</th>
-                                <th scope="col">title_en</th>
-                                <th scope="col">qisqacha_uz</th>
-                                <th scope="col">qisqacha_ru</th>
-                                <th scope="col">qisqacha_en</th>
-                                <th scope="col">content_uz</th>
-                                <th scope="col">content_ru</th>
-                                <th scope="col">content_en</th>
-                                <th scope="col">Blog_uz</th>
-                                <th scope="col">Blog_ru</th>
-                                <th scope="col">Blog_en</th>
-                                <th scope="col">photo</th>
-                            </tr>
-                            </thead>
-                            <tbody>
-                            <tr>
-                                <td>{{ $blogs->id }}</td>
-                                <td>{{ $blogs->title_uz }}</td>
-                                <td>{{ $blogs->title_ru }}</td>
-                                <td>{{ $blogs->title_en }}</td>
-                                <td>{{ $blogs->short_content_uz }}</td>
-                                <td>{{ $blogs->short_content_ru }}</td>
-                                <td>{{ $blogs->short_content_en }}</td>
-                                <td>{{ $blogs->content_uz }}</td>
-                                <td>{{ $blogs->content_ru }}</td>
-                                <td>{{ $blogs->content_en }}</td>
-                                <td>{{ $blogs->description_uz }}</td>
-                                <td>{{ $blogs->description_ru }}</td>
-                                <td>{{ $blogs->description_en }}</td>
-                                <td><img src="{{ asset('storage/' . $blogs->photo) }}" alt="" style="width: 80px;"></td>
-                            </tr>
-                            </tbody>
-                        </table>
-                        <a href="{{ route('blog.index') }}" class="btn btn-outline-info">Orqaga <i class="fa fa-arrow-left"></i></a>
+                        <!-- Short Content Fields -->
+                        <div class="mb-3">
+                            <h4>Short Content (Uzbek):</h4>
+                            <p>{{ $blog->short_content_uz }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Short Content (Russian):</h4>
+                            <p>{{ $blog->short_content_ru }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Short Content (English):</h4>
+                            <p>{{ $blog->short_content_en }}</p>
+                        </div>
+
+                        <!-- Content Fields -->
+                        <div class="mb-3">
+                            <h4>Content (Uzbek):</h4>
+                            <p>{{ $blog->content_uz }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Content (Russian):</h4>
+                            <p>{{ $blog->content_ru }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Content (English):</h4>
+                            <p>{{ $blog->content_en }}</p>
+                        </div>
 
                     </div>
-                </div>
-            </section>
-        </div>
 
+                    <div class="col-md-6">
+                        <!-- Description Fields -->
+                        <div class="mb-3">
+                            <h4>Description (Uzbek):</h4>
+                            <p>{{ $blog->description_uz }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Description (Russian):</h4>
+                            <p>{{ $blog->description_ru }}</p>
+                        </div>
+                        <div class="mb-3">
+                            <h4>Description (English):</h4>
+                            <p>{{ $blog->description_en }}</p>
+                        </div>
+
+                        <!-- Image Display -->
+                        <div class="mb-3">
+                            @if ($blog->photo)
+                                <h4>Image:</h4>
+                                <img src="{{ asset('storage/' . $blog->photo) }}" alt="Blog Image" style="max-width: 100%; height: auto;">
+                            @else
+                                <p>No image available</p>
+                            @endif
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="card-footer">
+                <a href="{{ route('blog.index') }}" class="btn btn-secondary">Back</a>
+                <a href="{{ route('blog.edit', ['blog' => $blog->id]) }}" class="btn btn-primary">Edit</a>
+                <form action="{{ route('blog.destroy', ['blog' => $blog->id]) }}" method="POST" class="d-inline" onsubmit="return confirm('Are you sure you want to delete?')">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn btn-danger">Delete</button>
+                </form>
+            </div>
+        </div>
     </div>
 </x-layouts.admin>

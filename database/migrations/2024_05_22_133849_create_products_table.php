@@ -11,20 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('category_of_products', function (Blueprint $table) {
+        Schema::create('products', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete();
             $table->unsignedBigInteger('type_id');
-            $table->json('category_id');
-            $table->text('title_uz')->nullable();
-            $table->text('title_ru')->nullable();
-            $table->text('title_en')->nullable();
-            $table->text('short_content_uz')->nullable();
-            $table->text('short_content_ru')->nullable();
-            $table->text('short_content_en')->nullable();
             $table->text('name_uz')->nullable();
             $table->text('name_ru')->nullable();
             $table->text('name_en')->nullable();
-            $table->text('type')->nullable();
+            $table->text('size')->nullable();
+            $table->text('manufacturer')->nullable();
+            $table->text('tonna_metr')->nullable();
+            $table->text('metr_tonna')->nullable();
+            $table->text('price')->nullable();
             $table->text('photo')->nullable();
             $table->timestamps();
         });

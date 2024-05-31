@@ -12,11 +12,7 @@
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">mahsulot nomi</th>
-                                <th scope="col">o'lchami</th>
-                                <th scope="col">nazariya</th>
-                                <th scope="col">ishlab chiqarilgan</th>
-                                <th scope="col">birligi</th>
-                                <th scope="col">narxi</th>
+                                
                                 <th scope="col">photo</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
@@ -26,11 +22,7 @@
                                 <tr>
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->name_uz }}</td>
-                                    <td>{{ $category->size }}</td>
-                                    <td>{{ $category->theory }}</td>
-                                    <td>{{ $category->manufacturer }}</td>
-                                    <td>{{ $category->unit }}</td>
-                                    <td>{{ $category->price }}</td>
+                                    
                                     <td><img src="{{ asset('storage/' . $category->photo)  }}" alt="" style="width: 80px;"></td>
                                     <td>
                                         <div class="d-flex tools">

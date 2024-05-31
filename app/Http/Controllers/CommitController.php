@@ -14,7 +14,7 @@ class CommitController extends Controller
      */
     public function index()
     {
-        $commit = Commit::all();
+        $commit = Commit::all()->sortDesc();
         return view('commit.index')->with('commits', $commit);
     }
 
@@ -63,7 +63,7 @@ class CommitController extends Controller
 
     public function edit(Commit $commit)
     {
-        return view('commit.edit')->with(['commits' => $commit]);
+        return view('commit.edit')->with(['commit' => $commit]);
     }
 
     /**
@@ -73,9 +73,9 @@ class CommitController extends Controller
     {
         if ($request->hasFile('photo'))
         {
-            if (isset($category_of_product->photo))
+            if (isset($commit->photo))
             {
-                Storage::delete($category_of_product->photo);
+                Storage::delete($commit->photo);
             }
 
             $name = $request->file('photo')->getClientOriginalName();
@@ -100,6 +100,10 @@ class CommitController extends Controller
     public function destroy(Commit $commit)
     {
         $commit->delete();
+        if (isset($commit->photo))
+        {
+            Storage::delete($commit->photo);
+        }
         return redirect()->route('commit.index');
     }
 }

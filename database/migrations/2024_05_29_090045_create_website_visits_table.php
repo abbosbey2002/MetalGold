@@ -11,13 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('commits', function (Blueprint $table) {
+        Schema::create('website_visits', function (Blueprint $table) {
             $table->id();
-            $table->text('name')->nullable();
-            $table->text('title_uz')->nullable();
-            $table->text('title_ru')->nullable();
-            $table->text('title_en')->nullable();
-            $table->text('photo')->nullable();
+            $table->string('url');
+            $table->ipAddress('ip_address');
+            $table->string('user_agent')->nullable();
+            $table->timestamp('visited_at')->default(now());
             $table->timestamps();
         });
     }
@@ -27,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('commits');
+        Schema::dropIfExists('website_visits');
     }
 };

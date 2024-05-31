@@ -11,24 +11,20 @@
                             <thead>
                             <tr>
                                 <th scope="col">Id</th>
-                                <th scope="col">category_id</th>
-                                <th scope="col">Product Title</th>
-                                <th scope="col">Product haqida malumot</th>
-                                <th scope="col">turi</th>
-                                <th scope="col">product nomi</th>
-                                <th scope="col">photo</th>
-                                <th scope="col">operatsiyalar</th>
+                                <th scope="col">Category Name</th>
+                                <th scope="col">Product Name</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Photo</th>
+                                <th scope="col">Operation</th>
                             </tr>
                             </thead>
                             <tbody>
                             @foreach($products as $product)
                                 <tr>
                                     <td>{{ $product->id }}</td>
-                                    <td>{{ $product->category_id }}</td>
-                                    <td>{{ $product->title_uz }}</td>
-                                    <td>{{ $product->short_content_uz }}</td>
-                                    <td>{{ $product->type_id }}</td>
+                                    <td>{{ $product->category->name_uz }}</td>
                                     <td>{{ $product->name_uz }}</td>
+                                    <td>{{ $product->price }}</td>
                                     <td><img src="{{ asset( 'storage/' . $product->photo ) }}" alt="" style="width: 80px; height: 70px;"></td>
                                     <td>
                                         <div class="d-flex tools">

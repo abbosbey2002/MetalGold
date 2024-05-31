@@ -13,6 +13,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\ImageController;
 use App\Http\Controllers\LinkController;
 use App\Http\Controllers\MainController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\PriceController;
 use App\Http\Controllers\TeamController;
 use App\Http\Controllers\UserController;
@@ -70,6 +71,7 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::resource('/blog', BlogController::class);
         Route::get('/profile', [UserController::class, 'index'])->name('user-index');
         Route::resource('/profile', UserController::class);
+        Route::resource('orders', OrderController::class);
         Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
     });
 });
@@ -80,8 +82,10 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
 | Barcha foydalanuvshilar ko'raoladigan qism
 |-------------------------------------------------------------
 */
+Route::middleware(['web', 'log.visits'])->group(function () {
+    Route::get('/', [MainController::class, 'index'])->name('index');
+});
 
-Route::get('/', [MainController::class, 'index'])->name('index');
 Route::get('/about', [MainController::class, 'about'])->name('about');
 Route::get('/blog', [MainController::class, 'blog'])->name('blog');
 Route::get('/blog/{blog}', [MainController::class, 'single_blog'])->name('single_blog');
@@ -90,6 +94,7 @@ Route::get('/product', [MainController::class, 'product'])->name('product');
 Route::get('/category', [MainController::class, 'category'])->name('category');
 Route::get('/product/{product}', [MainController::class, 'products'])->name('products');
 
+Route::post('orders.store', [OrderController::class, 'store'])->name('orders.store');
 Route::get('/{lang}', function ($lang){
 
     session(['lang' => $lang]);

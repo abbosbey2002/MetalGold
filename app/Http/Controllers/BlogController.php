@@ -13,7 +13,7 @@ class BlogController extends Controller
      */
     public function index()
     {
-        $blog = Blog::all();
+        $blog = Blog::all()->sortDesc();
         return view('blog.index')->with('blogs', $blog);
     }
 
@@ -64,13 +64,13 @@ class BlogController extends Controller
     public function show(Blog $blog)
     {
         return view('blog.show')->with([
-            'blogs' => $blog,
+            'blog' => $blog,
         ]);
     }
 
     public function edit(Blog $blog)
     {
-        return view('blog.edit')->with(['blogs' => $blog]);
+        return view('blog.edit')->with(['blog' => $blog]);
     }
 
     /**
@@ -114,6 +114,10 @@ class BlogController extends Controller
     public function destroy(Blog $blog)
     {
         $blog->delete();
+        if (isset($blog->photo))
+        {
+            Storage::delete($blog->photo);
+        }
         return redirect()->route('blog.index');
     }
 }
