@@ -160,13 +160,15 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                 const weight = document.getElementById('weight').value;
                 const length = document.getElementById('length').value;
                 const price = document.getElementById('price').value;
+                const productName = document.getElementById('productName').innerText;
+
 
                 if (!fullName || !phoneNumber || !weight || !length || !price) {
                     alert('Iltimos, barcha maydonlarni to\'ldiring.');
                     return;
                 }
 
-                const message = `Buyurtma Yaratildi:\n\nXaridor ismi: ${fullName}\nTelefon Raqam: ${phoneNumber}\nWeight: ${weight}\nlenght: ${length}\nPrice: ${price}`;
+                const message = `Buyurtma Yaratildi:\n\nMahsulot nomi: ${productName}\nXaridor ismi: ${fullName}\nTelefon Raqam: ${phoneNumber}\nKilogram: ${weight} kg\nUzunligi: ${length} m\nPrice: ${price} so'm`;
                 const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
                 const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
 

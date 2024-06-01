@@ -176,16 +176,15 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row">
                 <div class="col-md-12">
                     <div class="service_activition">
-                        @foreach ($photos as $product)
+                        @foreach ($categories as $category)
                         <div class="service_card">
                             <div class="service_img text-center">
-                                <img src="{{ asset('storage/' . $product->photo) }}" alt="service_img">
+                                <img src="{{ asset('storage/' . $category->photo) }}" alt="service_img">
                             </div>
                             <div class="service_content text-center">
-                                <h3 class="service_title">{{ $product['name_'.$lang]}}</h3>
-                                <p class="light_color">{{ $product['title_uz'.$lang]}}</p>
+                                <h3 class="service_title">{{ $category['name_'.$lang]}}</h3>
                             </div>
-                            <a class="radius_btn effectPlus" href="{{ route('products', ['product'=> $product->id]) }}">
+                            <a class="radius_btn effectPlus" href="{{ route('products', ['product'=> $category->id]) }}">
                                 <i class="icon-serviceicon"></i>
                             </a>
                         </div>

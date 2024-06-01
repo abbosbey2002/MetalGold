@@ -13,11 +13,25 @@ class CategoryOfProductController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
-    {
-        $category_of_product = CategoryOfProduct::all()->sortDesc();
-        return view('category_of_product.index')->with('products', $category_of_product);
-    }
+
+
+
+     public function index(Request $request)
+     {
+         $productQuery = CategoryOfProduct::query();
+         $categories = Category::all();
+     
+         if ($request->category_id && $request->category_id !== 'all') {
+             $productQuery->where('category_id', $request->category_id)->orderBy('id', 'desc')->paginate(20);
+         }
+     
+         $category_of_product = $productQuery->orderBy('id', 'desc')->paginate(20);
+     
+         return view('category_of_product.index', compact('categories', 'category_of_product', 'request'));
+     }
+     
+
+
 
     /**
      * Show the form for creating a new resource.
@@ -81,7 +95,7 @@ class CategoryOfProductController extends Controller
      */
     public function update(Request $request, $id)
     {
-        
+
 
         $categoryOfProduct = CategoryOfProduct::findOrFail($id);
 

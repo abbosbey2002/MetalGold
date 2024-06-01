@@ -2431,7 +2431,7 @@ img.preview_shape_03 {
     .wrap-work {
         flex-wrap: wrap;
         text-align: center;
-        justify-content: center;
+        /* justify-content: center; */
         align-items: center;
     }
     .d-flex.work_process_card.remove-pad-lef {
