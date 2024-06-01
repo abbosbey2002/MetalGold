@@ -41,7 +41,6 @@
                                         </a></td>
                                     <td>
                                         <div class="d-flex tools">
-                                            <a href="{{ route('orders.edit', ['order' => $order->id]) }}" class="mr-1"><i class="fa fa-edit"></i></a>
                                             <form action="{{ route('orders.destroy', ['order'=> $order->id]) }}" method="post" onsubmit="return confirm('Are you sure you want to delete this order?')">
                                                 @csrf
                                                 @method('DELETE')

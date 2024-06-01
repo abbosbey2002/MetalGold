@@ -14,7 +14,7 @@ class BlogController extends Controller
     public function index()
     {
         $blog = Blog::all()->sortDesc();
-        return view('blog.index')->with('blogs', $blog);
+        return view('admin.blog.index')->with('blogs', $blog);
     }
 
     /**
@@ -22,7 +22,7 @@ class BlogController extends Controller
      */
     public function create()
     {
-        return view('blog.create')->with([
+        return view('admin.blog.create')->with([
             'blogs' => Blog::all(),
         ]);
     }
@@ -63,14 +63,14 @@ class BlogController extends Controller
      */
     public function show(Blog $blog)
     {
-        return view('blog.show')->with([
+        return view('admin.blog.show')->with([
             'blog' => $blog,
         ]);
     }
 
     public function edit(Blog $blog)
     {
-        return view('blog.edit')->with(['blog' => $blog]);
+        return view('admin.blog.edit')->with(['blog' => $blog]);
     }
 
     /**

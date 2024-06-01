@@ -10877,13 +10877,13 @@ div#loading-center-absolute img {
 }
 
 #quote_btn {
-  background-color: #438FF9;
+  background-color: #FF7300;
   padding: 14px 33px !important;
   display: block;
   border-radius: 50px;
   color: #ffffff !important;
   text-transform: capitalize;
-  box-shadow: 0px 6px 15px #438FF973;
+  box-shadow: 0px 6px 15px #c89367;
   -webkit-transition: all 0.5s ease-out 0s;
   -moz-transition: all 0.5s ease-out 0s;
   -ms-transition: all 0.5s ease-out 0s;
@@ -12002,7 +12002,7 @@ img.img-5 {
 }
 
 .cmn_btn {
-  background-color: #438FF9;
+  background-color: #FF7300;
   padding: 12px 50px !important;
   border-radius: 50px;
   color: #ffffff !important;

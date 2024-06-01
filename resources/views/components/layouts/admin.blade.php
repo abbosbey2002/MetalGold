@@ -148,13 +148,13 @@ $visit = DB::table('website_visits')->count();
                                             <li class="nav-item">
                                                 <a href="/admin/category_of_product" class="nav-link" id="link">
                                                     <i class="far fa-circle nav-icon text-danger"></i>
-                                                    <p>Mahsulot turlari</p>
+                                                    <p>Mahsulot turlari productlar</p>
                                                 </a>
                                             </li>
                                             <li class="nav-item">
                                                 <a href="/admin/commit" class="nav-link" id="link">
                                                     <i class="far fa-circle nav-icon text-danger"></i>
-                                                    <p>Mijozlar fikri</p>
+                                                    <p>Mijozlar fikri comentariya</p>
                                                 </a>
                                             </li>
                                         </ul>
@@ -163,7 +163,7 @@ $visit = DB::table('website_visits')->count();
                                 <li class="nav-item">
                                     <a href="/admin/active_client" class="nav-link" id="link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Faol mijozlarimiz</p>
+                                        <p>Faol mijozlarimiz soni</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -175,7 +175,7 @@ $visit = DB::table('website_visits')->count();
                                 <li class="nav-item">
                                     <a href="/admin/contact" class="nav-link" id="link">
                                         <i class="far fa-circle nav-icon"></i>
-                                        <p>Bog'lanish</p>
+                                        <p>Biz bilan Bog'lanish</p>
                                     </a>
                                 </li>
                                 <li class="nav-item">
@@ -186,7 +186,7 @@ $visit = DB::table('website_visits')->count();
                                 </li>
                                 <li class="nav-item">
                                     <a href="/admin/profile" class="nav-link" id="link">
-                                        <i class="far fa-circle nav-icon"></i>
+                                        <i class="far fa-user nav-icon"></i>
                                         <p>Profil</p>
                                     </a>
                                 </li>

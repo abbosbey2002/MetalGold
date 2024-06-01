@@ -42,7 +42,7 @@ class MainController extends Controller
         $blog_text = Blog::latest()->take(1)->get(['title_uz', 'title_ru', 'title_en', 'short_content_uz', 'short_content_ru', 'short_content_en', 'content_uz', 'content_ru', 'content_en']);
         $popular_products = CategoryOfProduct::where('type_id', '=', 1)->paginate(3);
         
-        return view('index', compact(
+        return view('front.index', compact(
             'abouts',
             'homes',
             'contacts',
@@ -74,7 +74,7 @@ class MainController extends Controller
         $contacts = Contact::latest()->take(1)->get();
         $actives = ActiveClient::latest()->take(1)->get();
 
-        return view('about', compact(
+        return view('front.about', compact(
             'abouts',
             'category_of_product',
             'clients',
@@ -95,7 +95,7 @@ class MainController extends Controller
         $contacts = Contact::latest()->take(1)->get();
 
         $categories = Category::orderBy('created_at', 'desc')->take(6)->get(['name_uz', 'name_ru', 'name_en']);
-        return view('blog', compact(
+        return view('front.blog', compact(
             'blogs',
             'categories',
             'links',
@@ -112,7 +112,7 @@ class MainController extends Controller
         $contacts = Contact::latest()->take(1)->get();
 
         $categories = Category::orderBy('created_at', 'desc')->take(6)->get(['name_uz', 'name_ru', 'name_en']);
-        return view('singleBlog', compact('blog', 'categories', 'lastBlogs','links', 'contacts'));
+        return view('front.singleBlog', compact('blog', 'categories', 'lastBlogs','links', 'contacts'));
     }
     public function product()
     {
@@ -121,14 +121,14 @@ class MainController extends Controller
         $contacts = Contact::latest()->take(1)->get();
         $numbers = 1;
 
-        return view('product', compact('links', 'contacts', 'numbers'))->with('products', $products);
+        return view('front.product', compact('links', 'contacts', 'numbers'))->with('products', $products);
     }
     public function contact()
     {
         $links = Link::latest()->take(1)->get();
         $contacts = Contact::latest()->take(1)->get();
 
-        return view('contact', compact('links', 'contacts'));
+        return view('front.contact', compact('links', 'contacts'));
     }
     public function category()
     {
@@ -136,7 +136,7 @@ class MainController extends Controller
         $links = Link::latest()->take(1)->get();
         $contacts = Contact::latest()->take(1)->get();
 
-        return view('category', compact(
+        return view('front.category', compact(
             'categories',
             'links',
             'contacts',
@@ -157,6 +157,6 @@ class MainController extends Controller
 
         
 
-        return view('singleProduct', compact('products', 'links', 'contacts'));
+        return view('front.singleProduct', compact('products', 'links', 'contacts'));
     }
 }

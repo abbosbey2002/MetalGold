@@ -99,7 +99,7 @@ $contacts = \App\Models\Contact::latest()->first();
                     </div>
                     <div class="col-md-10">
                         <div class="row align-items-center text-end">
-                            <div class="col-md-11 col-lg-11 text-end">
+                            <div class="col-md-10 col-lg-10 text-end">
                                 <div class="main_menu">
                                     <nav id="mobile-menu">
                                         <ul>
@@ -115,12 +115,12 @@ $contacts = \App\Models\Contact::latest()->first();
                                 </div>
                                 <!-- <div class="mobile-menu"></div> -->
                             </div>
-                            <div class="col-md-1 d-sm-none d-xl-block">
+                            <div class="col-md-2 col-lg-2 d-sm-none d-xl-block">
                                 <div class="menu_essential">
                                     <div class="quote">
 
                                     </div>
-                                    <div class="lan_currencey">
+                                    <div class="lan_currencey mx-4">
                                         <ul>
                                             <li><a href="#">@if($lang == 'en') Language @endif @if($lang == 'ru') язык @endif @if($lang == 'uz') Til @endif:</a></li>
                                             <li id="showcurrencey"><a href="javascript:void();">

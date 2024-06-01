@@ -14,7 +14,7 @@ class AboutController extends Controller
     public function index()
     {
         $about = About::all()->sortDesc();
-        return view('about.index')->with('abouts', $about);
+        return view('admin.about.index')->with('abouts', $about);
     }
 
     /**
@@ -22,7 +22,7 @@ class AboutController extends Controller
      */
     public function create()
     {
-        return view('about.create')->with([
+        return view('admin.about.create')->with([
             'abouts' => About::all(),
         ]);
     }
@@ -59,14 +59,14 @@ class AboutController extends Controller
      */
     public function show(About $about)
     {
-        return view('about.show')->with([
+        return view('admin.about.show')->with([
             'about' => $about,
         ]);
     }
 
     public function edit(About $about)
     {
-        return view('about.edit')->with(['about' => $about]);
+        return view('admin.about.edit')->with(['about' => $about]);
     }
 
     /**

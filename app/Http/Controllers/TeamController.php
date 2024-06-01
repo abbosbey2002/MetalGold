@@ -15,7 +15,7 @@ class TeamController extends Controller
     public function index()
     {
         $team = Team::all()->sortDesc();
-        return view('team.index')->with('teams', $team);
+        return view('admin.team.index')->with('teams', $team);
     }
 
     /**
@@ -23,7 +23,7 @@ class TeamController extends Controller
      */
     public function create()
     {
-        return view('team.create')->with([
+        return view('admin.team.create')->with([
             'teams' => Team::all(),
         ]);
     }
@@ -60,14 +60,14 @@ class TeamController extends Controller
      */
     public function show(Team $team)
     {
-        return view('team.show')->with([
+        return view('admin.team.show')->with([
             'team' => $team,
         ]);
     }
 
     public function edit(Team $team)
     {
-        return view('team.edit')->with(['team' => $team]);
+        return view('admin.team.edit')->with(['team' => $team]);
     }
 
     /**

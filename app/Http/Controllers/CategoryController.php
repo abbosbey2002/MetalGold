@@ -15,7 +15,7 @@ class CategoryController extends Controller
     public function index()
     {
         $category = Category::all()->sortDesc();
-        return view('category.index')->with('categories', $category);
+        return view('admin.category.index')->with('categories', $category);
     }
 
     /**
@@ -23,7 +23,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create')->with([
+        return view('admin.category.create')->with([
             'categories' => Category::all(),
         ]);
     }
@@ -55,14 +55,14 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        return view('category.show')->with([
+        return view('admin.category.show')->with([
             'category' => $category,
         ]);
     }
 
     public function edit(Category $category)
     {
-        return view('category.edit')->with(['category' => $category]);
+        return view('admin.category.edit')->with(['category' => $category]);
     }
 
     /**

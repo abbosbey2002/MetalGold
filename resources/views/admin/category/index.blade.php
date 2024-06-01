@@ -12,7 +12,7 @@
                             <tr>
                                 <th scope="col">Id</th>
                                 <th scope="col">mahsulot nomi</th>
-                                
+
                                 <th scope="col">photo</th>
                                 <th scope="col">operatsiyalar</th>
                             </tr>
@@ -22,7 +22,7 @@
                                 <tr>
                                     <td>{{ $category->id }}</td>
                                     <td>{{ $category->name_uz }}</td>
-                                    
+
                                     <td><img src="{{ asset('storage/' . $category->photo)  }}" alt="" style="width: 80px;"></td>
                                     <td>
                                         <div class="d-flex tools">

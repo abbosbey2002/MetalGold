@@ -15,7 +15,7 @@ class CommitController extends Controller
     public function index()
     {
         $commit = Commit::all()->sortDesc();
-        return view('commit.index')->with('commits', $commit);
+        return view('admin.commit.index')->with('commits', $commit);
     }
 
     /**
@@ -23,7 +23,7 @@ class CommitController extends Controller
      */
     public function create()
     {
-        return view('commit.create')->with([
+        return view('admin.commit.create')->with([
             'commits' => Commit::all(),
         ]);
     }
@@ -56,14 +56,14 @@ class CommitController extends Controller
      */
     public function show(Commit $commit)
     {
-        return view('commit.show')->with([
+        return view('admin.commit.show')->with([
             'commits' => $commit,
         ]);
     }
 
     public function edit(Commit $commit)
     {
-        return view('commit.edit')->with(['commit' => $commit]);
+        return view('admin.commit.edit')->with(['commit' => $commit]);
     }
 
     /**

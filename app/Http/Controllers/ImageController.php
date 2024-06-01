@@ -14,7 +14,7 @@ class ImageController extends Controller
     public function index()
     {
         $image = Image::all()->sortDesc();
-        return view('image.index')->with('images', $image);
+        return view('admin.image.index')->with('images', $image);
     }
 
     /**
@@ -22,7 +22,7 @@ class ImageController extends Controller
      */
     public function create()
     {
-        return view('image.create')->with([
+        return view('admin.image.create')->with([
             'images' => Image::all(),
         ]);
     }
@@ -52,7 +52,7 @@ class ImageController extends Controller
 
     public function edit(Image $image)
     {
-        return view('image.edit')->with(['images' => $image]);
+        return view('admin.image.edit')->with(['images' => $image]);
     }
 
     /**

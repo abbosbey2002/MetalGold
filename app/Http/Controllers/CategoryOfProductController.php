@@ -16,7 +16,7 @@ class CategoryOfProductController extends Controller
     public function index()
     {
         $category_of_product = CategoryOfProduct::all()->sortDesc();
-        return view('category_of_product.index')->with('products', $category_of_product);
+        return view('admin.category_of_product.index')->with('products', $category_of_product);
     }
 
     /**
@@ -24,7 +24,7 @@ class CategoryOfProductController extends Controller
      */
     public function create()
     {
-        return view('category_of_product.create')->with([
+        return view('admin.category_of_product.create')->with([
             'products' => CategoryOfProduct::all(),
             'populars' => Popular::all(),
             'categories' => Category::all(),
@@ -64,7 +64,7 @@ class CategoryOfProductController extends Controller
      */
     public function show(CategoryOfProduct $category_of_product)
     {
-        return view('category_of_product.show')->with([
+        return view('admin.category_of_product.show')->with([
             'product' => $category_of_product,
         ]);
     }
@@ -73,7 +73,7 @@ class CategoryOfProductController extends Controller
     {
         $categories = Category::all();
         $populars = Popular::all();
-        return view('category_of_product.edit')->with(['product' => $category_of_product, 'categories' => $categories, 'populars' => $populars]);
+        return view('admin.category_of_product.edit')->with(['product' => $category_of_product, 'categories' => $categories, 'populars' => $populars]);
     }
 
     /**

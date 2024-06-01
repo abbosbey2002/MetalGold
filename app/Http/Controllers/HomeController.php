@@ -14,7 +14,7 @@ class HomeController extends Controller
     public function index()
     {
         $home = Home::all();
-        return view('home.index')->with('homes', $home);
+        return view('admin.home.index')->with('homes', $home);
     }
 
     /**
@@ -22,7 +22,7 @@ class HomeController extends Controller
      */
     public function create()
     {
-        return view('home.create')->with([
+        return view('admin.home.create')->with([
             'homes' => Home::all(),
         ]);
     }
@@ -85,14 +85,14 @@ class HomeController extends Controller
      */
     public function show(Home $home)
     {
-        return view('home.show')->with([
+        return view('admin.home.show')->with([
             'home' => $home,
         ]);
     }
 
     public function edit(Home $home)
     {
-        return view('home.edit')->with(['item' => $home]);
+        return view('admin.home.edit')->with(['item' => $home]);
     }
 
     /**

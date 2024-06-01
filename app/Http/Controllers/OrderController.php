@@ -15,7 +15,7 @@ class OrderController extends Controller
     public function index()
     {
         $orders = Order::latest()->Paginate(10);
-        return view('order.index')->with('orders', $orders);
+        return view('admin.order.index')->with('orders', $orders);
     }
 
     /**
@@ -23,7 +23,7 @@ class OrderController extends Controller
      */
     public function create()
     {
-        return view('orders.create');
+        return view('admin.orders.create');
     }
 
     /**
@@ -42,7 +42,7 @@ class OrderController extends Controller
      */
     public function show(Order $order)
     {
-        return view('order.show', array('order' => $order));
+        return view('admin.order.show', array('order' => $order));
     }
 
     /**
@@ -50,7 +50,7 @@ class OrderController extends Controller
      */
     public function edit(Order $order)
     {
-        return view('order.edit', array('order' => $order));
+        return view('admin.order.edit', array('order' => $order));
     }
 
     /**

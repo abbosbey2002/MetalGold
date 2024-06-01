@@ -2,7 +2,7 @@
 
     <div class="card">
         <div class="py-4 mx-3">
-        <div class="card-header"><h2><b>Edit About</b></h2></div>
+            <div class="card-header"><h2><b>Edit About</b></h2></div>
 
             <div class="contact-form">
                 <div id="success"></div>
@@ -82,27 +82,44 @@
                             </div>
                             <!-- Image upload field -->
                             <div class="mb-3">
-                                <label for="photo" class="form-label">Rasm hajmi: Custom Size</label>
+                                <label for="photo" class="form-label">Rasm hajmi: 397:440</label>
                                 <div class="custom-file">
-                                    <input type="file" class="custom-file-input" id="photo" name="photo" onchange="displayFileName()">
+                                    <input type="file" class="custom-file-input" id="photo" name="photo" onchange="displayFileNameAndPreview()">
                                     <label class="custom-file-label" for="photo" id="photoLabel">Yangi Rasm Tanlash</label>
                                 </div>
-                                @if ($about->photo)
-                                <div class="mt-2">
-                                    <img src="{{ asset('storage/' . $about->photo) }}" alt="Current Image" style="width: 90px;">
+                                <div class="mt-2" id="photoPreviewContainer">
+                                    @if ($about->photo)
+                                        <img src="{{ asset('storage/' . $about->photo) }}" alt="Current Image" id="photoPreview" style="width: 90px;">
+                                    @endif
                                 </div>
-                                @endif
                                 @error('photo')
                                 <div class="text-danger">Faylni yuklashni unutdingiz: {{ $message }}</div>
                                 @enderror
                             </div>
 
                             <script>
-                                function displayFileName() {
+                                function displayFileNameAndPreview() {
                                     const input = document.getElementById('photo');
                                     const label = document.getElementById('photoLabel');
-                                    const fileName = input.files[0].name;
-                                    label.textContent = fileName;
+                                    const photoPreviewContainer = document.getElementById('photoPreviewContainer');
+
+                                    const file = input.files[0];
+                                    if (file) {
+                                        label.textContent = file.name;
+
+                                        const reader = new FileReader();
+                                        reader.onload = function(e) {
+                                            let img = document.getElementById('photoPreview');
+                                            if (!img) {
+                                                img = document.createElement('img');
+                                                img.id = 'photoPreview';
+                                                img.style.width = '90px';
+                                                photoPreviewContainer.appendChild(img);
+                                            }
+                                            img.src = e.target.result;
+                                        }
+                                        reader.readAsDataURL(file);
+                                    }
                                 }
                             </script>
 

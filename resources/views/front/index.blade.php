@@ -19,23 +19,24 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         Contact Info
                     </h4>
                     <ul>
-                        <li><i class="fal fa-map"></i>
-                            <a href="#">12/A, Mirnada City Tower, NYC</a>
-                        </li>
-
-                        <li><i class="fal fa-clock"></i>
-                            <a href="#">Mon - Fri: 9.00am - 11.00pm</a>
-                        </li>
-
-                        <li><i class="fal fa-phone"></i><a href="tell:+876864764764">
-                                +876 864 764 764
-                            </a>
-                        </li>
-
-                        <li><i class="far fa-envelope"></i><a href="mailto:info@webmail.com">
-                                info@webmail.com
-                            </a>
-                        </li>
+                        @foreach($contacts as $contact)
+                            <li><i class="far fa-location"></i><a href="mailto:info@webmail.com">
+                                    Bunyodkor shox ko'chasi 2-uy
+                                </a>
+                            </li>
+                            <li><i class="far fa-clock"></i><a href="mailto:info@webmail.com">
+                                    Murojat qilish vaqti 08:00 - 20:00
+                                </a>
+                            </li>
+                            <li><i class="far fa-phone"></i><a href="mailto:info@webmail.com">
+                                    {{ $contact->phone_number }}
+                                </a>
+                            </li>
+                            <li><i class="far fa-envelope"></i><a href="mailto:info@webmail.com">
+                                    {{ $contact->email }}
+                                </a>
+                            </li>
+                        @endforeach
                     </ul>
 
                 </div>
