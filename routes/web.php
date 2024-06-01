@@ -55,8 +55,11 @@ Route::middleware(['checkRole:admin', 'auth'])->group(function () {
         Route::resource('/team', TeamController::class);
         Route::get('/image', [ImageController::class, 'index'])->name('image-index');
         Route::resource('/image', ImageController::class);
-        Route::get('/category_of_product', [CategoryOfProductController::class, 'index'])->name('category-product-index');
+
+        Route::post('/category_of_product', [CategoryOfProductController::class, 'index'])->name('category_of_product-index');
+
         Route::resource('/category_of_product', CategoryOfProductController::class);
+
         Route::get('/commit', [CommitController::class, 'index'])->name('commit-index');
         Route::resource('/commit', CommitController::class);
         Route::get('/active_client', [ActiveClientController::class, 'index'])->name('active_client-index');
@@ -97,7 +100,7 @@ Route::get('/category', [MainController::class, 'category'])->name('category');
 Route::get('/product/{product}', [MainController::class, 'products'])->name('products');
 
 Route::post('orders.store', [OrderController::class, 'store'])->name('orders.store');
-Route::get('/{lang}', function ($lang){
+Route::get('/{lang}', function ($lang) {
 
     session(['lang' => $lang]);
 

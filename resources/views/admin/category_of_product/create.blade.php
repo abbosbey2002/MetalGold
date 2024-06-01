@@ -59,7 +59,7 @@
 
                             <!-- Additional Fields -->
                             <div class="mb-3">
-                                <label for="size">Size:</label>
+                                <label for="size">Marka:</label>
                                 <input type="text" class="form-control" name="size" placeholder="Size" value="{{ old('size') }}" />
                                 @error('size')
                                 <small class="text-danger">Size is required</small>

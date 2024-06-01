@@ -102,6 +102,6 @@ class CategoryController extends Controller
         {
             Storage::delete($category->photo);
         }
-        return redirect()->route('category.index');
+        return redirect()->back();
     }
 }
