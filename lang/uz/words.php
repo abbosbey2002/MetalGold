@@ -39,6 +39,6 @@ return
         'MonFri' => 'Dushanba - Juma',
         'SatSun' => 'Shanba - Yakshanba',
         'connect' => "Biz doimo yangi mijozlar bilan ishlashga intilamiz. Agar siz biz bilan ishlashga qiziqsangiz, quyidagi usullardan biri orqali bog'laning.",
-        'getTouch' => "Biz bilan bog'lanish"
-
+        'getTouch' => "Biz bilan bog'lanish",
+        'trustClient' => "BIZGA ISHONCH BILDIRGAN MIJOZLAR SONI"
     ];

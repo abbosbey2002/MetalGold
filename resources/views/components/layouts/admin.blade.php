@@ -48,13 +48,7 @@ $visit = DB::table('website_visits')->count();
                     <a class="nav-link" data-widget="pushmenu" href="#"><i class="fas fa-bars"></i></a>
                 </li>
             </ul>
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <p class="nav-link" style="color:brown">saytga tashrif buyuruvchilar soni: {{$visit}} ta</p>
-                </li>
-            </ul>
-
-
+           
         </nav>
         <!-- /.navbar -->
 

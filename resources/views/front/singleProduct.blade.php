@@ -29,7 +29,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <div class="row">
                 <div class="col-md-12">
                     <div class="breadcrumb_content">
-                        <h3>{{__('words.category')}}</h3>
+                        <h3>{{__('words.category')}}: {{$category['name_'.$lang]}}</h3>
                         <ul>
                             <p>
                                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
@@ -37,12 +37,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
                                 optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
                                 obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
-                                nihil, eveniet aliquid culpa officia aut! Impedit sit sunt quaerat, odit,
-                                tenetur error, harum nesciunt ipsum debitis quas aliquid. Reprehenderit,
-                                quia. Quo neque error repudiandae fuga? Ipsa laudantium molestias eos
-                                sapiente officiis modi at sunt excepturi expedita sint? Sed quibusdam
-                                recusandae alias error harum maxime adipisci amet laborum. Perspiciatis
-                                minima nesciunt dolorem! Officiis iure rerum voluptates a cumque velit
+                                
                             </p>
                             <li><a href="{{ route('index')}}">Home<i class="far fa-chevron-right"></i></a></li>
                             <li><a href="{{ route('product')}}">{{__('words.category')}}</a></li>
@@ -209,6 +204,11 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             // Create a products array in JavaScript
             const products = @json($products);
 
+            let currentProductPrice = 0;
+            let metr_tonna = 0;
+            let tonna_metr = 0;
+            let weightPerMeter = 0;
+
             function xarid(productId) {
                 // Find the product by ID
                 const product = products.find(p => p.id === productId);
@@ -223,16 +223,17 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 
                 // Populate modal with product details
                 document.getElementById('productId').value = productId;
-
-                document.getElementById('productName').innerText = product['name_{{ $lang }}'];
+                document.getElementById('productName').innerText = product[`name_{{ $lang }}`];
                 document.getElementById('productPrice').innerText = "Price per kg: " + product.price;
 
                 // Set global variable for current product price
                 currentProductPrice = product.price;
-            }
+                metr_tonna = product.metr_tonna;
+                tonna_metr = product.tonna_metr;
 
-            let currentProductPrice = 0;
-            const weightPerMeter = 1 / 0.7;
+                // Calculate weight per meter
+                weightPerMeter = tonna_metr > 0 ? metr_tonna / tonna_metr : 0;
+            }
 
             function calculateFromLength() {
                 const length = parseFloat(document.getElementById('length').value);
@@ -268,7 +269,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     return;
                 }
 
-                const totalLength = weight / weightPerMeter;
+                const totalLength = weightPerMeter > 0 ? weight / weightPerMeter : 0;
                 const totalPrice = weight * currentProductPrice;
 
                 lengthInput.value = totalLength.toFixed(2);
@@ -289,14 +290,15 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     return;
                 }
 
-                const totalWeight = price / currentProductPrice;
-                const totalLength = totalWeight / weightPerMeter;
+                const totalWeight = currentProductPrice > 0 ? price / currentProductPrice : 0;
+                const totalLength = weightPerMeter > 0 ? totalWeight / weightPerMeter : 0;
 
                 weightInput.value = totalWeight.toFixed(2);
                 lengthInput.value = totalLength.toFixed(2);
                 resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy uzunlik: ${totalLength.toFixed(2)} metr`;
             }
         </script>
+
 
 
 

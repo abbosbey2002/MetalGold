@@ -108,7 +108,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <div class="col-md-9 col-xs-9">
                                     <div class="shoot_icon">
                                         <img src="./assets/img/video/vd-or-2.png" alt="">
-                                        <h5>OUR TRUSTED ACTIVE CLIENTS</h5>
+                                        <h5>{{__('words.trustClient')}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-3 col-xs-3">
@@ -125,8 +125,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <div class="col-md-9">
                                     <div class="shoot_icon shoot_icon_two">
                                         <img src="./assets/img/video/ach-icon2.png" alt="">
-                                        <h5>our Experienced
-                                            Members</h5>
+                                        <h5>{{ __('words.expStaff')}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-3">
@@ -143,8 +142,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                                 <div class="col-md-9">
                                     <div class="shoot_icon">
                                         <img src="./assets/img/video/vd-or-1.png" alt="">
-                                        <h5>Years Providing
-                                            Services</h5>
+                                        <h5>{{__('words.yearService')}}</h5>
                                     </div>
                                 </div>
                                 <div class="col-md-3">

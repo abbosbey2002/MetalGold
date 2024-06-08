@@ -25,8 +25,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                     <div class="breadcrumb_content">
                         <h3>Blog</h3>
                         <ul>
-                            <li><a href="index.html">{{ __('words.home') }}<i class="far fa-chevron-right"></i></a></li>
-                            <li><a href="#">blog</a> </li>
+                            <li><a href="{{ route('index')}}">{{ __('words.home') }}<i class="far fa-chevron-right"></i></a></li>
+                            <li><a href="{{ route('blog')}}">blog</a> </li>
                         </ul>
                     </div>
                 </div>

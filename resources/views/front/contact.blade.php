@@ -9,12 +9,12 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         <div class="row align-items-center justify-content-between">
             <div class="col-2">
                 <div class="mobile-logo">
-                    <a href="index.html"><img src="./assets/img/logo/logo.png" alt=""></a>
+                    <a href="{{ route('index')}}"><img src="./assets/img/logo/logo.png" alt=""></a>
                 </div>
             </div>
             <div class="col-8 text-end">
                 <div class="icon">
-                    <a href="#" class="open-mobile-menu"><i class="far fa-bars"></i></a>
+                    <a href="{{ route('contact')}}" class="open-mobile-menu"><i class="far fa-bars"></i></a>
                     <!-- <div class="mobile-menu">
                         </div> -->
                 </div>
@@ -82,10 +82,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
         <div class="row">
             <div class="col-md-12">
                 <div class="breadcrumb_content">
-                    <h3>contact us</h3>
+                    <h3>{{ __('words.contact')}}</h3>
                     <ul>
-                        <li><a href="index.html">Home<i class="far fa-chevron-right"></i></a></li>
-                        <li><a href="#">contact</a> </li>
+                        <li><a href="{{ route('index')}}">Home<i class="far fa-chevron-right"></i></a></li>
+                        <li><a href="{{ route('contact')}}">contact</a> </li>
                     </ul>
                 </div>
             </div>

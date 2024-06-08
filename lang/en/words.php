@@ -39,5 +39,5 @@ return
         'SatSun' => 'Saturday - Sunday',
         'connect' => "We're always on the lookout to work with new clients. If you're interested in working with us, please get in touch in one of the following ways.",
         'getTouch' => 'Get in touch',
-
+        'trustClient' => 'OUR TRUSTED ACTIVE CLIENTS',
     ];
