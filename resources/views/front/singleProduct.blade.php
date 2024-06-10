@@ -56,6 +56,44 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 
 
 
+    <!-- pricing area start  -->
+    <!-- pricing area start  -->
+    <div class="pricing_area mobile-res-mb py-3 category1" style="background-color: #f1f1f1">
+        <div class="container">
+            <div class="row">
+                <div class="table-responsive">
+                    <table class="table table-bordered">
+                        <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Marka</th>
+                            <th>Theory</th>
+                            <th>Manufacturer</th>
+                            <th>Unit</th>
+                            <th>Price</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @foreach ($products as $product)
+                            <tr>
+                                <td>{{ $product->{'name_'.$lang} }}</td>
+                                <td>{{ $product->size }}</td>
+                                <td>{{ $product->metr_tonna }}</td>
+                                <td>{{ $product->tonna_metr }}</td>
+                                <td>{{ $product->manufacturer }}</td>
+                                <td>
+                                    {{ $product->price }} so'm
+                                    <button onclick="xarid({{ $product->id }})" type="button" class="btn btn-danger mx-2 xarid-btn" style="border: 1px solid #FF7300; background-color: #FF7300" data-bs-toggle="modal" data-bs-target="#purchaseModal">Xarid</button>
+                                </td>
+                            </tr>
+                        @endforeach
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
 
     <div class="pricing_area mobile-res-mb py-3 category2" style="background-color: #f1f1f1">
         <div class="container">
@@ -63,7 +101,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                 <div class="col-md-12">
                     <div class="d-flex animate__fadeIn" data-animation="fadeInUp" data-delay="3s" data-wow-duration="3s">
                         <div class="col-md-2"><b>Name</b></div>
-                        <div class="col-md-2"><b>Size</b></div>
+                        <div class="col-md-2"><b>Marka</b></div>
                         <div class="col-md-2"><b>Metr -Tonna</b></div>
                         <div class="col-md-2"><b>Tonna - Metr</b></div>
                         <div class="col-md-2"><b>Manufacturer</b></div>
@@ -87,7 +125,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             <div class="col-md-2"><b>{{ $product->manufacturer }}</b></div>
                             <div class="col-md-2">
                                 <b>{{ $product->price}}</b>
-                                <button onclick="xarid({{ $product->id }})" type="button" class="btn btn-danger mx-2 xarid-btn" data-bs-toggle="modal" data-bs-target="#purchaseModal">Xarid</button>
+                                <button onclick="xarid({{ $product->id }})" type="button" class="btn btn-danger mx-2 xarid-btn" style="border: 1px solid #FF7300; background-color: #FF7300" data-bs-toggle="modal" data-bs-target="#purchaseModal">Xarid</button>
                             </div>
                         </div>
                     </div>
@@ -96,9 +134,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             </div>
         </div>
         <!-- Pricing area end -->
+    </div>
 
         <!-- Modal -->
-        <div class="modal fade" style="margin-top: 90px;" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
+        <div class="modal fade" style="margin-top: 70px;" id="purchaseModal" tabindex="-1" aria-labelledby="purchaseModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -108,7 +147,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     <div class="modal-body">
                         <!-- Display Product Name and Price -->
                         <h4 id="productName"></h4>
-                        <p id="productPrice"></p>
+                        <p id="productPrice" style="display: none"></p>
 
                         <!-- Form for user input -->
                         <form id="purchaseForm" action="{{ route('orders.store')}}" method="post" onsubmit="return confirm('Maxsulotni o\'zlashtirishga ruxsat berasizmi')">
@@ -139,15 +178,17 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                         <input type="text" class="form-control" name="total_length" id="length" placeholder="Armatura uzunligini kiriting" oninput="calculateFromLength()" required>
                                     </div>
                                 </div>
+                                <div class="col md-6">
+                                    <div class="mb-3">
+                                        <label for="price" class="form-label">Narx (so'm):</label>
+                                        <input type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label id="result" class="form-label">O'zlashtirish uchun bosing</label>
+                                    <button type="submit" onclick="sendOrderInfo()" class="btn btn-primary mb-5">O'zlashtirish</button>
+                                </div>
                             </div>
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Narx (so'm):</label>
-                                <input type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
-                            </div>
-                            <div class="mt-4 text-center" style="display:none;">
-                                <textarea id="result" class="form-control" rows="4"></textarea>
-                            </div>
-                            <button type="submit" onclick="sendOrderInfo()" class="btn btn-primary mt-3">Submit</button>
                         </form>
                     </div>
                 </div>
@@ -381,7 +422,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             <input type="text" id="phone_number_footer" required class="form-control" placeholder="+998" value="+998">
                         </div>
                         <div class="input-group mt-3">
-                            <button type="submit" onclick="sendphone()" class="btn btn-primary form-control">Yuborish</button>
+                            <button type="submit" onclick="sendphone()" class="btn btn-primary form-control" style="background-color: #FF7300;border: 1px solid #FF7300">Yuborish</button>
                         </div>
                     </div>
 
