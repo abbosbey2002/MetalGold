@@ -122,16 +122,16 @@ $contacts = \App\Models\Contact::latest()->first();
                                     </div>
                                     <div class="lan_currencey mx-2">
                                         <ul>
-                                            <li><a href="/">@if($lang == 'en') Language @endif @if($lang == 'ru') язык @endif @if($lang == 'uz') Til @endif:</a></li>
+                                            <li><a href="#">@if($lang == 'en') English @endif @if($lang == 'ru') Русский @endif @if($lang == 'uz') Uzbekcha @endif:</a></li>
                                             <li id="showcurrencey"><a href="javascript:void();">
-                                                    @if($lang == 'en') En @endif
+                                                    @if($lang == 'en') Eng @endif
                                                     @if($lang == 'ru') Руc @endif
                                                     @if($lang == 'uz') Uzb @endif
                                                 </a><i class="far fa-chevron-down"></i>
                                                 <ul class="currencey">
                                                     <li><a class="dropdown-item" href="/uz">Uzb</a></li>
                                                     <li><a class="dropdown-item" href="/ru">Руc</a></li>
-                                                    <li><a class="dropdown-item" href="/en">En</a></li>
+                                                    <li><a class="dropdown-item" href="/en">Eng</a></li>
                                                 </ul>
                                             </li>
                                         </ul>
