@@ -120,9 +120,9 @@ $contacts = \App\Models\Contact::latest()->first();
                                     <div class="quote">
 
                                     </div>
-                                    <div class="lan_currencey mx-4">
+                                    <div class="lan_currencey mx-2">
                                         <ul>
-                                            <li><a href="#">@if($lang == 'en') Language @endif @if($lang == 'ru') язык @endif @if($lang == 'uz') Til @endif:</a></li>
+                                            <li><a href="/">@if($lang == 'en') Language @endif @if($lang == 'ru') язык @endif @if($lang == 'uz') Til @endif:</a></li>
                                             <li id="showcurrencey"><a href="javascript:void();">
                                                     @if($lang == 'en') En @endif
                                                     @if($lang == 'ru') Руc @endif
