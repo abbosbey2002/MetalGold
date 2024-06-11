@@ -15944,7 +15944,7 @@ img.clients_11 {
 .price p {
   display: inline-block;
   height: 67px;
-  width: 97px;
+  width: 126px !important;
   background: #ffffff;
   text-align: center;
   line-height: 72px;

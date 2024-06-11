@@ -4,16 +4,17 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 ?>
 
 <x-layouts.main>
-<style>
-    .w-94{
-        width:94%;
-    }
-    .aaa{
-        padding: 2px 10px !important;
-        border:1px solid black;
-        border-radius: 8px;
-    }
-</style>
+    <style>
+        .w-94 {
+            width: 94%;
+        }
+
+        .aaa {
+            padding: 2px 10px !important;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+    </style>
     <div class="breadcrumb_area">
         <div class="breadcrumb-shapes">
             <img class="shape_01 position-absolute" src="/assets/img/slide/sl-1.png" alt="shape_01">
@@ -40,15 +41,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     <div class="breadcrumb_content">
                         <h3>{{__('words.category')}}: {{$category['name_'.$lang]}}</h3>
                         <ul>
-                            <p>
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime mollitia,
-                                molestiae quas vel sint commodi repudiandae consequuntur voluptatum laborum
-                                numquam blanditiis harum quisquam eius sed odit fugiat iusto fuga praesentium
-                                optio, eaque rerum! Provident similique accusantium nemo autem. Veritatis
-                                obcaecati tenetur iure eius earum ut molestias architecto voluptate aliquam
 
-                            </p>
-                            <li><a href="{{ route('index')}}">Home<i class="far fa-chevron-right"></i></a></li>
+                            <li><a href="{{ route('index')}}">{{__('words.home')}}<i class="far fa-chevron-right"></i></a></li>
                             <li><a href="{{ route('product')}}">{{__('words.category')}}</a></li>
                         </ul>
                     </div>
@@ -60,14 +54,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 
     <div class="pricing_area mb-120 mobile-res-mb">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    <div class="section_wrapper section_wrapper_mobile text-center mb-60">
-                        <h4 class="sub_title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2s" data-wow-duration="3s">Product table</h4>
-                        <h2 class="title wow animate__fadeIn" data-animation="fadeInUp" data-delay="2.5s" data-wow-duration="3s">our product</h2>
-                    </div>
-                </div>
-            </div>
+
             <div class="row align-items-center">
                 @foreach ($products as $product)
                 <div class="col-md-12">
@@ -75,19 +62,28 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                         <div class="price_img">
                             <img src="/storage/{{$category->photo}}" style="height: 120px;" alt="">
                             <div class="price">
-                                <p>{{$product->price}}</p>
+                                <p>{{ $product->price/1000000 }} mln</p>
                             </div>
                         </div>
                         <div class="price_content">
                             <h4>{{ $product->{'name_'.$lang} }}</h4>
                             <div>
-                                <div class=" mt-2 w-94 justify-content-between d-flex">
-                                    <p class=" px-1 aaa">  <b>Size:</b> {{ $product->size}}</p>
-                                    <p class=" px-1 aaa"><b>Metr -Tonna:</b> {{ $product->metr_tonna}}</p>
-                                    <p class="text-start px-1 aaa"> <b>Tonna - Metr: </b>{{$product->tonna_metr}}</p>
-                                    <p class="px-1 aaa"> <b>Manufacturer: </b>{{$product->manufacturer}}</p>
+                                <div class=" mt-2  justify-content-between d-flex">
+                                    <div class="row justify-content-between">
+                                        <div class="col-md-3">
+                                            <p class="  aaa"> Size: <br>{{ $product->size}}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class=" aaa">Metr -Tonna: <br> {{ $product->metr_tonna}}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class=" aaa"> Tonna - Metr: {{$product->tonna_metr}}</p>
+                                        </div>
+                                        <div class="col-md-3">
+                                            <p class=" aaa"> Manufacturer: {{$product->manufacturer}}</p>
+                                        </div>
+                                    </div>
                                 </div>
-                        
                             </div>
                         </div>
                         <div class="choose_plan">
@@ -112,11 +108,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <!-- Display Product Name and Price -->
                     <h4 id="productName"></h4>
                     <p id="productPrice"></p>
-
-                    <!-- Form for user input -->
                     <form id="purchaseForm" action="{{ route('orders.store')}}" method="post" onsubmit="return confirm('Maxsulotni o\'zlashtirishga ruxsat berasizmi')">
                         @csrf
                         <div class="row">
@@ -124,7 +117,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             <div class="col-md-6">
                                 <div class="mb-3">
                                     <label for="fullName" class="form-label">Full Name</label>
-                                    <input type="text" name="name" class="form-control" id="fullName" required>
+                                    <input type="text" name="name" class="form-control" id="fullName" placeholder="ismingizni kiriting" required>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -138,18 +131,19 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                     <label for="weight" class="form-label">Vazn (kg):</label>
                                     <input type="text" class="form-control" name="total_weight" id="weight" placeholder="Armatura vaznini kiriting" oninput="calculateFromWeight()" required>
                                 </div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="mb-3">
-                                    <label for="length" class="form-label">Uzunlik (metr):</label>
+                                    <label for="weight" disabled class="form-label">Uzunligi (Metr):</label>
                                     <input type="text" class="form-control" name="total_length" id="length" placeholder="Armatura uzunligini kiriting" oninput="calculateFromLength()" required>
                                 </div>
                             </div>
                         </div>
-                        <div class="mb-3">
-                            <label for="price" class="form-label">Narx (so'm):</label>
-                            <input type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
-                        </div>
+                            <div class="mb-3">
+                                <label for="price" class="form-label">Narx (so'm):</label>
+                                <input disabled type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
+                            </div>
                         <div class="mt-4 text-center" style="display:none;">
                             <textarea id="result" class="form-control" rows="4"></textarea>
                         </div>
@@ -168,15 +162,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             const price = document.getElementById('price').value;
             const productName = document.getElementById('productName').innerText;
 
-
             if (!fullName || !phoneNumber || !weight || !length || !price) {
                 alert('Iltimos, barcha maydonlarni to\'ldiring.');
                 return;
             }
 
             const message = `Buyurtma Yaratildi:\n\nMahsulot nomi: ${productName}\nXaridor ismi: ${fullName}\nTelefon Raqam: ${phoneNumber}\nKilogram: ${weight} kg\nUzunligi: ${length} m\nPrice: ${price} so'm`;
-            const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY'; // Bu yerga o'zingizning bot tokeningizni qo'ying
-            const telegramChatId = '6583641407'; // Bu yerga o'zingizning chat ID ni qo'ying
+            const telegramBotToken = '7217681658:AAGzxilWkKBQqgxsA9Nte_T3viv4I7c2TkY';
+            const telegramChatId = '-4236704302';
 
             const url = `https://api.telegram.org/bot${telegramBotToken}/sendMessage`;
             const data = {
@@ -209,10 +202,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                     alert('Xatolik yuz berdi. Iltimos, qaytadan urinib ko\'ring.');
                 });
         }
-    </script>
 
-    <script>
-        // Create a products array in JavaScript
         const products = @json($products);
 
         let currentProductPrice = 0;
@@ -221,10 +211,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         let weightPerMeter = 0;
 
         function xarid(productId) {
-            // Find the product by ID
             const product = products.find(p => p.id === productId);
 
-            // Clear input fields
             document.getElementById('fullName').value = '';
             document.getElementById('phoneNumber').value = '';
             document.getElementById('length').value = '';
@@ -232,18 +220,18 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             document.getElementById('price').value = '';
             document.getElementById('result').value = '';
 
-            // Populate modal with product details
             document.getElementById('productId').value = productId;
             document.getElementById('productName').innerText = product[`name_{{ $lang }}`];
-            document.getElementById('productPrice').innerText = "Price per kg: " + product.price;
+            document.getElementById('productPrice').innerText = "Price per tonna: " + product.price;
 
-            // Set global variable for current product price
             currentProductPrice = product.price;
             metr_tonna = product.metr_tonna;
             tonna_metr = product.tonna_metr;
+            console.log(tonna_metr);
+            console.log(metr_tonna);
 
-            // Calculate weight per meter
-            weightPerMeter = tonna_metr > 0 ? metr_tonna / tonna_metr : 0;
+            // Calculate weight per meter based on the database values
+            weightPerMeter = metr_tonna;
         }
 
         function calculateFromLength() {
@@ -252,7 +240,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             const priceInput = document.getElementById('price');
             const resultDiv = document.getElementById('result');
 
-            if (isNaN(length) || length <= 0) {
+            if (isNaN(length) || length <= 0 || weightPerMeter === 0) {
                 weightInput.value = '';
                 priceInput.value = '';
                 resultDiv.value = 'Iltimos, to\'g\'ri uzunlik qiymatini kiriting.';
@@ -260,11 +248,14 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             }
 
             const totalWeight = length * weightPerMeter;
-            const totalPrice = totalWeight * currentProductPrice;
+            const totalPrice = totalWeight * currentProductPrice/1000;
+            const formattedPrice = totalPrice.toLocaleString('uz-UZ', { style: 'currency', currency: 'UZS' });
 
-            weightInput.value = totalWeight.toFixed(2);
-            priceInput.value = totalPrice.toFixed(2);
+
+            weightInput.value = totalWeight;
+            priceInput.value = formattedPrice;
             resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy narx: ${totalPrice.toFixed(2)} so'm`;
+            console.log(`Calculated from Length: ${length}m, Weight: ${totalWeight}kg, Price: ${totalPrice}so'm`);
         }
 
         function calculateFromWeight() {
@@ -273,19 +264,23 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             const priceInput = document.getElementById('price');
             const resultDiv = document.getElementById('result');
 
-            if (isNaN(weight) || weight <= 0) {
+            if (isNaN(weight) || weight <= 0 || weightPerMeter === 0) {
                 lengthInput.value = '';
                 priceInput.value = '';
                 resultDiv.value = 'Iltimos, to\'g\'ri vazn qiymatini kiriting.';
                 return;
             }
 
-            const totalLength = weightPerMeter > 0 ? weight / weightPerMeter : 0;
-            const totalPrice = weight * currentProductPrice;
+            const totalLength = weight / weightPerMeter;
+            const totalPrice = weight * currentProductPrice/1000;
+            const formattedPrice = totalPrice.toLocaleString('uz-UZ', { style: 'currency', currency: 'UZS' });
+           console.log(formattedPrice);
 
             lengthInput.value = totalLength.toFixed(2);
-            priceInput.value = totalPrice.toFixed(2);
-            resultDiv.value = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr\nUmumiy narx: ${totalPrice.toFixed(2)} so'm`;
+            priceInput.value = formattedPrice;
+            resultDiv.value = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr\nUmumiy narx: ${formattedPrice.toFixed(2)} so'm`;
+
+            console.log(`Calculated from Weight: ${weight}kg, Length: ${totalLength}m, Price: ${formattedPrice}so'm`);
         }
 
         function calculateFromPrice() {
@@ -294,21 +289,25 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             const weightInput = document.getElementById('weight');
             const resultDiv = document.getElementById('result');
 
-            if (isNaN(price) || price <= 0) {
+            if (isNaN(price) || price <= 0 || currentProductPrice === 0) {
                 lengthInput.value = '';
                 weightInput.value = '';
                 resultDiv.value = 'Iltimos, to\'g\'ri narx qiymatini kiriting.';
                 return;
             }
 
-            const totalWeight = currentProductPrice > 0 ? price / currentProductPrice : 0;
+            // const totalWeight = price / currentProductPrice;
             const totalLength = weightPerMeter > 0 ? totalWeight / weightPerMeter : 0;
 
             weightInput.value = totalWeight.toFixed(2);
             lengthInput.value = totalLength.toFixed(2);
             resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy uzunlik: ${totalLength.toFixed(2)} metr`;
+            console.log(`Calculated from Price: ${price}so'm, Weight: ${totalWeight}kg, Length: ${totalLength}m`);
         }
     </script>
+
+
+
 
 
 
