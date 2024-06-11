@@ -12501,7 +12501,7 @@ img.position-absolute.about_4 {
   padding-bottom: 70px;
   border-bottom: 0;
   border-top: 0;
-  max-height: 450px;
+  height: 450px;
   margin-bottom: 40px;
   overflow: visible;
   box-shadow: 0px 10px px #00000029;
@@ -12648,6 +12648,7 @@ a.radius_btn::before {
 }
 
 .service_img img {
+  width: 300px !important;
   display: inline-block;
   transform: translateY(4px);
   margin-bottom: -50px;
@@ -14484,6 +14485,7 @@ img.position-absolute.service_01 {
   padding-bottom: 0;
   position: relative;
   z-index: 99;
+  height: 200px;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
 }
@@ -14494,6 +14496,8 @@ img.position-absolute.service_01 {
   content: "";
   top: 0;
   left: 0;
+  height: 200px;
+
   z-index: -1;
   height: 100%;
   width: 100%;

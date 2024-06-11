@@ -1742,6 +1742,7 @@ img.preview_shape_03 {
         padding-bottom: 48px;
     }
     .service_img img {
+        width: 300px !important;
         display: inline-block !important;
     }
     .details_nav .nav .nav-item button {

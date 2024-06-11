@@ -180,7 +180,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                         @foreach ($categories as $category)
                         <div class="service_card">
                             <div class="service_img text-center">
-                                <img src="{{ asset('storage/' . $category->photo) }}" alt="service_img">
+                                <img src="{{ asset('storage/' . $category->photo) }}" style="width:300px !important;" alt="service_img">
                             </div>
                             <div class="service_content text-center">
                                 <h3 class="service_title">{{ $category['name_'.$lang]}}</h3>
