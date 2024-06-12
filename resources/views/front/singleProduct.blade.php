@@ -204,7 +204,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         }
 
         const products = @json($products);
-
+        console.log(products);
         let currentProductPrice = 0;
         let metr_tonna = 0;
         let tonna_metr = 0;
@@ -212,7 +212,11 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
 
         function xarid(productId) {
             const product = products.find(p => p.id === productId);
-
+            console.log(product);
+            if (!product) {
+                console.error('Product not found:', productId);
+                return;
+            }
             document.getElementById('fullName').value = '';
             document.getElementById('phoneNumber').value = '';
             document.getElementById('length').value = '';
@@ -221,7 +225,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             document.getElementById('result').value = '';
 
             document.getElementById('productId').value = productId;
-            document.getElementById('productName').innerText = "Test product";
+            document.getElementById('productName').innerText = product.name_uz;
             document.getElementById('productPrice').innerText = "Price per tonna: " + product.price;
 
             currentProductPrice = product.price;
