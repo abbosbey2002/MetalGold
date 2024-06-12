@@ -221,7 +221,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             document.getElementById('result').value = '';
 
             document.getElementById('productId').value = productId;
-            document.getElementById('productName').innerText = product.name_uz;
+            document.getElementById('productName').innerText = "Test product";
             document.getElementById('productPrice').innerText = "Price per tonna: " + product.price;
 
             currentProductPrice = product.price;
