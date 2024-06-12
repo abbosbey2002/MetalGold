@@ -211,8 +211,9 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         let weightPerMeter = 0;
 
         function xarid(productId) {
-            const product = products.find(p => p.id === productId);
-            console.log(product);
+            const product = products.find(p => p.id === Number(productId));
+
+            console.log(typeof product.id );
             if (!product) {
                 console.error('Product not found:', productId);
                 return;
