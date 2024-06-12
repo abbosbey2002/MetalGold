@@ -87,7 +87,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                             </div>
                         </div>
                         <div class="choose_plan">
-                            <button class="cmn_btn  increase_width   cmn_outline  effect" onclick="xarid({{ $product->id }})" type="button" data-bs-toggle="modal" data-bs-target="#purchaseModal"><span>Xarid</span><i class="fas fa-chevron-right"></i></button>
+                            <button class="cmn_btn  increase_width   cmn_outline  effect" onclick='xarid({{ $product->id }})' type="button" data-bs-toggle="modal" data-bs-target="#purchaseModal"><span>Xarid</span><i class="fas fa-chevron-right"></i></button>
                         </div>
                     </div>
                 </div>
@@ -211,6 +211,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
         let weightPerMeter = 0;
 
         function xarid(productId) {
+
             const product = products.find(p => p.id === Number(productId));
 
             console.log(typeof product.id );
