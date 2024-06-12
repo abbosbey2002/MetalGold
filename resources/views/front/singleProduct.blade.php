@@ -140,10 +140,10 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                                 </div>
                             </div>
                         </div>
-                            <div class="mb-3">
-                                <label for="price" class="form-label">Narx (so'm):</label>
-                                <input disabled type="text" class="form-control" name="total_price" id="price" placeholder="Armatura narxini kiriting" oninput="calculateFromPrice()" required>
-                            </div>
+                        <div class="mb-3">
+                            <label for="price" class="form-label">Narx (so'm):</label>
+                            <input disabled type="text" class="form-control" name="total_price" id="price" placeholder="" oninput="calculateFromPrice()" required>
+                        </div>
                         <div class="mt-4 text-center" style="display:none;">
                             <textarea id="result" class="form-control" rows="4"></textarea>
                         </div>
@@ -248,13 +248,16 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             }
 
             const totalWeight = length * weightPerMeter;
-            const totalPrice = totalWeight * currentProductPrice/1000;
-            const formattedPrice = totalPrice.toLocaleString('uz-UZ', { style: 'currency', currency: 'UZS' });
+            const totalPrice = totalWeight * currentProductPrice / 1000;
+            const formattedPrice = totalPrice.toLocaleString('uz-UZ', {
+                style: 'currency',
+                currency: 'UZS'
+            });
 
 
             weightInput.value = totalWeight;
             priceInput.value = formattedPrice;
-            resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy narx: ${totalPrice.toFixed(2)} so'm`;
+            resultDiv.value = `Umumiy vazn: ${totalWeight.toFixed(2)} kg\nUmumiy narx: ${totalPrice} so'm`;
             console.log(`Calculated from Length: ${length}m, Weight: ${totalWeight}kg, Price: ${totalPrice}so'm`);
         }
 
@@ -272,13 +275,16 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             }
 
             const totalLength = weight / weightPerMeter;
-            const totalPrice = weight * currentProductPrice/1000;
-            const formattedPrice = totalPrice.toLocaleString('uz-UZ', { style: 'currency', currency: 'UZS' });
-           console.log(formattedPrice);
+            const totalPrice = weight * currentProductPrice / 1000;
+            const formattedPrice = totalPrice.toLocaleString('uz-UZ', {
+                style: 'currency',
+                currency: 'UZS'
+            });
+            console.log(formattedPrice);
 
             lengthInput.value = totalLength.toFixed(2);
             priceInput.value = formattedPrice;
-            resultDiv.value = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr\nUmumiy narx: ${formattedPrice.toFixed(2)} so'm`;
+            resultDiv.value = `Umumiy uzunlik: ${totalLength.toFixed(2)} metr\nUmumiy narx: ${formattedPrice} so'm`;
 
             console.log(`Calculated from Weight: ${weight}kg, Length: ${totalLength}m, Price: ${formattedPrice}so'm`);
         }
@@ -451,7 +457,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
             <div class="row top-border align-items-center">
                 <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
                     <div class="logo">
-                        <a href="/"><img src="/assets/img/logo/logo2.png" alt="site_logo"></a>
+                        <a href="/"><img src="/assets/img/MegaGoldMetall2-01.png" alt="site_logo"></a>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
@@ -462,8 +468,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale();
                 <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
                     <div class="copyright_menu">
                         <ul>
-                            <li><a href="#">+998 (93) 512 5324</a></li>
-                            <li><a href="#">+998 (93) 513 5324</a></li>
+                            <li><a href="/">+998 (97) 530 77 77</a></li>
+                            <li><a href="/">+998 (99) 840 55 55</a></li>
                         </ul>
                     </div>
                 </div>

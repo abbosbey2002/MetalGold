@@ -265,7 +265,7 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
             <div class="row top-border align-items-center">
                 <div class="col-md-4 col-lg-2 col-xl-4  col-sm-6">
                     <div class="logo">
-                        <a href="/"><img src="./assets/img/logo/logo2.png" alt="site_logo"></a>
+                        <a href="/"><img src="/assets/img/MegaGoldMetall2-01.png" alt="site_logo"></a>
                     </div>
                 </div>
                 <div class="col-md-8 col-lg-8 col-xl-4 col-sm-6 text-center">
@@ -276,8 +276,8 @@ $lang = \Illuminate\Support\Facades\App::getLocale()
                 <div class="col-md-4 col-xl-4 text-end d-none d-xl-block">
                     <div class="copyright_menu">
                         <ul>
-                            <li><a href="#">+998 (93) 512 5324</a></li>
-                            <li><a href="#">+998 (93) 513 5324</a></li>
+                            <li><a href="/">+998 (97) 530 77 77</a></li>
+                            <li><a href="/">+998 (99) 840 55 55</a></li>
                         </ul>
                     </div>
                 </div>

@@ -13,7 +13,6 @@ $contacts = \App\Models\Contact::latest()->first();
     <title>Mega Metal Gold</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="manifest" href="/site.webmanifest">
     <link rel="shortcut icon" type="/assets/img/Shapemgm2-01.png" href="/assets/img/Shapemgm2-01.png">
 
     <!-- Place favicon.ico in the root directory -->
